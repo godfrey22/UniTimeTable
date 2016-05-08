@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70B5C1E1CDF348B00E0EA0D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70B5C1D1CDF348B00E0EA0D /* CoreData.framework */; };
 		A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6B41CD46C1100CB7E1F /* AppDelegate.swift */; };
 		A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6B61CD46C1100CB7E1F /* ViewController.swift */; };
 		A768E6BA1CD46C1200CB7E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768E6B81CD46C1200CB7E1F /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A70B5C1D1CDF348B00E0EA0D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A768E6B11CD46C1100CB7E1F /* UniTimeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniTimeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768E6B41CD46C1100CB7E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A768E6B61CD46C1100CB7E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70B5C1E1CDF348B00E0EA0D /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +79,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A70B5C151CDF331100E0EA0D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A70B5C161CDF332100E0EA0D /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
 		A768E6A81CD46C1100CB7E1F = {
 			isa = PBXGroup;
 			children = (
+				A70B5C1D1CDF348B00E0EA0D /* CoreData.framework */,
 				A768E6B31CD46C1100CB7E1F /* UniTimeTable */,
 				A768E6CB1CD46C1200CB7E1F /* UniTimeTableTests */,
 				A768E6D61CD46C1200CB7E1F /* UniTimeTableUITests */,
@@ -99,6 +117,8 @@
 		A768E6B31CD46C1100CB7E1F /* UniTimeTable */ = {
 			isa = PBXGroup;
 			children = (
+				A70B5C161CDF332100E0EA0D /* DataModels */,
+				A70B5C151CDF331100E0EA0D /* ViewControllers */,
 				A768E6B41CD46C1100CB7E1F /* AppDelegate.swift */,
 				A768E6B61CD46C1100CB7E1F /* ViewController.swift */,
 				A768E6B81CD46C1200CB7E1F /* Main.storyboard */,
@@ -489,6 +509,7 @@
 				A768E6DE1CD46C1200CB7E1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A768E6DF1CD46C1200CB7E1F /* Build configuration list for PBXNativeTarget "UniTimeTableTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +518,7 @@
 				A768E6E11CD46C1200CB7E1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A768E6E21CD46C1200CB7E1F /* Build configuration list for PBXNativeTarget "UniTimeTableUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +527,7 @@
 				A768E6E41CD46C1200CB7E1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
