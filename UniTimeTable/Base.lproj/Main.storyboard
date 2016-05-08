@@ -212,6 +212,9 @@
                                         <include reference="wsD-fy-DiT"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="editStartDate:" destination="kQf-pV-Uvg" eventType="editingDidBegin" id="F6Q-Ns-pxT"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm5-Gm-OMm">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -245,6 +248,9 @@
                                         <include reference="Pts-rK-CbW"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="editEndDate:" destination="kQf-pV-Uvg" eventType="editingDidBegin" id="eX1-1Z-Dvw"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzv-ek-Bfy">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -337,6 +343,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="semesterEndDate" destination="lNa-QU-GGa" id="u2d-q9-Tta"/>
+                        <outlet property="semesterNameInput" destination="98e-SD-b3c" id="ERx-Ij-o9v"/>
+                        <outlet property="semesterStartDate" destination="EPU-oK-vBt" id="7KC-ng-MAF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihG-39-8zQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
