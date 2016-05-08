@@ -193,6 +193,9 @@
                                         <include reference="rdK-fu-EBm"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="clearContent:" destination="kQf-pV-Uvg" eventType="editingDidBegin" id="RGR-E7-SyW"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EPU-oK-vBt">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>

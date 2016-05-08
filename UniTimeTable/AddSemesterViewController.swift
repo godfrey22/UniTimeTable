@@ -19,6 +19,8 @@ class AddSemesterViewController: UIViewController {
     var allSemester: NSArray?
     var delegate: addSemesterDelegate!
     var managedObjectContext: NSManagedObjectContext
+    var startDate = NSDate()
+    var endDate = NSDate()
     
     @IBOutlet var semesterNameInput: UITextField!
     @IBOutlet var semesterStartDate: UITextField!
@@ -35,7 +37,7 @@ class AddSemesterViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        //dateInput = sender.date
+        startDate = sender.date
         semesterStartDate.text = dateFormatter.stringFromDate(sender.date)
     }
     
@@ -50,10 +52,19 @@ class AddSemesterViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        //dateInput = sender.date
+        endDate = sender.date
         semesterEndDate.text = dateFormatter.stringFromDate(sender.date)
     }
     
+    @IBAction func clearContent(sender: UITextField) {
+        var stringCache: String
+        stringCache = semesterNameInput.text!
+        if (stringCache == " Input Semester Name")
+        {
+            semesterNameInput.text = ""
+        }
+        semesterNameInput.textColor = UIColor.blackColor()
+    }
     
     
     required init?(coder aDecoder: NSCoder) {
