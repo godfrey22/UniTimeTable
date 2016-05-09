@@ -16,32 +16,23 @@ class SemesterViewController: UIViewController, UITableViewDataSource {
     @IBOutlet var semesterTableView: UITableView!
     var semester = [Semester]()
     
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Register the table view
         semesterTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SemesterCell")
         
-        //self.deleteAllData("Semester")
-        
+        //Create the delegate and prepare for the fetch
         let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         let context: NSManagedObjectContext = appDel.managedObjectContext
         
+        //Request all the objects in the "Semester" table
         let request = NSFetchRequest(entityName: "Semester")
         request.returnsObjectsAsFaults = false
         
-        
-
-      
-        
+        //Put all the semester into the semesterList
         do{
             let result: NSArray = try context.executeFetchRequest(request)
-            print(result.count)
             if result.count > 0{
                 self.semesterList = NSMutableArray(array: (result as! [Semester]))
             }
@@ -51,9 +42,6 @@ class SemesterViewController: UIViewController, UITableViewDataSource {
             print(fetchError)
         }
         self.semesterTableView.reloadData()
-        
-        
-        
         // Do any additional setup after loading the view.
     }
 
@@ -62,35 +50,24 @@ class SemesterViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
-    
-    
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return semesterList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SemesterCellIdentifier", forIndexPath: indexPath) as! SemesterCell
+        //Create a date formatter
         let dateFormatter = NSDateFormatter()
         let s: Semester = self.semesterList[indexPath.row] as! Semester
-        print(s)
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        //Config the cell
         cell.timeLabel.text = dateFormatter.stringFromDate(s.startYear!) + " ~ " + dateFormatter.stringFromDate(s.endYear!)
         return cell
     }
     
+    
+    //Delete data purpose
     func deleteAllData(entity: String)
     {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -112,7 +89,5 @@ class SemesterViewController: UIViewController, UITableViewDataSource {
         }
         
     }
- 
- 
 
 }

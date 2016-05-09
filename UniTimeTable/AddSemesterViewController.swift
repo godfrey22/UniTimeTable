@@ -67,11 +67,16 @@ class AddSemesterViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    //Button function
     @IBAction func saveSemester(sender: UIButton) {
+        
+        //Create delegate and NSManagedObjectContext
         let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         let context: NSManagedObjectContext = appDel.managedObjectContext
         
+        //Add a newSemester Object into the Semester table
         let newSemester = NSEntityDescription.insertNewObjectForEntityForName("Semester", inManagedObjectContext: context)
+        //Edit the value of the object and save into the core data
         newSemester.setValue(semesterNameInput.text, forKey: "name")
         newSemester.setValue(startDate, forKey: "startYear")
         newSemester.setValue(endDate, forKey: "endYear")
@@ -94,15 +99,4 @@ class AddSemesterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
