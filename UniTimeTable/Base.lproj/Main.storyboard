@@ -53,6 +53,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1lJ-EZ-3c2" id="37K-qC-zar">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period Time Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc4-tw-QBu">
@@ -167,6 +168,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6fk-fw-ctb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qW1-hk-gci">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Input Semester Name" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98e-SD-b3c">
@@ -391,6 +393,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Js-s4-zZJ" id="ZJB-sl-qMT">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ysx-c3-0gD">
@@ -482,6 +485,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GGc-QS-Rya" id="mPf-dL-tKE">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQv-No-6w6">
@@ -565,14 +569,14 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Jnc-0G-P88"/>
                                         <exclude reference="68A-It-Psn"/>
+                                        <exclude reference="Jnc-0G-P88"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="Jnc-0G-P88"/>
                                         <include reference="68A-It-Psn"/>
+                                        <include reference="Jnc-0G-P88"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -604,14 +608,14 @@
                                 <exclude reference="JNg-0N-ZyP"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Sqn-xK-yWW"/>
-                                <exclude reference="zaC-mm-My3"/>
-                                <exclude reference="OdD-wd-xm7"/>
-                                <exclude reference="mpX-69-7SJ"/>
                                 <exclude reference="JVS-oR-cgN"/>
                                 <exclude reference="RYR-Za-F0u"/>
+                                <exclude reference="Sqn-xK-yWW"/>
+                                <exclude reference="zaC-mm-My3"/>
                                 <exclude reference="mWY-Nk-7Sq"/>
                                 <exclude reference="yxO-JH-ozc"/>
+                                <exclude reference="OdD-wd-xm7"/>
+                                <exclude reference="mpX-69-7SJ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -622,14 +626,14 @@
                                 <include reference="JNg-0N-ZyP"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Sqn-xK-yWW"/>
-                                <include reference="zaC-mm-My3"/>
-                                <include reference="OdD-wd-xm7"/>
-                                <include reference="mpX-69-7SJ"/>
                                 <include reference="JVS-oR-cgN"/>
                                 <include reference="RYR-Za-F0u"/>
+                                <include reference="Sqn-xK-yWW"/>
+                                <include reference="zaC-mm-My3"/>
                                 <include reference="mWY-Nk-7Sq"/>
                                 <include reference="yxO-JH-ozc"/>
+                                <include reference="OdD-wd-xm7"/>
+                                <include reference="mpX-69-7SJ"/>
                             </mask>
                         </variation>
                     </view>
@@ -642,7 +646,6 @@
         <!--View Controller-->
         <scene sceneID="ZaC-RV-Rgv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eKh-21-rMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4lU-Ge-9lS" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vpp-jC-odE"/>
@@ -655,6 +658,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="26S-mQ-J4Z"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKh-21-rMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984" y="-1716"/>
         </scene>
