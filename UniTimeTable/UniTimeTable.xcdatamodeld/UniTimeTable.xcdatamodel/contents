@@ -11,26 +11,18 @@
         <relationship name="hasTask" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="belongs_to_assignment" inverseEntity="Task" syncable="YES"/>
     </entity>
     <entity name="Class" syncable="YES">
-        <attribute name="classID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="courseID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="teacherID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="typeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongs_to_Course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="hasClass" inverseEntity="Course" syncable="YES"/>
         <relationship name="hasTeacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="belongs_to_Class" inverseEntity="Teacher" syncable="YES"/>
         <relationship name="hasType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" inverseName="belongs_to_Class" inverseEntity="Type" syncable="YES"/>
     </entity>
     <entity name="Consult" syncable="YES">
         <attribute name="consult_time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="consultID" attributeType="Integer 16" minValueString="1" defaultValueString="1" indexed="YES" syncable="YES"/>
-        <attribute name="courseID" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongs_to_Course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="hasConsult" inverseEntity="Course" syncable="YES"/>
     </entity>
     <entity name="Course" syncable="YES">
         <attribute name="course_code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="course_name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="courseID" attributeType="Integer 16" defaultValueString="1" indexed="YES" syncable="YES"/>
-        <attribute name="semesterID" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongs_to_semester" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Semester" inverseName="hasCourse" inverseEntity="Semester" syncable="YES"/>
         <relationship name="hasAssignment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Assignment" inverseName="belongs_to_Course" inverseEntity="Assignment" syncable="YES"/>
         <relationship name="hasClass" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Class" inverseName="belongs_to_Course" inverseEntity="Class" syncable="YES"/>
@@ -39,7 +31,6 @@
     <entity name="Semester" representedClassName=".Semester" syncable="YES">
         <attribute name="endYear" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="semesterID" attributeType="Integer 16" defaultValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="startYear" optional="YES" attributeType="Date" minDateTimeInterval="473294700" syncable="YES"/>
         <relationship name="hasCourse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="belongs_to_semester" inverseEntity="Course" syncable="YES"/>
     </entity>
@@ -68,10 +59,10 @@
     </entity>
     <elements>
         <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="163"/>
-        <element name="Class" positionX="-6626" positionY="-3736" width="128" height="163"/>
-        <element name="Consult" positionX="-6176" positionY="-3694" width="128" height="103"/>
-        <element name="Course" positionX="-6408" positionY="-3753" width="144" height="163"/>
-        <element name="Semester" positionX="-6372" positionY="-3931" width="128" height="118"/>
+        <element name="Class" positionX="-6626" positionY="-3736" width="128" height="103"/>
+        <element name="Consult" positionX="-6176" positionY="-3694" width="128" height="73"/>
+        <element name="Course" positionX="-6408" positionY="-3753" width="144" height="133"/>
+        <element name="Semester" positionX="-6372" positionY="-3931" width="128" height="103"/>
         <element name="Task" positionX="-6149" positionY="-3502" width="128" height="163"/>
         <element name="Teacher" positionX="-6615" positionY="-3465" width="128" height="133"/>
         <element name="Type" positionX="-6624" positionY="-3906" width="128" height="88"/>

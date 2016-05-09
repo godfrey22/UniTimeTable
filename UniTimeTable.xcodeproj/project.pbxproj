@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A70B5C1E1CDF348B00E0EA0D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70B5C1D1CDF348B00E0EA0D /* CoreData.framework */; };
-		A70B5C251CDF35EA00E0EA0D /* Semester+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B5C231CDF35EA00E0EA0D /* Semester+CoreDataProperties.swift */; };
-		A70B5C261CDF35EA00E0EA0D /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B5C241CDF35EA00E0EA0D /* Semester.swift */; };
 		A70B5C281CDF361A00E0EA0D /* AddSemesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B5C271CDF361A00E0EA0D /* AddSemesterViewController.swift */; };
+		A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B5C331CE0698F00E0EA0D /* Semester+CoreDataProperties.swift */; };
+		A70B5C361CE0698F00E0EA0D /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B5C341CE0698F00E0EA0D /* Semester.swift */; };
 		A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6B41CD46C1100CB7E1F /* AppDelegate.swift */; };
 		A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6B61CD46C1100CB7E1F /* ViewController.swift */; };
 		A768E6BA1CD46C1200CB7E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768E6B81CD46C1200CB7E1F /* Main.storyboard */; };
@@ -40,9 +40,9 @@
 
 /* Begin PBXFileReference section */
 		A70B5C1D1CDF348B00E0EA0D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		A70B5C231CDF35EA00E0EA0D /* Semester+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Semester+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A70B5C241CDF35EA00E0EA0D /* Semester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		A70B5C271CDF361A00E0EA0D /* AddSemesterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSemesterViewController.swift; sourceTree = "<group>"; };
+		A70B5C331CE0698F00E0EA0D /* Semester+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Semester+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A70B5C341CE0698F00E0EA0D /* Semester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		A768E6B11CD46C1100CB7E1F /* UniTimeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniTimeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768E6B41CD46C1100CB7E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A768E6B61CD46C1100CB7E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		A70B5C161CDF332100E0EA0D /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				A70B5C231CDF35EA00E0EA0D /* Semester+CoreDataProperties.swift */,
-				A70B5C241CDF35EA00E0EA0D /* Semester.swift */,
+				A70B5C331CE0698F00E0EA0D /* Semester+CoreDataProperties.swift */,
+				A70B5C341CE0698F00E0EA0D /* Semester.swift */,
 			);
 			name = DataModels;
 			sourceTree = "<group>";
@@ -292,9 +292,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */,
-				A70B5C251CDF35EA00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
+				A70B5C361CE0698F00E0EA0D /* Semester.swift in Sources */,
+				A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
-				A70B5C261CDF35EA00E0EA0D /* Semester.swift in Sources */,
 				A70B5C281CDF361A00E0EA0D /* AddSemesterViewController.swift in Sources */,
 				A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */,
 			);

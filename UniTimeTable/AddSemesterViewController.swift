@@ -10,14 +10,8 @@ import UIKit
 import Foundation
 import CoreData
 
-protocol addSemesterDelegate {
-    func addSemester(semester: Semester)
-}
-
 class AddSemesterViewController: UIViewController {
     
-    var allSemester: NSArray?
-    var delegate: addSemesterDelegate!
     var managedObjectContext: NSManagedObjectContext
     var startDate = NSDate()
     var endDate = NSDate()
@@ -73,6 +67,16 @@ class AddSemesterViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    @IBAction func saveSemester(sender: UIButton) {
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let newSemester = NSEntityDescription.insertNewObjectForEntityForName("Semester", inManagedObjectContext: context)
+        newSemester.setValue(semesterNameInput.text, forKey: "name")
+        newSemester.setValue(startDate, forKey: "startYear")
+        newSemester.setValue(endDate, forKey: "endYear")
+        print(newSemester)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
