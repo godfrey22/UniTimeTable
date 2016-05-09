@@ -2,63 +2,60 @@
 //  SemesterViewController.swift
 //  UniTimeTable
 //
-//  Created by Godfrey Gao on 16/5/8.
+//  Created by Godfrey Gao on 16/5/9.
 //  Copyright © 2016年 Godfrey Gao. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class SemesterViewController: UIViewController, addSemesterDelegate {
+class SemesterViewController: UIViewController, UITableViewDataSource {
     
-    var managedObjectContext: NSManagedObjectContext
-    var semesterList: NSMutableArray
-    var currentGroup: Group?
-    
-    @IBOutlet var semesterTableView: UITableView!
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.semesterList = NSMutableArray()
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        self.managedObjectContext = appDelegate.managedObjectContext
-        super.init(coder: aDecoder)
-    }
-    
+    var semesterList: NSMutableArray = []
 
+    @IBOutlet var semesterTableView: UITableView!
+    var semester = [Semester]()
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fetchRequest = NSFetchRequest()
-        let entityDescription = NSEntityDescription.entityForName("Group", inManagedObjectContext: self.managedObjectContext)
-        fetchRequest.entity = entityDescription
+        semesterTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SemesterCell")
+        
+        //self.deleteAllData("Semester")
+        
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "Semester")
+        request.returnsObjectsAsFaults = false
         
         
-        var result = NSArray?()
-        do
-        {
-            result = try self.managedObjectContext.executeFetchRequest(fetchRequest)
-            if result!.count == 0
-            {
-                self.currentGroup = Group.init(entity: NSEntityDescription.entityForName("Group", inManagedObjectContext: self.managedObjectContext)!, insertIntoManagedObjectContext: self.managedObjectContext)
+
+      
+        
+        do{
+            let result: NSArray = try context.executeFetchRequest(request)
+            print(result.count)
+            if result.count > 0{
+                self.semesterList = NSMutableArray(array: (result as! [Semester]))
             }
-            else
-            {
-                self.currentGroup = result![0] as? Group
-                self.semesterList = NSMutableArray(array: (currentGroup!.members?.allObjects as! [Semester]))
-            }
-        }
-        catch
+        }catch
         {
             let fetchError = error as NSError
             print(fetchError)
         }
         self.semesterTableView.reloadData()
+        
+        
+        
+        // Do any additional setup after loading the view.
     }
-    
-    
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,27 +73,46 @@ class SemesterViewController: UIViewController, addSemesterDelegate {
     }
     */
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "AddSemester"
-        {
-            let controller: AddSemesterViewController = segue.destinationViewController as! AddSemesterViewController
-            controller.managedObjectContext = self.managedObjectContext
-            controller.delegate = self
-        }
+    
+    
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return semesterList.count
     }
     
-    func addSemester(semester: Semester) {
-        self.currentGroup!.addTask(semester)
-        self.semesterList = NSMutableArray(array: (currentGroup!.members?.allObjects as! [Semester]))
-        self.semesterTableView.reloadData()
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("SemesterCellIdentifier", forIndexPath: indexPath) as! SemesterCell
+        let dateFormatter = NSDateFormatter()
+        let s: Semester = self.semesterList[indexPath.row] as! Semester
+        print(s)
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        cell.timeLabel.text = dateFormatter.stringFromDate(s.startYear!) + " ~ " + dateFormatter.stringFromDate(s.endYear!)
+        return cell
+    }
+    
+    func deleteAllData(entity: String)
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        
         do
         {
-            try self.managedObjectContext.save()
-        }
-        catch let error
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData: NSManagedObject = managedObject as! NSManagedObject
+                managedContext.deleteObject(managedObjectData)
+            }
+        }catch let error as NSError
         {
-            print("Could not save Deletion \(error)")
+            print("Delete all data in \(entity) error: \(error)")
         }
+        
     }
+ 
+ 
 
 }

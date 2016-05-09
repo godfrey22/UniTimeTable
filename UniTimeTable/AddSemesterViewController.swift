@@ -75,12 +75,17 @@ class AddSemesterViewController: UIViewController {
         newSemester.setValue(semesterNameInput.text, forKey: "name")
         newSemester.setValue(startDate, forKey: "startYear")
         newSemester.setValue(endDate, forKey: "endYear")
-        print(newSemester)
+        do{
+            try context.save()
+        }catch
+        {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
