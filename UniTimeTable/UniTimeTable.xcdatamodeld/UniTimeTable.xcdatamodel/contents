@@ -20,7 +20,7 @@
         <attribute name="consult_time" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="belongs_to_Course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="hasConsult" inverseEntity="Course" syncable="YES"/>
     </entity>
-    <entity name="Course" syncable="YES">
+    <entity name="Course" representedClassName=".Course" syncable="YES">
         <attribute name="course_code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="course_name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongs_to_semester" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Semester" inverseName="hasCourse" inverseEntity="Semester" syncable="YES"/>
