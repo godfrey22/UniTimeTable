@@ -9,12 +9,21 @@
 import UIKit
 import CoreData
 
-class SemesterViewController: UIViewController, UITableViewDataSource {
+class SemesterViewController: UIViewController, UITableViewDataSource, addSemesterDelegate{
     
     var semesterList: NSMutableArray = []
+    var managedObjectContext: NSManagedObjectContext
 
     @IBOutlet var semesterTableView: UITableView!
     var semester = [Semester]()
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.semesterList = NSMutableArray()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedObjectContext = appDelegate.managedObjectContext
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +31,13 @@ class SemesterViewController: UIViewController, UITableViewDataSource {
         //Register the table view
         semesterTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SemesterCell")
         
-        //Create the delegate and prepare for the fetch
-        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-        let context: NSManagedObjectContext = appDel.managedObjectContext
-        
         //Request all the objects in the "Semester" table
         let request = NSFetchRequest(entityName: "Semester")
         request.returnsObjectsAsFaults = false
         
         //Put all the semester into the semesterList
         do{
-            let result: NSArray = try context.executeFetchRequest(request)
+            let result: NSArray = try managedObjectContext.executeFetchRequest(request)
             if result.count > 0{
                 self.semesterList = NSMutableArray(array: (result as! [Semester]))
             }
@@ -41,8 +46,7 @@ class SemesterViewController: UIViewController, UITableViewDataSource {
             let fetchError = error as NSError
             print(fetchError)
         }
-        self.semesterTableView.reloadData()
-        // Do any additional setup after loading the view.
+        semesterTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +71,30 @@ class SemesterViewController: UIViewController, UITableViewDataSource {
     }
     
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            managedObjectContext.deleteObject(semesterList.objectAtIndex(indexPath.row) as! NSManagedObject)
+            self.semesterList.removeObjectAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.semesterTableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+        }
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddSemester"
+        {
+            let controller: AddSemesterViewController = segue.destinationViewController as! AddSemesterViewController
+            controller.managedObjectContext = self.managedObjectContext
+            controller.delegate = self
+        }
+    }
+    
+    
+    func addSemester() {
+        semesterTableView.reloadData()
+    }
     //Delete data purpose
     func deleteAllData(entity: String)
     {

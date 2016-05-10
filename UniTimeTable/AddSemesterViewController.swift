@@ -10,11 +10,16 @@ import UIKit
 import Foundation
 import CoreData
 
+protocol addSemesterDelegate {
+    func addSemester()
+}
+
 class AddSemesterViewController: UIViewController {
     
     var managedObjectContext: NSManagedObjectContext
     var startDate = NSDate()
     var endDate = NSDate()
+    var delegate: addSemesterDelegate!
     
     @IBOutlet var semesterNameInput: UITextField!
     @IBOutlet var semesterStartDate: UITextField!
@@ -70,23 +75,37 @@ class AddSemesterViewController: UIViewController {
     //Button function
     @IBAction func saveSemester(sender: UIButton) {
         
-        //Create delegate and NSManagedObjectContext
-        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-        let context: NSManagedObjectContext = appDel.managedObjectContext
-        
-        //Add a newSemester Object into the Semester table
-        let newSemester = NSEntityDescription.insertNewObjectForEntityForName("Semester", inManagedObjectContext: context)
-        //Edit the value of the object and save into the core data
-        newSemester.setValue(semesterNameInput.text, forKey: "name")
-        newSemester.setValue(startDate, forKey: "startYear")
-        newSemester.setValue(endDate, forKey: "endYear")
-        do{
-            try context.save()
-        }catch
+        if (startDate.timeIntervalSince1970<endDate.timeIntervalSince1970)
         {
-            let fetchError = error as NSError
-            print(fetchError)
+            //Create delegate and NSManagedObjectContext
+            let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+            let context: NSManagedObjectContext = appDel.managedObjectContext
+            
+            //Add a newSemester Object into the Semester table
+            let newSemester = NSEntityDescription.insertNewObjectForEntityForName("Semester", inManagedObjectContext: context)
+            //Edit the value of the object and save into the core data
+            newSemester.setValue(semesterNameInput.text, forKey: "name")
+            newSemester.setValue(startDate, forKey: "startYear")
+            newSemester.setValue(endDate, forKey: "endYear")
+            print(newSemester)
+            do{
+                try context.save()
+                print("The semester has been stored!")
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }catch
+            {
+                let fetchError = error as NSError
+                print(fetchError)
+            }
+        }else
+        {
+            let alertController = UIAlertController(title: "Invalid Time Input", message:
+                "Ending date of the semester should be later than the start of the semester!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
+
     }
 
     override func viewDidLoad() {
