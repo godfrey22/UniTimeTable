@@ -76,8 +76,16 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
             // Delete the row from the data source
             managedObjectContext.deleteObject(semesterList.objectAtIndex(indexPath.row) as! NSManagedObject)
             self.semesterList.removeObjectAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            semesterTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             self.semesterTableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+            do
+            {
+                try self.managedObjectContext.save()
+            }
+            catch let error
+            {
+                print("Could not save Deletion \(error)")
+            }
         }
     }
     
@@ -92,8 +100,18 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
     }
     
     
-    func addSemester() {
-        semesterTableView.reloadData()
+    func addSemester(semester: Semester) {
+        print(semester)
+        self.semesterList.addObject(semester)
+        self.semesterTableView.reloadData()
+        do
+        {
+            try self.managedObjectContext.save()
+        }
+        catch let error
+        {
+            print("Could not save Deletion \(error)")
+        }
     }
     //Delete data purpose
     func deleteAllData(entity: String)

@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ppI-y8-nnB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vwE-ff-MTl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Current Term" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOp-lM-EQG">
@@ -144,7 +144,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="BzB-Kf-L0w">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HVV-90-RKg">
                             <connections>
-                                <segue destination="kQf-pV-Uvg" kind="show" id="fMS-n2-xZU"/>
+                                <segue destination="kQf-pV-Uvg" kind="show" identifier="AddSemester" id="fMS-n2-xZU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -166,7 +166,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6fk-fw-ctb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qW1-hk-gci">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" Input Semester Name" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98e-SD-b3c">

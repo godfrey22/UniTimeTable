@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 protocol addSemesterDelegate {
-    func addSemester()
+    func addSemester(semester: Semester)
 }
 
 class AddSemesterViewController: UIViewController {
@@ -77,26 +77,15 @@ class AddSemesterViewController: UIViewController {
         
         if (startDate.timeIntervalSince1970<endDate.timeIntervalSince1970)
         {
-            //Create delegate and NSManagedObjectContext
-            let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-            let context: NSManagedObjectContext = appDel.managedObjectContext
-            
             //Add a newSemester Object into the Semester table
-            let newSemester = NSEntityDescription.insertNewObjectForEntityForName("Semester", inManagedObjectContext: context)
+            let newSemester: Semester = (NSEntityDescription.insertNewObjectForEntityForName("Semester", inManagedObjectContext: self.managedObjectContext)as! Semester)
             //Edit the value of the object and save into the core data
             newSemester.setValue(semesterNameInput.text, forKey: "name")
             newSemester.setValue(startDate, forKey: "startYear")
             newSemester.setValue(endDate, forKey: "endYear")
+            self.delegate!.addSemester(newSemester)
+            self.navigationController?.popToRootViewControllerAnimated(true)
             print(newSemester)
-            do{
-                try context.save()
-                print("The semester has been stored!")
-                self.navigationController?.popToRootViewControllerAnimated(true)
-            }catch
-            {
-                let fetchError = error as NSError
-                print(fetchError)
-            }
         }else
         {
             let alertController = UIAlertController(title: "Invalid Time Input", message:
