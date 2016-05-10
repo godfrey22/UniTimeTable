@@ -85,6 +85,7 @@
                                         <connections>
                                             <outlet property="numberOfClassesLabel" destination="Ax0-Wn-U3u" id="V76-33-8ua"/>
                                             <outlet property="timeLabel" destination="dc4-tw-QBu" id="suu-fv-oIt"/>
+                                            <segue destination="PZU-ge-tEJ" kind="show" id="wKX-NX-qVc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -341,7 +342,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihG-39-8zQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728" y="-815"/>
+            <point key="canvasLocation" x="1713" y="-991"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Aj5-fP-bdN">
+            <objects>
+                <viewController id="PZU-ge-tEJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OEl-Re-WLb"/>
+                        <viewControllerLayoutGuide type="bottom" id="g05-th-ZdF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fbO-w7-IOa">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QL2-Wy-U2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713" y="-327"/>
         </scene>
         <!--Focus-->
         <scene sceneID="5GB-og-42h">
