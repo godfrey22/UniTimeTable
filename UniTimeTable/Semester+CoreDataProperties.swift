@@ -19,4 +19,10 @@ extension Semester {
     @NSManaged var startYear: NSDate?
     @NSManaged var hasCourse: NSSet?
 
+    func addCourse(value: Course)
+    {
+        let course = self.mutableSetValueForKey("hasCourse")
+        course.addObject(value)
+    }
+
 }

@@ -99,7 +99,6 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
         }else if segue.identifier == "ViewCourse"
         {
             let selectedIndexPath: NSIndexPath = self.semesterTableView.indexPathForSelectedRow!
-            print("bjkjnlm \(selectedIndexPath)")
             let courseViewController: CourseViewController = segue.destinationViewController as! CourseViewController
             courseViewController.managedObjectContext = self.managedObjectContext
             courseViewController.selectedSemester = semesterList.objectAtIndex(selectedIndexPath.row) as? Semester
@@ -108,11 +107,11 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
     
     
     func addSemester(semester: Semester) {
-        print(semester)
         self.semesterList.addObject(semester)
         self.semesterTableView.reloadData()
         do
         {
+            print("A Semester has been added!")
             try self.managedObjectContext.save()
         }
         catch let error

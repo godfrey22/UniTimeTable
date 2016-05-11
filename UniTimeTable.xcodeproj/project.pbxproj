@@ -16,6 +16,8 @@
 		A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */; };
 		A754CE271CE1A8FB00283B84 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE251CE1A8FB00283B84 /* Course.swift */; };
 		A754CE291CE2D1F200283B84 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE281CE2D1F200283B84 /* CourseViewController.swift */; };
+		A754CE2B1CE2D9CE00283B84 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE2A1CE2D9CE00283B84 /* AddCourseViewController.swift */; };
+		A754CE2D1CE2E22100283B84 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE2C1CE2E22100283B84 /* CourseCell.swift */; };
 		A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6B41CD46C1100CB7E1F /* AppDelegate.swift */; };
 		A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6B61CD46C1100CB7E1F /* ViewController.swift */; };
 		A768E6BA1CD46C1200CB7E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768E6B81CD46C1200CB7E1F /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A754CE251CE1A8FB00283B84 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		A754CE281CE2D1F200283B84 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
+		A754CE2A1CE2D9CE00283B84 /* AddCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
+		A754CE2C1CE2E22100283B84 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		A768E6B11CD46C1100CB7E1F /* UniTimeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniTimeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768E6B41CD46C1100CB7E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A768E6B61CD46C1100CB7E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				A70B5C271CDF361A00E0EA0D /* AddSemesterViewController.swift */,
 				A70B5C371CE06B4D00E0EA0D /* SemesterViewController.swift */,
 				A754CE281CE2D1F200283B84 /* CourseViewController.swift */,
+				A754CE2A1CE2D9CE00283B84 /* AddCourseViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				A70B5C3A1CE06E1800E0EA0D /* SemesterCell.swift */,
+				A754CE2C1CE2E22100283B84 /* CourseCell.swift */,
 			);
 			name = CustomCell;
 			sourceTree = "<group>";
@@ -315,8 +321,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */,
+				A754CE2B1CE2D9CE00283B84 /* AddCourseViewController.swift in Sources */,
 				A70B5C361CE0698F00E0EA0D /* Semester.swift in Sources */,
 				A754CE271CE1A8FB00283B84 /* Course.swift in Sources */,
+				A754CE2D1CE2E22100283B84 /* CourseCell.swift in Sources */,
 				A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
 				A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */,
