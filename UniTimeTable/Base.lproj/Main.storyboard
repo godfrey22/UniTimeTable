@@ -85,7 +85,7 @@
                                         <connections>
                                             <outlet property="numberOfClassesLabel" destination="Ax0-Wn-U3u" id="V76-33-8ua"/>
                                             <outlet property="timeLabel" destination="dc4-tw-QBu" id="suu-fv-oIt"/>
-                                            <segue destination="PZU-ge-tEJ" kind="show" id="wKX-NX-qVc"/>
+                                            <segue destination="PZU-ge-tEJ" kind="show" identifier="ViewCourse" id="wKX-NX-qVc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -344,22 +344,144 @@
             </objects>
             <point key="canvasLocation" x="1713" y="-991"/>
         </scene>
-        <!--View Controller-->
+        <!--Course-->
         <scene sceneID="Aj5-fP-bdN">
             <objects>
-                <viewController id="PZU-ge-tEJ" sceneMemberID="viewController">
+                <viewController id="PZU-ge-tEJ" customClass="CourseViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OEl-Re-WLb"/>
                         <viewControllerLayoutGuide type="bottom" id="g05-th-ZdF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fbO-w7-IOa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MMh-jF-bfT">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="pZz-Eb-qu6"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="Phg-Vr-GST">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Phg-Vr-GST" id="NRg-Is-rla">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qp-1I-huY">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="8" width="100" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="9Qp-1I-huY"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="9Qp-1I-huY"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pZz-Eb-qu6"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="pZz-Eb-qu6"/>
+                                    </mask>
+                                </variation>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJ0-8m-Vrf">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VJ0-8m-Vrf" firstAttribute="leading" secondItem="fbO-w7-IOa" secondAttribute="leading" id="O2X-Du-rr6"/>
+                            <constraint firstItem="MMh-jF-bfT" firstAttribute="leading" secondItem="fbO-w7-IOa" secondAttribute="leading" id="Pg8-Gm-Ien"/>
+                            <constraint firstItem="MMh-jF-bfT" firstAttribute="top" secondItem="fbO-w7-IOa" secondAttribute="topMargin" constant="100" id="nlw-nc-WdX"/>
+                            <constraint firstItem="MMh-jF-bfT" firstAttribute="width" secondItem="fbO-w7-IOa" secondAttribute="width" id="qYE-b7-Dao"/>
+                            <constraint firstItem="VJ0-8m-Vrf" firstAttribute="width" secondItem="fbO-w7-IOa" secondAttribute="width" id="uze-xM-rG6"/>
+                            <constraint firstItem="VJ0-8m-Vrf" firstAttribute="top" secondItem="OEl-Re-WLb" secondAttribute="bottom" constant="10" id="ynk-KI-67f"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MMh-jF-bfT"/>
+                                <exclude reference="VJ0-8m-Vrf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="O2X-Du-rr6"/>
+                                <exclude reference="uze-xM-rG6"/>
+                                <exclude reference="ynk-KI-67f"/>
+                                <exclude reference="Pg8-Gm-Ien"/>
+                                <exclude reference="nlw-nc-WdX"/>
+                                <exclude reference="qYE-b7-Dao"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="MMh-jF-bfT"/>
+                                <include reference="VJ0-8m-Vrf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="O2X-Du-rr6"/>
+                                <include reference="uze-xM-rG6"/>
+                                <include reference="ynk-KI-67f"/>
+                                <include reference="Pg8-Gm-Ien"/>
+                                <include reference="nlw-nc-WdX"/>
+                                <include reference="qYE-b7-Dao"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Course" id="PYr-a8-nn8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yce-Cl-mrV">
+                            <connections>
+                                <segue destination="Wgd-sq-zyq" kind="show" id="CLa-ut-cm8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="timeLabel" destination="VJ0-8m-Vrf" id="vDz-ZV-927"/>
+                        <outlet property="unitTableView" destination="MMh-jF-bfT" id="htf-fP-Ebk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QL2-Wy-U2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1713" y="-327"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="trq-9X-7X2">
+            <objects>
+                <viewController id="Wgd-sq-zyq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mCs-JI-zl1"/>
+                        <viewControllerLayoutGuide type="bottom" id="s71-G8-UJe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kRA-Yu-JJt">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xR-qd-uuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2376" y="-285"/>
         </scene>
         <!--Focus-->
         <scene sceneID="5GB-og-42h">
@@ -752,6 +874,12 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vj3-KA-QZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Settings" id="QkP-Fd-c23">
+                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="idd-Mm-04n"/>
+                </navigationItem>
+                <navigationItem title="Settings" id="VD7-Yj-IsN">
+                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="icE-Of-oxt"/>
+                </navigationItem>
             </objects>
             <point key="canvasLocation" x="152" y="-816"/>
         </scene>

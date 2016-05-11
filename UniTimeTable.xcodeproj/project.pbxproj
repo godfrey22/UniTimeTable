@@ -15,6 +15,7 @@
 		A70B5C3B1CE06E1800E0EA0D /* SemesterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B5C3A1CE06E1800E0EA0D /* SemesterCell.swift */; };
 		A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */; };
 		A754CE271CE1A8FB00283B84 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE251CE1A8FB00283B84 /* Course.swift */; };
+		A754CE291CE2D1F200283B84 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE281CE2D1F200283B84 /* CourseViewController.swift */; };
 		A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6B41CD46C1100CB7E1F /* AppDelegate.swift */; };
 		A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6B61CD46C1100CB7E1F /* ViewController.swift */; };
 		A768E6BA1CD46C1200CB7E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768E6B81CD46C1200CB7E1F /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		A70B5C3A1CE06E1800E0EA0D /* SemesterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterCell.swift; sourceTree = "<group>"; };
 		A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A754CE251CE1A8FB00283B84 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		A754CE281CE2D1F200283B84 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		A768E6B11CD46C1100CB7E1F /* UniTimeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniTimeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768E6B41CD46C1100CB7E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A768E6B61CD46C1100CB7E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				A70B5C271CDF361A00E0EA0D /* AddSemesterViewController.swift */,
 				A70B5C371CE06B4D00E0EA0D /* SemesterViewController.swift */,
+				A754CE281CE2D1F200283B84 /* CourseViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
 				A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */,
 				A70B5C281CDF361A00E0EA0D /* AddSemesterViewController.swift in Sources */,
+				A754CE291CE2D1F200283B84 /* CourseViewController.swift in Sources */,
 				A70B5C3B1CE06E1800E0EA0D /* SemesterCell.swift in Sources */,
 				A70B5C381CE06B4D00E0EA0D /* SemesterViewController.swift in Sources */,
 				A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */,
