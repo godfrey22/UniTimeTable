@@ -356,101 +356,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MMh-jF-bfT">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="pZz-Eb-qu6"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCellIdentifier" rowHeight="40" id="Phg-Vr-GST" customClass="CourseCell" customModule="UniTimeTable" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Phg-Vr-GST" id="NRg-Is-rla">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qp-1I-huY">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="8" width="100" height="21"/>
-                                                    </variation>
-                                                </label>
-                                            </subviews>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="9Qp-1I-huY"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="9Qp-1I-huY"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="courseCode" destination="9Qp-1I-huY" id="7gJ-4T-RfR"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="pZz-Eb-qu6"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="pZz-Eb-qu6"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="PZU-ge-tEJ" id="OVK-8i-WMJ"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJ0-8m-Vrf">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="74" width="320" height="21"/>
+                                </variation>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rph-Cl-HJJ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCellIdentifier" id="IfB-eD-in3" customClass="CourseCell" customModule="UniTimeTable" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IfB-eD-in3" id="mTp-Yy-VsM">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-W1-mPR">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="11" width="100" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="9RH-W1-mPR"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="9RH-W1-mPR"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseCode" destination="9RH-W1-mPR" id="NhE-0h-WeU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="103" width="320" height="280"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="PZU-ge-tEJ" id="cG0-73-QjS"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="VJ0-8m-Vrf" firstAttribute="leading" secondItem="fbO-w7-IOa" secondAttribute="leading" id="O2X-Du-rr6"/>
-                            <constraint firstItem="MMh-jF-bfT" firstAttribute="leading" secondItem="fbO-w7-IOa" secondAttribute="leading" id="Pg8-Gm-Ien"/>
-                            <constraint firstItem="MMh-jF-bfT" firstAttribute="top" secondItem="fbO-w7-IOa" secondAttribute="topMargin" constant="100" id="nlw-nc-WdX"/>
-                            <constraint firstItem="MMh-jF-bfT" firstAttribute="width" secondItem="fbO-w7-IOa" secondAttribute="width" id="qYE-b7-Dao"/>
-                            <constraint firstItem="VJ0-8m-Vrf" firstAttribute="width" secondItem="fbO-w7-IOa" secondAttribute="width" id="uze-xM-rG6"/>
-                            <constraint firstItem="VJ0-8m-Vrf" firstAttribute="top" secondItem="OEl-Re-WLb" secondAttribute="bottom" constant="10" id="ynk-KI-67f"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="MMh-jF-bfT"/>
                                 <exclude reference="VJ0-8m-Vrf"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="O2X-Du-rr6"/>
-                                <exclude reference="uze-xM-rG6"/>
-                                <exclude reference="ynk-KI-67f"/>
-                                <exclude reference="Pg8-Gm-Ien"/>
-                                <exclude reference="nlw-nc-WdX"/>
-                                <exclude reference="qYE-b7-Dao"/>
+                                <exclude reference="Rph-Cl-HJJ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="MMh-jF-bfT"/>
                                 <include reference="VJ0-8m-Vrf"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="O2X-Du-rr6"/>
-                                <include reference="uze-xM-rG6"/>
-                                <include reference="ynk-KI-67f"/>
-                                <include reference="Pg8-Gm-Ien"/>
-                                <include reference="nlw-nc-WdX"/>
-                                <include reference="qYE-b7-Dao"/>
+                                <include reference="Rph-Cl-HJJ"/>
                             </mask>
                         </variation>
                     </view>
@@ -465,12 +434,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="timeLabel" destination="VJ0-8m-Vrf" id="vDz-ZV-927"/>
-                        <outlet property="unitTableView" destination="MMh-jF-bfT" id="aCz-tj-hL6"/>
+                        <outlet property="unitTableView" destination="Rph-Cl-HJJ" id="THI-pp-PsO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QL2-Wy-U2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="-71"/>
+            <point key="canvasLocation" x="1582.5" y="-25"/>
         </scene>
         <!--Add Course View Controller-->
         <scene sceneID="trq-9X-7X2">

@@ -13,7 +13,6 @@ class CourseViewController: UIViewController, addCourseDelegate {
 
     //MARK: Variable initiations
     @IBOutlet var timeLabel: UILabel!
-
     @IBOutlet var unitTableView: UITableView!
     
     var selectedSemester: Semester?
@@ -85,7 +84,23 @@ class CourseViewController: UIViewController, addCourseDelegate {
         return cell
     }
     
-    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            managedObjectContext.deleteObject(courseList.objectAtIndex(indexPath.row) as! NSManagedObject)
+            self.courseList.removeObjectAtIndex(indexPath.row)
+            unitTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.unitTableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+            do
+            {
+                try self.managedObjectContext.save()
+            }
+            catch let error
+            {
+                print("Could not save Deletion \(error)")
+            }
+        }
+    }
     
     
     

@@ -9,7 +9,8 @@
 import UIKit
 
 class CourseCell: UITableViewCell {
-
+    
+    
     @IBOutlet var courseCode: UILabel!
     
     
