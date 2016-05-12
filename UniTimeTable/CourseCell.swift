@@ -1,18 +1,17 @@
 //
-//  SemesterCell.swift
+//  CourseCell.swift
 //  UniTimeTable
 //
-//  Created by Godfrey Gao on 16/5/9.
+//  Created by Godfrey Gao on 16/5/11.
 //  Copyright © 2016年 Godfrey Gao. All rights reserved.
 //
 
 import UIKit
 
-class SemesterCell: UITableViewCell {
-
-    @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var numberOfClassesLabel: UILabel!
+class CourseCell: UITableViewCell {
     
+    
+    @IBOutlet var courseCode: UILabel!
     
     
     override func awakeFromNib() {

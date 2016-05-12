@@ -85,7 +85,6 @@ class AddSemesterViewController: UIViewController {
             newSemester.setValue(endDate, forKey: "endYear")
             self.delegate!.addSemester(newSemester)
             self.navigationController?.popToRootViewControllerAnimated(true)
-            print(newSemester)
         }else
         {
             let alertController = UIAlertController(title: "Invalid Time Input", message:

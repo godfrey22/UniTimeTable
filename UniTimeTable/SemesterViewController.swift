@@ -15,7 +15,6 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
     var managedObjectContext: NSManagedObjectContext
 
     @IBOutlet var semesterTableView: UITableView!
-    var semester = [Semester]()
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,6 +22,11 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.managedObjectContext = appDelegate.managedObjectContext
         super.init(coder: aDecoder)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        semesterTableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -67,6 +71,7 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
         
         //Config the cell
         cell.timeLabel.text = dateFormatter.stringFromDate(s.startYear!) + " ~ " + dateFormatter.stringFromDate(s.endYear!)
+        cell.numberOfClassesLabel.text = "\(s.hasCourse!.count)"
         return cell
     }
     
@@ -96,16 +101,22 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
             let controller: AddSemesterViewController = segue.destinationViewController as! AddSemesterViewController
             controller.managedObjectContext = self.managedObjectContext
             controller.delegate = self
+        }else if segue.identifier == "ViewCourse"
+        {
+            let selectedIndexPath: NSIndexPath = self.semesterTableView.indexPathForSelectedRow!
+            let courseViewController: CourseViewController = segue.destinationViewController as! CourseViewController
+            courseViewController.managedObjectContext = self.managedObjectContext
+            courseViewController.selectedSemester = semesterList.objectAtIndex(selectedIndexPath.row) as! Semester
         }
     }
     
     
     func addSemester(semester: Semester) {
-        print(semester)
         self.semesterList.addObject(semester)
         self.semesterTableView.reloadData()
         do
         {
+            print("A Semester has been added!")
             try self.managedObjectContext.save()
         }
         catch let error
@@ -113,6 +124,7 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
             print("Could not save Deletion \(error)")
         }
     }
+    
     //Delete data purpose
     func deleteAllData(entity: String)
     {
