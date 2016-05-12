@@ -13,6 +13,8 @@ class SemesterCell: UITableViewCell {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var numberOfClassesLabel: UILabel!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

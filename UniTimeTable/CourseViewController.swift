@@ -15,7 +15,7 @@ class CourseViewController: UIViewController, addCourseDelegate {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var unitTableView: UITableView!
     
-    var selectedSemester: Semester?
+    var selectedSemester: Semester!
     var courseList: NSMutableArray = []
     var managedObjectContext: NSManagedObjectContext
     
@@ -30,13 +30,16 @@ class CourseViewController: UIViewController, addCourseDelegate {
     //View Controller Overrides
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        timeLabel.text = "  " + dateFormatter.stringFromDate(selectedSemester!.startYear!) + " ~ " + dateFormatter.stringFromDate(selectedSemester!.endYear!)
+        unitTableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        timeLabel.text = "  " + dateFormatter.stringFromDate(selectedSemester!.startYear!) + " ~ " + dateFormatter.stringFromDate(selectedSemester!.endYear!)
+        
         
         //Register the table view
         unitTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "CourseCell")
@@ -48,13 +51,8 @@ class CourseViewController: UIViewController, addCourseDelegate {
         //Put all the semester into the semesterList
         do{
             let result: NSArray = try managedObjectContext.executeFetchRequest(request)
-            if result.count == 0
+            if result.count != 0
             {
-                self.selectedSemester = Semester.init(entity: NSEntityDescription.entityForName("Semester", inManagedObjectContext: self.managedObjectContext)!, insertIntoManagedObjectContext: self.managedObjectContext)
-            }
-            else
-            {
-                //self.selectedSemester = result[0] as? Semester
                 self.courseList = NSMutableArray(array: (selectedSemester!.hasCourse?.allObjects as! [Course]))
             }
         }catch
@@ -79,7 +77,6 @@ class CourseViewController: UIViewController, addCourseDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseCellIdentifier", forIndexPath: indexPath) as! CourseCell
         let c: Course = self.courseList[indexPath.row] as! Course
-        print(c)
         cell.courseCode.text = c.course_code
         return cell
     }
