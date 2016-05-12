@@ -26,6 +26,7 @@
 		A768E6C21CD46C1200CB7E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768E6C01CD46C1200CB7E1F /* LaunchScreen.storyboard */; };
 		A768E6CD1CD46C1200CB7E1F /* UniTimeTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6CC1CD46C1200CB7E1F /* UniTimeTableTests.swift */; };
 		A768E6D81CD46C1200CB7E1F /* UniTimeTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */; };
+		A7D016E81CE54719008A31BA /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016E71CE54719008A31BA /* ClassCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		A768E6D31CD46C1200CB7E1F /* UniTimeTableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniTimeTableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniTimeTableUITests.swift; sourceTree = "<group>"; };
 		A768E6D91CD46C1200CB7E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7D016E71CE54719008A31BA /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		A70B5C391CE06E0200E0EA0D /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				A7D016E71CE54719008A31BA /* ClassCell.swift */,
 				A70B5C3A1CE06E1800E0EA0D /* SemesterCell.swift */,
 				A754CE2C1CE2E22100283B84 /* CourseCell.swift */,
 			);
@@ -328,6 +331,7 @@
 				A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
 				A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */,
+				A7D016E81CE54719008A31BA /* ClassCell.swift in Sources */,
 				A70B5C281CDF361A00E0EA0D /* AddSemesterViewController.swift in Sources */,
 				A754CE291CE2D1F200283B84 /* CourseViewController.swift in Sources */,
 				A70B5C3B1CE06E1800E0EA0D /* SemesterCell.swift in Sources */,
