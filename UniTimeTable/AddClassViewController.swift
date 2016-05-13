@@ -10,12 +10,20 @@ import UIKit
 import CoreData
 
 class AddClassViewController: UIViewController {
+    
+    var startDate = NSDate()
+    var endDate = NSDate()
+    var startTime = NSDate()
+    var endTime = NSDate()
+    var timeCheck = true
+    var dateCheck = true
 
     @IBOutlet var typeInput: UITextField!
     @IBOutlet var startDateInput: UITextField!
     @IBOutlet var endDateInput: UITextField!
     @IBOutlet var startTimeInput: UITextField!
     @IBOutlet var endTimeInput: UITextField!
+    @IBOutlet var durationLabel: UILabel!
     
     //Start Datepicker
     @IBAction func editStartDate(sender: UITextField) {
@@ -28,6 +36,7 @@ class AddClassViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        startDate = sender.date
         startDateInput.text = dateFormatter.stringFromDate(sender.date)
     }
     //End Datepicker
@@ -41,6 +50,7 @@ class AddClassViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        endDate = sender.date
         endDateInput.text = dateFormatter.stringFromDate(sender.date)
     }
     //Start time input picker
@@ -54,7 +64,9 @@ class AddClassViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        startTime = sender.date
         startTimeInput.text = dateFormatter.stringFromDate(sender.date)
+        calcNShowDuration()
     }
     //End time input picker
     @IBAction func editEndTime(sender: UITextField) {
@@ -67,7 +79,9 @@ class AddClassViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        endTime = sender.date
         endTimeInput.text = dateFormatter.stringFromDate(sender.date)
+        calcNShowDuration()
     }
     
     override func viewDidLoad() {
@@ -91,5 +105,31 @@ class AddClassViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func calcNShowDuration(){
+        let cal = NSCalendar.currentCalendar()
+        let unit:NSCalendarUnit = NSCalendarUnit.Minute
+        let time = cal.components(unit, fromDate: startTime, toDate: endTime, options: [])
+        let hour = time.minute/60
+        let min = time.minute - hour * 60 + 1
+        if(hour<0||min<0){
+            durationLabel.text = "End time is too early"
+            timeCheck = false
+        }
+        else
+        {
+            if !(min==0)
+            {
+                durationLabel.text = "\(hour) Hour(s) \(min) Minutes"
+            }else{
+                 durationLabel.text = "\(hour) Hour(s)"
+            }
+            if (hour==0)
+            {
+                durationLabel.text = "\(min) Minutes"
+            }
+            timeCheck = true
+        }
+    }
 
 }

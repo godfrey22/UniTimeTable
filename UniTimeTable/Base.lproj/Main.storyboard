@@ -792,15 +792,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="174-wk-g92">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="248" width="62" height="21"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLq-y2-HV6">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -810,10 +801,67 @@
                                     <rect key="frame" x="20" y="277" width="66" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="174-wk-g92">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="248" width="62" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPe-6G-7UG">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="11L-D1-LLo"/>
+                                    <constraint firstAttribute="height" constant="21" id="QD7-U7-BLv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="11L-D1-LLo"/>
+                                        <exclude reference="QD7-U7-BLv"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="11L-D1-LLo"/>
+                                        <include reference="QD7-U7-BLv"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLE-Ps-uly">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FRh-j5-D4a"/>
+                                    <constraint firstAttribute="width" constant="100" id="Uay-Tk-ZEc">
+                                        <variation key="widthClass=compact" constant="186"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FRh-j5-D4a"/>
+                                        <exclude reference="Uay-Tk-ZEc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="FRh-j5-D4a"/>
+                                        <include reference="Uay-Tk-ZEc"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="iPe-6G-7UG" firstAttribute="leading" secondItem="CPk-fh-TLB" secondAttribute="leadingMargin" id="22u-Qx-NfS"/>
                             <constraint firstItem="W7L-C2-sK0" firstAttribute="width" secondItem="CPk-fh-TLB" secondAttribute="width" id="5su-AJ-bsw"/>
+                            <constraint firstItem="xLE-Ps-uly" firstAttribute="top" secondItem="Hp7-US-pp7" secondAttribute="bottom" constant="50" id="A5C-Bb-bq8"/>
                             <constraint firstItem="gvr-OA-xZh" firstAttribute="width" secondItem="CPk-fh-TLB" secondAttribute="width" id="A6R-9O-00e"/>
                             <constraint firstItem="Hp7-US-pp7" firstAttribute="leading" secondItem="CPk-fh-TLB" secondAttribute="leading" id="B8U-QH-RHK"/>
                             <constraint firstItem="bdK-ov-agC" firstAttribute="width" secondItem="CPk-fh-TLB" secondAttribute="width" id="Bc9-tf-qnQ"/>
@@ -823,7 +871,9 @@
                             <constraint firstItem="W7L-C2-sK0" firstAttribute="leading" secondItem="CPk-fh-TLB" secondAttribute="leading" id="JRN-Z1-4za"/>
                             <constraint firstItem="2bD-dj-Ldw" firstAttribute="leading" secondItem="CPk-fh-TLB" secondAttribute="leading" id="MAt-jd-RK7"/>
                             <constraint firstItem="Hp7-US-pp7" firstAttribute="top" secondItem="2bD-dj-Ldw" secondAttribute="bottom" constant="8" id="MHp-uF-KIN"/>
+                            <constraint firstItem="iPe-6G-7UG" firstAttribute="top" secondItem="Hp7-US-pp7" secondAttribute="bottom" constant="50" id="NUH-eU-qVD"/>
                             <constraint firstItem="rT5-BW-jYB" firstAttribute="width" secondItem="CPk-fh-TLB" secondAttribute="width" id="Nqe-DE-XCK"/>
+                            <constraint firstItem="xLE-Ps-uly" firstAttribute="leading" secondItem="iPe-6G-7UG" secondAttribute="trailing" constant="4" id="Pef-gF-bnR"/>
                             <constraint firstItem="rT5-BW-jYB" firstAttribute="leading" secondItem="CPk-fh-TLB" secondAttribute="leading" id="Up7-gD-JcI"/>
                             <constraint firstItem="sTF-NL-Aza" firstAttribute="width" secondItem="CPk-fh-TLB" secondAttribute="width" id="VmR-xR-kY3"/>
                             <constraint firstItem="ZEI-db-O5o" firstAttribute="top" secondItem="rT5-BW-jYB" secondAttribute="bottom" constant="8" id="WzD-Ii-oOx"/>
@@ -853,8 +903,10 @@
                                 <exclude reference="Hp7-US-pp7"/>
                                 <exclude reference="gvr-OA-xZh"/>
                                 <exclude reference="2bD-dj-Ldw"/>
-                                <exclude reference="174-wk-g92"/>
                                 <exclude reference="WLq-y2-HV6"/>
+                                <exclude reference="174-wk-g92"/>
+                                <exclude reference="iPe-6G-7UG"/>
+                                <exclude reference="xLE-Ps-uly"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Nqe-DE-XCK"/>
@@ -881,6 +933,10 @@
                                 <exclude reference="B8U-QH-RHK"/>
                                 <exclude reference="MHp-uF-KIN"/>
                                 <exclude reference="YBP-Al-WOj"/>
+                                <exclude reference="22u-Qx-NfS"/>
+                                <exclude reference="NUH-eU-qVD"/>
+                                <exclude reference="A5C-Bb-bq8"/>
+                                <exclude reference="Pef-gF-bnR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -898,8 +954,10 @@
                                 <include reference="Hp7-US-pp7"/>
                                 <include reference="gvr-OA-xZh"/>
                                 <include reference="2bD-dj-Ldw"/>
-                                <include reference="174-wk-g92"/>
                                 <include reference="WLq-y2-HV6"/>
+                                <include reference="174-wk-g92"/>
+                                <include reference="iPe-6G-7UG"/>
+                                <include reference="xLE-Ps-uly"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Nqe-DE-XCK"/>
@@ -926,10 +984,15 @@
                                 <include reference="B8U-QH-RHK"/>
                                 <include reference="MHp-uF-KIN"/>
                                 <include reference="YBP-Al-WOj"/>
+                                <include reference="22u-Qx-NfS"/>
+                                <include reference="NUH-eU-qVD"/>
+                                <include reference="A5C-Bb-bq8"/>
+                                <include reference="Pef-gF-bnR"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="durationLabel" destination="xLE-Ps-uly" id="K8t-lD-lzJ"/>
                         <outlet property="endDateInput" destination="bdK-ov-agC" id="T9r-7y-gdi"/>
                         <outlet property="endTimeInput" destination="sTF-NL-Aza" id="Z0l-Xi-ol9"/>
                         <outlet property="startDateInput" destination="ZEI-db-O5o" id="KAg-zl-TJe"/>
