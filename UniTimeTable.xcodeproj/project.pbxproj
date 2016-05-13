@@ -26,7 +26,10 @@
 		A768E6C21CD46C1200CB7E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768E6C01CD46C1200CB7E1F /* LaunchScreen.storyboard */; };
 		A768E6CD1CD46C1200CB7E1F /* UniTimeTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6CC1CD46C1200CB7E1F /* UniTimeTableTests.swift */; };
 		A768E6D81CD46C1200CB7E1F /* UniTimeTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */; };
-		A7D016E81CE54719008A31BA /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016E71CE54719008A31BA /* ClassCell.swift */; };
+		A7D016EB1CE549B3008A31BA /* Class+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016E91CE549B3008A31BA /* Class+CoreDataProperties.swift */; };
+		A7D016EC1CE549B3008A31BA /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016EA1CE549B3008A31BA /* Class.swift */; };
+		A7D016EE1CE54A1B008A31BA /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */; };
+		A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +75,10 @@
 		A768E6D31CD46C1200CB7E1F /* UniTimeTableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniTimeTableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniTimeTableUITests.swift; sourceTree = "<group>"; };
 		A768E6D91CD46C1200CB7E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7D016E71CE54719008A31BA /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
+		A7D016E91CE549B3008A31BA /* Class+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Class+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A7D016EA1CE549B3008A31BA /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
+		A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,8 @@
 		A70B5C151CDF331100E0EA0D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */,
+				A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */,
 				A70B5C271CDF361A00E0EA0D /* AddSemesterViewController.swift */,
 				A70B5C371CE06B4D00E0EA0D /* SemesterViewController.swift */,
 				A754CE281CE2D1F200283B84 /* CourseViewController.swift */,
@@ -115,6 +123,8 @@
 		A70B5C161CDF332100E0EA0D /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				A7D016E91CE549B3008A31BA /* Class+CoreDataProperties.swift */,
+				A7D016EA1CE549B3008A31BA /* Class.swift */,
 				A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */,
 				A754CE251CE1A8FB00283B84 /* Course.swift */,
 				A70B5C331CE0698F00E0EA0D /* Semester+CoreDataProperties.swift */,
@@ -126,7 +136,6 @@
 		A70B5C391CE06E0200E0EA0D /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
-				A7D016E71CE54719008A31BA /* ClassCell.swift */,
 				A70B5C3A1CE06E1800E0EA0D /* SemesterCell.swift */,
 				A754CE2C1CE2E22100283B84 /* CourseCell.swift */,
 			);
@@ -324,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */,
+				A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */,
 				A754CE2B1CE2D9CE00283B84 /* AddCourseViewController.swift in Sources */,
 				A70B5C361CE0698F00E0EA0D /* Semester.swift in Sources */,
 				A754CE271CE1A8FB00283B84 /* Course.swift in Sources */,
@@ -331,9 +341,11 @@
 				A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
 				A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */,
-				A7D016E81CE54719008A31BA /* ClassCell.swift in Sources */,
 				A70B5C281CDF361A00E0EA0D /* AddSemesterViewController.swift in Sources */,
+				A7D016EE1CE54A1B008A31BA /* ClassViewController.swift in Sources */,
+				A7D016EB1CE549B3008A31BA /* Class+CoreDataProperties.swift in Sources */,
 				A754CE291CE2D1F200283B84 /* CourseViewController.swift in Sources */,
+				A7D016EC1CE549B3008A31BA /* Class.swift in Sources */,
 				A70B5C3B1CE06E1800E0EA0D /* SemesterCell.swift in Sources */,
 				A70B5C381CE06B4D00E0EA0D /* SemesterViewController.swift in Sources */,
 				A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */,

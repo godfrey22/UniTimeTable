@@ -20,5 +20,11 @@ extension Course {
     @NSManaged var hasAssignment: NSSet?
     @NSManaged var hasClass: NSSet?
     @NSManaged var hasConsult: NSSet?
+    
+    func addClass(value: Class)
+    {
+        let course = self.mutableSetValueForKey("hasClass")
+        course.addObject(value)
+    }
 
 }
