@@ -25,6 +25,22 @@ class TypeViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    @IBAction func saveType(sender: UIButton) {
+        let newType: Type = (NSEntityDescription.insertNewObjectForEntityForName("Type", inManagedObjectContext: self.managedObjectContext)as! Type)
+        //Edit the value of the object and save into the core data
+        newType.setValue(typeInput.text, forKey: "type_name")
+        typeList.addObject(newType)
+        self.typeTableView.reloadData()
+        do
+        {
+            try self.managedObjectContext.save()
+            print("A Type has been added!")
+        }
+        catch let error
+        {
+            print("Could not save Deletion \(error)")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

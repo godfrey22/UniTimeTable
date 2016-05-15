@@ -60,11 +60,11 @@
     </entity>
     <entity name="Type" representedClassName=".Type" syncable="YES">
         <attribute name="type_name" attributeType="String" syncable="YES"/>
-        <relationship name="belongs_to_Class" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="hasType" inverseEntity="Class" syncable="YES"/>
+        <relationship name="belongs_to_Class" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="hasType" inverseEntity="Class" syncable="YES"/>
     </entity>
     <elements>
         <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="163"/>
-        <element name="Class" positionX="-6626" positionY="-3736" width="128" height="193"/>
+        <element name="Class" positionX="-6615" positionY="-3744" width="128" height="193"/>
         <element name="Consult" positionX="-6176" positionY="-3694" width="128" height="73"/>
         <element name="Course" positionX="-6408" positionY="-3753" width="144" height="133"/>
         <element name="Semester" positionX="-6372" positionY="-3931" width="128" height="103"/>
