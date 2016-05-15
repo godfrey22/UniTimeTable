@@ -24,5 +24,11 @@ extension Class {
     @NSManaged var belongs_to_Course: Course?
     @NSManaged var hasTeacher: NSManagedObject?
     @NSManaged var hasType: NSManagedObject?
+    
+    func addType(value: Type)
+    {
+        let course = self.mutableSetValueForKey("hasType")
+        course.addObject(value)
+    }
 
 }

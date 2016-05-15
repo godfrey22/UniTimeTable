@@ -31,6 +31,9 @@
 		A7D016FD1CE8016A008A31BA /* Class+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016FB1CE8016A008A31BA /* Class+CoreDataProperties.swift */; };
 		A7D016FE1CE8016A008A31BA /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016FC1CE8016A008A31BA /* Class.swift */; };
 		A7D017001CE8042F008A31BA /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016FF1CE8042F008A31BA /* ClassCell.swift */; };
+		A7D017021CE82160008A31BA /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D017011CE82160008A31BA /* TypeViewController.swift */; };
+		A7D017051CE8217D008A31BA /* Type+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D017031CE8217D008A31BA /* Type+CoreDataProperties.swift */; };
+		A7D017061CE8217D008A31BA /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D017041CE8217D008A31BA /* Type.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		A7D016FB1CE8016A008A31BA /* Class+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Class+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A7D016FC1CE8016A008A31BA /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		A7D016FF1CE8042F008A31BA /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
+		A7D017011CE82160008A31BA /* TypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
+		A7D017031CE8217D008A31BA /* Type+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A7D017041CE8217D008A31BA /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		A70B5C151CDF331100E0EA0D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7D017011CE82160008A31BA /* TypeViewController.swift */,
 				A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */,
 				A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */,
 				A70B5C271CDF361A00E0EA0D /* AddSemesterViewController.swift */,
@@ -125,6 +132,8 @@
 		A70B5C161CDF332100E0EA0D /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				A7D017031CE8217D008A31BA /* Type+CoreDataProperties.swift */,
+				A7D017041CE8217D008A31BA /* Type.swift */,
 				A7D016FB1CE8016A008A31BA /* Class+CoreDataProperties.swift */,
 				A7D016FC1CE8016A008A31BA /* Class.swift */,
 				A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */,
@@ -335,15 +344,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D017021CE82160008A31BA /* TypeViewController.swift in Sources */,
 				A7D017001CE8042F008A31BA /* ClassCell.swift in Sources */,
 				A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */,
 				A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */,
 				A754CE2B1CE2D9CE00283B84 /* AddCourseViewController.swift in Sources */,
+				A7D017051CE8217D008A31BA /* Type+CoreDataProperties.swift in Sources */,
 				A70B5C361CE0698F00E0EA0D /* Semester.swift in Sources */,
 				A754CE271CE1A8FB00283B84 /* Course.swift in Sources */,
 				A754CE2D1CE2E22100283B84 /* CourseCell.swift in Sources */,
 				A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
+				A7D017061CE8217D008A31BA /* Type.swift in Sources */,
 				A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */,
 				A70B5C281CDF361A00E0EA0D /* AddSemesterViewController.swift in Sources */,
 				A7D016FD1CE8016A008A31BA /* Class+CoreDataProperties.swift in Sources */,

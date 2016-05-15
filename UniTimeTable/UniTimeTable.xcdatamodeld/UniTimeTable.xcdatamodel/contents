@@ -58,9 +58,8 @@
         <attribute name="teacherID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongs_to_Class" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="hasTeacher" inverseEntity="Class" syncable="YES"/>
     </entity>
-    <entity name="Type" syncable="YES">
+    <entity name="Type" representedClassName=".Type" syncable="YES">
         <attribute name="type_name" attributeType="String" syncable="YES"/>
-        <attribute name="typeID" attributeType="Integer 16" minValueString="1" defaultValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="belongs_to_Class" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="hasType" inverseEntity="Class" syncable="YES"/>
     </entity>
     <elements>
@@ -71,6 +70,6 @@
         <element name="Semester" positionX="-6372" positionY="-3931" width="128" height="103"/>
         <element name="Task" positionX="-6149" positionY="-3502" width="128" height="163"/>
         <element name="Teacher" positionX="-6615" positionY="-3465" width="128" height="133"/>
-        <element name="Type" positionX="-6624" positionY="-3906" width="128" height="88"/>
+        <element name="Type" positionX="-6624" positionY="-3906" width="128" height="73"/>
     </elements>
 </model>

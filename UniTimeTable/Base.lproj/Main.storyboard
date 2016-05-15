@@ -1024,10 +1024,10 @@
             </objects>
             <point key="canvasLocation" x="1660.5" y="685"/>
         </scene>
-        <!--View Controller-->
+        <!--Type View Controller-->
         <scene sceneID="P0O-cs-GuN">
             <objects>
-                <viewController id="Qu8-GD-SHB" sceneMemberID="viewController">
+                <viewController id="Qu8-GD-SHB" customClass="TypeViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tjq-s5-ayJ"/>
                         <viewControllerLayoutGuide type="bottom" id="kpw-IB-lvk"/>
@@ -1081,8 +1081,11 @@
                                         <include reference="b9u-g0-gQw"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qu8-GD-SHB" id="9NR-Um-UJ3"/>
+                                </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-GF-y44">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-GF-y44">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1101,6 +1104,15 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lm1-WC-JSb">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="24" y="98" width="38" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1115,6 +1127,7 @@
                             <mask key="subviews">
                                 <exclude reference="DSw-9V-9gR"/>
                                 <exclude reference="RvB-GF-y44"/>
+                                <exclude reference="lm1-WC-JSb"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="8gu-f9-RH4"/>
@@ -1129,6 +1142,7 @@
                             <mask key="subviews">
                                 <include reference="DSw-9V-9gR"/>
                                 <include reference="RvB-GF-y44"/>
+                                <include reference="lm1-WC-JSb"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="8gu-f9-RH4"/>
@@ -1140,6 +1154,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="typeInput" destination="RvB-GF-y44" id="qQH-Sz-9dy"/>
+                        <outlet property="typeTableView" destination="DSw-9V-9gR" id="f5X-xA-cvK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X94-hn-uD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
