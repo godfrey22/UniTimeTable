@@ -403,7 +403,7 @@
                                     <constraint firstAttribute="height" constant="300" id="uU0-gH-Y16"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z63-cQ-oxX" customClass="ClassCell" customModule="UniTimeTable" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassCellIdentifier" id="z63-cQ-oxX" customClass="ClassCell" customModule="UniTimeTable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z63-cQ-oxX" id="oyp-Xb-Hec">
@@ -434,7 +434,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="206" y="0.0" width="106" height="21"/>
+                                                        <rect key="frame" x="172" y="0.0" width="140" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOp-tf-QfM">
@@ -476,11 +476,11 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="locationLabel" destination="qqi-x4-pA4" id="1dp-iN-DwP"/>
-                                            <outlet property="teacherLabel" destination="Wag-du-4lf" id="hCC-l7-ixg"/>
-                                            <outlet property="timeLabel" destination="hCI-kr-TcF" id="F0H-QS-0U7"/>
-                                            <outlet property="typeLabel" destination="aFg-af-412" id="9rb-rh-Ach"/>
-                                            <outlet property="weekLabel" destination="yOp-tf-QfM" id="vR3-e8-q00"/>
+                                            <outlet property="locationLabel" destination="qqi-x4-pA4" id="KKz-cf-1S9"/>
+                                            <outlet property="teacherLabel" destination="Wag-du-4lf" id="YTU-3p-q7p"/>
+                                            <outlet property="timeLabel" destination="hCI-kr-TcF" id="Yh6-fg-a49"/>
+                                            <outlet property="typeLabel" destination="aFg-af-412" id="o4A-e7-3vB"/>
+                                            <outlet property="weekLabel" destination="yOp-tf-QfM" id="jJt-ZD-ipb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -494,6 +494,9 @@
                                         <include reference="uU0-gH-Y16"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="d0H-jg-dng" id="c00-1q-cjl"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -548,16 +551,19 @@
                     <navigationItem key="navigationItem" title="Class" id="GHf-yL-k74">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cmm-LT-3mL">
                             <connections>
-                                <segue destination="dU0-2p-bJW" kind="show" id="23q-jz-sP1"/>
+                                <segue destination="dU0-2p-bJW" kind="show" identifier="AddClass" id="23q-jz-sP1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="classTableView" destination="P1s-oA-NIJ" id="IPv-S8-CQn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpY-tx-EB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984" y="685"/>
         </scene>
-        <!--Add Class View Controller-->
+        <!--Add new class-->
         <scene sceneID="hL2-Dt-qo6">
             <objects>
                 <viewController id="dU0-2p-bJW" customClass="AddClassViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
@@ -991,13 +997,23 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add new class" id="6td-cS-Rsu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ho0-IB-2Az">
+                            <connections>
+                                <action selector="addClass:" destination="dU0-2p-bJW" id="cG8-9n-nQT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="durationLabel" destination="xLE-Ps-uly" id="K8t-lD-lzJ"/>
                         <outlet property="endDateInput" destination="bdK-ov-agC" id="T9r-7y-gdi"/>
                         <outlet property="endTimeInput" destination="sTF-NL-Aza" id="Z0l-Xi-ol9"/>
+                        <outlet property="locationInput" destination="2bD-dj-Ldw" id="o8t-BH-ygA"/>
                         <outlet property="startDateInput" destination="ZEI-db-O5o" id="KAg-zl-TJe"/>
                         <outlet property="startTimeInput" destination="W7L-C2-sK0" id="aGZ-c7-L7o"/>
                         <outlet property="typeInput" destination="rT5-BW-jYB" id="f6L-SB-VHo"/>
+                        <outlet property="weekSelection" destination="Hp7-US-pp7" id="VmI-iH-RcH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3t-kf-JNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1059,7 +1075,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="courseCode" destination="9RH-W1-mPR" id="NhE-0h-WeU"/>
-                                            <segue destination="d0H-jg-dng" kind="show" id="55v-cl-V7f"/>
+                                            <segue destination="d0H-jg-dng" kind="show" identifier="ViewClass" id="55v-cl-V7f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

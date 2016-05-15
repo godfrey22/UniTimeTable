@@ -9,7 +9,15 @@
 import UIKit
 import CoreData
 
+protocol addClassDelegate {
+    func addClass(_class: Class)
+}
+
 class AddClassViewController: UIViewController {
+    
+    
+    var delegate: addClassDelegate!
+    var managedObjectContext: NSManagedObjectContext
     
     var startDate = NSDate()
     var endDate = NSDate()
@@ -24,6 +32,14 @@ class AddClassViewController: UIViewController {
     @IBOutlet var startTimeInput: UITextField!
     @IBOutlet var endTimeInput: UITextField!
     @IBOutlet var durationLabel: UILabel!
+    @IBOutlet var weekSelection: UISegmentedControl!
+    @IBOutlet var locationInput: UITextField!
+    
+    required init?(coder aDecoder: NSCoder) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedObjectContext = appDelegate.managedObjectContext
+        super.init(coder: aDecoder)
+    }
     
     //Start Datepicker
     @IBAction func editStartDate(sender: UITextField) {
@@ -106,12 +122,52 @@ class AddClassViewController: UIViewController {
     }
     */
     
+    
+    @IBAction func addClass(sender: AnyObject) {
+        let newClass: Class = (NSEntityDescription.insertNewObjectForEntityForName("Class", inManagedObjectContext: self.managedObjectContext) as! Class)
+                var week: Int
+                switch(weekSelection.selectedSegmentIndex)
+                {
+                case 0:
+                    week = 7
+                    break
+                case 1:
+                    week = 1
+                    break
+                case 2:
+                    week = 2
+                    break
+                case 3:
+                    week = 3
+                    break
+                case 4:
+                    week = 4
+                    break
+                case 5:
+                    week = 5
+                    break
+                case 6:
+                    week = 6
+                    break
+                default:
+                    week = 1
+                }
+        newClass.setValue(startDate, forKey: "startDate")
+        newClass.setValue(endDate, forKey: "endDate")
+        newClass.setValue(startTime, forKey: "startTime")
+        newClass.setValue(endTime, forKey: "endTime")
+        newClass.setValue(week, forKey: "week")
+        newClass.setValue(locationInput.text, forKey: "location")
+        self.delegate!.addClass(newClass)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     func calcNShowDuration(){
         let cal = NSCalendar.currentCalendar()
         let unit:NSCalendarUnit = NSCalendarUnit.Minute
         let time = cal.components(unit, fromDate: startTime, toDate: endTime, options: [])
         let hour = time.minute/60
-        let min = time.minute - hour * 60 + 1
+        let min = time.minute - hour * 60
         if(hour<0||min<0){
             durationLabel.text = "End time is too early"
             timeCheck = false
