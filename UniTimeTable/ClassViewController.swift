@@ -15,6 +15,7 @@ class ClassViewController: UIViewController, addClassDelegate {
     //var selectedType: Type!
     //var selectedTeacher: Teacher!
     
+    @IBOutlet var courseCodeLabel: UILabel!
     var classList: NSMutableArray = []
     var managedObjectContext: NSManagedObjectContext
     
@@ -29,6 +30,7 @@ class ClassViewController: UIViewController, addClassDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        courseCodeLabel.text = "  " + selectedCourse.course_code!
         
         //Register the table view
         classTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "ClassCell")

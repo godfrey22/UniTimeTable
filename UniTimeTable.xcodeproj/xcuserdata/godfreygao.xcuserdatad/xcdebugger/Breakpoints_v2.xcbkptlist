@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UniTimeTable/ClassViewController.swift"
-            timestampString = "484971068.326142"
+            timestampString = "484982118.920533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "addClass(_:)"
             landmarkType = "5">
          </BreakpointContent>
