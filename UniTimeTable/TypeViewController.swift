@@ -9,14 +9,18 @@
 import UIKit
 import CoreData
 
+protocol typeSelectionDelegate {
+    func didSelectType(type: Type)
+}
+
 class TypeViewController: UIViewController {
 
     @IBOutlet var typeInput: UITextField!
     @IBOutlet var typeTableView: UITableView!
     
-    var selectedClass: Class!
     var typeList: NSMutableArray = []
     var managedObjectContext: NSManagedObjectContext
+    var delegate: typeSelectionDelegate! = nil
     
     required init?(coder aDecoder: NSCoder) {
         self.typeList = NSMutableArray()
@@ -108,7 +112,17 @@ class TypeViewController: UIViewController {
             }
         }
     }
-
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let t:Type = self.typeList[indexPath.row] as! Type
+        delegate.didSelectType(t)
+        
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

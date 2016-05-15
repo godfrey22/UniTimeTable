@@ -60,7 +60,7 @@
     </entity>
     <entity name="Type" representedClassName=".Type" syncable="YES">
         <attribute name="type_name" attributeType="String" syncable="YES"/>
-        <relationship name="belongs_to_Class" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="hasType" inverseEntity="Class" syncable="YES"/>
+        <relationship name="belongs_to_Class" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Class" inverseName="hasType" inverseEntity="Class" syncable="YES"/>
     </entity>
     <elements>
         <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="163"/>

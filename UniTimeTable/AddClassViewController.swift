@@ -13,11 +13,12 @@ protocol addClassDelegate {
     func addClass(_class: Class)
 }
 
-class AddClassViewController: UIViewController {
+class AddClassViewController: UIViewController, typeSelectionDelegate {
     
     
     var delegate: addClassDelegate!
     var managedObjectContext: NSManagedObjectContext
+    var selectedType: Type!
     
     var startDate = NSDate()
     var endDate = NSDate()
@@ -122,6 +123,14 @@ class AddClassViewController: UIViewController {
     }
     */
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "ViewType"
+        {
+            let typeViewController: TypeViewController = segue.destinationViewController as! TypeViewController
+            typeViewController.managedObjectContext = self.managedObjectContext
+            typeViewController.delegate = self
+        }
+    }
     
     @IBAction func addClass(sender: AnyObject) {
         let newClass: Class = (NSEntityDescription.insertNewObjectForEntityForName("Class", inManagedObjectContext: self.managedObjectContext) as! Class)
@@ -160,6 +169,10 @@ class AddClassViewController: UIViewController {
         newClass.setValue(locationInput.text, forKey: "location")
         self.delegate!.addClass(newClass)
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func didSelectType(type: Type) {
+        selectedType = type
     }
     
     func calcNShowDuration(){

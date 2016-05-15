@@ -12,7 +12,7 @@ import CoreData
 class ClassViewController: UIViewController, addClassDelegate {
     
     var selectedCourse: Course!
-    //var selectedType: Type!
+    var selectedType: Type!
     //var selectedTeacher: Teacher!
     
     @IBOutlet var courseCodeLabel: UILabel!
@@ -150,6 +150,8 @@ class ClassViewController: UIViewController, addClassDelegate {
             print("Could not save Deletion \(error)")
         }
     }
+    
+
 
     /*
     // MARK: - Navigation

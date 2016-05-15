@@ -1060,7 +1060,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3t-kf-JNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660.5" y="685"/>
+            <point key="canvasLocation" x="1651.5" y="660"/>
         </scene>
         <!--Type-->
         <scene sceneID="P0O-cs-GuN">
@@ -1071,6 +1071,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kpw-IB-lvk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2hW-bf-vkU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DSw-9V-9gR">
@@ -1084,6 +1085,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="29g-90-VtV" id="IfR-ji-TpD">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaZ-Yn-X6a">
@@ -1124,6 +1126,7 @@
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Qu8-GD-SHB" id="9NR-Um-UJ3"/>
+                                    <outlet property="delegate" destination="Qu8-GD-SHB" id="DFK-cQ-xGh"/>
                                 </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-GF-y44">
@@ -1209,9 +1212,7 @@
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Type" id="0xd-db-j1v">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="tu4-zO-mc2"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Type" id="0xd-db-j1v"/>
                     <connections>
                         <outlet property="typeInput" destination="RvB-GF-y44" id="qQH-Sz-9dy"/>
                         <outlet property="typeTableView" destination="DSw-9V-9gR" id="f5X-xA-cvK"/>
@@ -1219,7 +1220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X94-hn-uD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307" y="562"/>
+            <point key="canvasLocation" x="2377.5" y="652"/>
         </scene>
         <!--Course-->
         <scene sceneID="Aj5-fP-bdN">
