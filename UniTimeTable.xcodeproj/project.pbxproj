@@ -34,6 +34,7 @@
 		A7D017021CE82160008A31BA /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D017011CE82160008A31BA /* TypeViewController.swift */; };
 		A7D017051CE8217D008A31BA /* Type+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D017031CE8217D008A31BA /* Type+CoreDataProperties.swift */; };
 		A7D017061CE8217D008A31BA /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D017041CE8217D008A31BA /* Type.swift */; };
+		A7D017081CE82431008A31BA /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D017071CE82431008A31BA /* TypeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		A7D017011CE82160008A31BA /* TypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
 		A7D017031CE8217D008A31BA /* Type+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A7D017041CE8217D008A31BA /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		A7D017071CE82431008A31BA /* TypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		A70B5C391CE06E0200E0EA0D /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				A7D017071CE82431008A31BA /* TypeCell.swift */,
 				A7D016FF1CE8042F008A31BA /* ClassCell.swift */,
 				A70B5C3A1CE06E1800E0EA0D /* SemesterCell.swift */,
 				A754CE2C1CE2E22100283B84 /* CourseCell.swift */,
@@ -347,6 +350,7 @@
 				A7D017021CE82160008A31BA /* TypeViewController.swift in Sources */,
 				A7D017001CE8042F008A31BA /* ClassCell.swift in Sources */,
 				A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */,
+				A7D017081CE82431008A31BA /* TypeCell.swift in Sources */,
 				A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */,
 				A754CE2B1CE2D9CE00283B84 /* AddCourseViewController.swift in Sources */,
 				A7D017051CE8217D008A31BA /* Type+CoreDataProperties.swift in Sources */,
