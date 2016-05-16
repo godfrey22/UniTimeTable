@@ -19,6 +19,8 @@
 		A70BE8651CE954FD005CC0D0 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BE8631CE954FD005CC0D0 /* Class.swift */; };
 		A70BE8681CE9552F005CC0D0 /* Type+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BE8661CE9552F005CC0D0 /* Type+CoreDataProperties.swift */; };
 		A70BE8691CE9552F005CC0D0 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BE8671CE9552F005CC0D0 /* Type.swift */; };
+		A70BE86F1CE95F99005CC0D0 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BE86E1CE95F99005CC0D0 /* TeacherViewController.swift */; };
+		A70BE8711CE96317005CC0D0 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BE8701CE96317005CC0D0 /* TeacherCell.swift */; };
 		A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */; };
 		A754CE271CE1A8FB00283B84 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE251CE1A8FB00283B84 /* Course.swift */; };
 		A754CE291CE2D1F200283B84 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE281CE2D1F200283B84 /* CourseViewController.swift */; };
@@ -69,6 +71,8 @@
 		A70BE8631CE954FD005CC0D0 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		A70BE8661CE9552F005CC0D0 /* Type+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A70BE8671CE9552F005CC0D0 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		A70BE86E1CE95F99005CC0D0 /* TeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
+		A70BE8701CE96317005CC0D0 /* TeacherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
 		A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A754CE251CE1A8FB00283B84 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		A754CE281CE2D1F200283B84 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				A70BE86D1CE95830005CC0D0 /* Course ViewControllers */,
 				A70BE86B1CE9580B005CC0D0 /* Class ViewControllers */,
 				A7D017011CE82160008A31BA /* TypeViewController.swift */,
+				A70BE86E1CE95F99005CC0D0 /* TeacherViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 		A70B5C391CE06E0200E0EA0D /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				A70BE8701CE96317005CC0D0 /* TeacherCell.swift */,
 				A70B5C3A1CE06E1800E0EA0D /* SemesterCell.swift */,
 				A754CE2C1CE2E22100283B84 /* CourseCell.swift */,
 				A7D016FF1CE8042F008A31BA /* ClassCell.swift */,
@@ -377,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70BE8711CE96317005CC0D0 /* TeacherCell.swift in Sources */,
 				A7D017021CE82160008A31BA /* TypeViewController.swift in Sources */,
 				A7D017001CE8042F008A31BA /* ClassCell.swift in Sources */,
 				A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */,
@@ -389,6 +396,7 @@
 				A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
 				A70BE8641CE954FD005CC0D0 /* Class+CoreDataProperties.swift in Sources */,
 				A70BE8651CE954FD005CC0D0 /* Class.swift in Sources */,
+				A70BE86F1CE95F99005CC0D0 /* TeacherViewController.swift in Sources */,
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
 				A70BE8611CE954CD005CC0D0 /* Teacher.swift in Sources */,
 				A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */,

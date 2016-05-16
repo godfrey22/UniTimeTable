@@ -1237,10 +1237,11 @@
             </objects>
             <point key="canvasLocation" x="2377.5" y="660"/>
         </scene>
-        <!--View Controller-->
+        <!--Teacher View Controller-->
         <scene sceneID="zMs-KT-O97">
             <objects>
-                <viewController id="TPn-b5-Lh1" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hot-ye-pRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="TPn-b5-Lh1" customClass="TeacherViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2JF-Xi-mVh"/>
                         <viewControllerLayoutGuide type="bottom" id="SJB-FA-aGw"/>
@@ -1368,6 +1369,9 @@
                                         <include reference="rXD-VZ-TGV"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="saveTeacher:" destination="TPn-b5-Lh1" eventType="touchUpInside" id="Ygx-Gg-vpb"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gUT-PT-V2U">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1376,12 +1380,48 @@
                                     <constraint firstAttribute="height" constant="250" id="s55-Rr-esk"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hkH-Hx-15s">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeacherCellIdentifier" id="hkH-Hx-15s" customClass="TeacherCell" customModule="UniTimeTable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hkH-Hx-15s" id="6cE-zb-M9K">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtV-lb-Mit">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="11" width="113" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yq1-cn-rU8">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="148" y="11" width="164" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="xtV-lb-Mit"/>
+                                                    <exclude reference="Yq1-cn-rU8"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="xtV-lb-Mit"/>
+                                                    <include reference="Yq1-cn-rU8"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="emailLabel" destination="Yq1-cn-rU8" id="Mo5-xG-FpV"/>
+                                            <outlet property="nameLabel" destination="xtV-lb-Mit" id="Svd-Ti-jvo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="default">
@@ -1394,6 +1434,10 @@
                                         <include reference="s55-Rr-esk"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="TPn-b5-Lh1" id="Sip-X3-Yur"/>
+                                    <outlet property="delegate" destination="TPn-b5-Lh1" id="Eco-r6-rNx"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
@@ -1507,10 +1551,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="emailInput" destination="DZC-9A-fDL" id="v6q-nn-Zi4"/>
+                        <outlet property="nameInput" destination="1ZQ-hx-jcy" id="v4e-wq-EH8"/>
+                        <outlet property="officeInput" destination="EDY-xe-fSs" id="Udo-yF-b00"/>
+                        <outlet property="phoneInput" destination="aVg-2e-2uW" id="zTN-oy-hgH"/>
+                        <outlet property="teacherTableView" destination="gUT-PT-V2U" id="qsy-7R-ycm"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hot-ye-pRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2377.5" y="1405"/>
+            <point key="canvasLocation" x="2349" y="1420"/>
         </scene>
         <!--Course-->
         <scene sceneID="Aj5-fP-bdN">
