@@ -10,15 +10,16 @@ import UIKit
 import CoreData
 
 protocol addClassDelegate {
-    func addClass(_class: Class, type: Type)
+    func addClass(_class: Class, type: Type, teacher: Teacher)
 }
 
-class AddClassViewController: UIViewController, typeSelectionDelegate {
+class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSelectionDelegate {
     
     
     var delegate: addClassDelegate!
     var managedObjectContext: NSManagedObjectContext
     var selectedType: Type!
+    var selectedTeacher: Teacher!
     
     var startDate = NSDate()
     var endDate = NSDate()
@@ -36,6 +37,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
     @IBOutlet var weekSelection: UISegmentedControl!
     @IBOutlet var locationInput: UITextField!
     @IBOutlet var typeLabel: UILabel!
+    @IBOutlet var teacherLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -119,6 +121,11 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
         {
             typeLabel.text = selectedType.type_name
         }
+        if((selectedTeacher) != nil)
+        {
+            teacherLabel.text = selectedTeacher.name
+        }
+        
     }
 
     /*
@@ -137,6 +144,11 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
             let typeViewController: TypeViewController = segue.destinationViewController as! TypeViewController
             typeViewController.managedObjectContext = self.managedObjectContext
             typeViewController.delegate = self
+    }else if segue.identifier == "ViewTeacher"
+    {
+        let teacherViewController: TeacherViewController = segue.destinationViewController as! TeacherViewController
+        teacherViewController.managedObjectContext = self.managedObjectContext
+        teacherViewController.delegate = self
         }
     }
     
@@ -175,12 +187,16 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
         newClass.setValue(endTime, forKey: "endTime")
         newClass.setValue(week, forKey: "week")
         newClass.setValue(locationInput.text, forKey: "location")
-        self.delegate!.addClass(newClass, type: selectedType)
+        self.delegate!.addClass(newClass, type: selectedType, teacher: selectedTeacher)
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     func didSelectType(type: Type) {
         selectedType = type
+    }
+    
+    func didSelectTeacher(teacher: Teacher) {
+        selectedTeacher = teacher
     }
     
     func calcNShowDuration(){

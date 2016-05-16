@@ -21,11 +21,7 @@ extension Class {
     @NSManaged var startTime: NSDate?
     @NSManaged var week: NSNumber?
     @NSManaged var belongs_to_Course: Course?
-    @NSManaged var hasTeacher: NSManagedObject?
+    @NSManaged var hasTeacher: Teacher?
     @NSManaged var hasType: Type?
 
-    func addType(value: Type)
-    {
-        
-    }
 }
