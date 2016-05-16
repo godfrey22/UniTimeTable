@@ -105,6 +105,16 @@
                                     <outlet property="dataSource" destination="Mju-Wf-a5c" id="551-en-oJg"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K8-qx-grf">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="278" y="70" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="UVT-Qr-G3K" kind="show" id="2jd-Kn-8bB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -119,6 +129,7 @@
                             <mask key="subviews">
                                 <exclude reference="eOp-lM-EQG"/>
                                 <exclude reference="uGs-nY-DJ1"/>
+                                <exclude reference="4K8-qx-grf"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1Sr-3N-Ntc"/>
@@ -133,6 +144,7 @@
                             <mask key="subviews">
                                 <include reference="eOp-lM-EQG"/>
                                 <include reference="uGs-nY-DJ1"/>
+                                <include reference="4K8-qx-grf"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1Sr-3N-Ntc"/>
@@ -158,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzi-In-IQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="-816"/>
+            <point key="canvasLocation" x="144" y="-148"/>
         </scene>
         <!--Add Semester View Controller-->
         <scene sceneID="eRf-8c-fNV">
@@ -344,7 +356,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihG-39-8zQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="-816"/>
+            <point key="canvasLocation" x="873" y="-148"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ByP-2N-0Fs">
+            <objects>
+                <viewController id="DTo-ZI-dfq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I0T-kf-Z7Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="J0f-xN-Jfv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qnu-gZ-3kj">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Fr-Hl-6RZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612" y="1349"/>
         </scene>
         <!--Class-->
         <scene sceneID="rpx-7h-7jm">
@@ -498,6 +527,16 @@
                                     <outlet property="dataSource" destination="d0H-jg-dng" id="c00-1q-cjl"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEH-9T-vka">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="275" y="72" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="DTo-ZI-dfq" kind="show" id="xeW-op-SUJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -516,6 +555,7 @@
                                 <exclude reference="tlh-hj-4cm"/>
                                 <exclude reference="4I2-uP-SLZ"/>
                                 <exclude reference="P1s-oA-NIJ"/>
+                                <exclude reference="NEH-9T-vka"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Elx-xm-NJb"/>
@@ -534,6 +574,7 @@
                                 <include reference="tlh-hj-4cm"/>
                                 <include reference="4I2-uP-SLZ"/>
                                 <include reference="P1s-oA-NIJ"/>
+                                <include reference="NEH-9T-vka"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Elx-xm-NJb"/>
@@ -562,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpY-tx-EB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="685"/>
+            <point key="canvasLocation" x="144" y="1328"/>
         </scene>
         <!--New Class-->
         <scene sceneID="hL2-Dt-qo6">
@@ -1087,7 +1128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3t-kf-JNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1651.5" y="660"/>
+            <point key="canvasLocation" x="811.5" y="1328"/>
         </scene>
         <!--Type-->
         <scene sceneID="P0O-cs-GuN">
@@ -1247,18 +1288,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X94-hn-uD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2377.5" y="660"/>
+            <point key="canvasLocation" x="1480.5" y="1328"/>
         </scene>
         <!--Teacher View Controller-->
         <scene sceneID="zMs-KT-O97">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hot-ye-pRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="TPn-b5-Lh1" customClass="TeacherViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2JF-Xi-mVh"/>
                         <viewControllerLayoutGuide type="bottom" id="SJB-FA-aGw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KI2-HL-COa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ZQ-hx-jcy">
@@ -1283,7 +1324,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDQ-Yn-vnN">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DZC-9A-fDL">
@@ -1346,19 +1387,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b43-Kv-aP7">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COp-xm-UlG">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Office" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec0-gq-Z3o">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHu-K5-bjx">
@@ -1396,12 +1437,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hkH-Hx-15s" id="6cE-zb-M9K">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtV-lb-Mit">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="8" y="11" width="113" height="21"/>
@@ -1410,7 +1452,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yq1-cn-rU8">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="148" y="11" width="164" height="21"/>
@@ -1533,8 +1575,43 @@
                         <outlet property="teacherTableView" destination="gUT-PT-V2U" id="qsy-7R-ycm"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hot-ye-pRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2349" y="1420"/>
+            <point key="canvasLocation" x="811.5" y="2094"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eDI-6c-Hys">
+            <objects>
+                <viewController id="UVT-Qr-G3K" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6D9-Vn-C2c"/>
+                        <viewControllerLayoutGuide type="bottom" id="cuV-Or-UOB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vom-Bs-cPM">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TBf-nx-dtg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-672" y="-148"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="c6E-V9-dWI">
+            <objects>
+                <viewController id="IjG-XA-Dr8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j9s-Ip-wDi"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Oy-lG-DYF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lqt-Vm-e4a">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l7m-Yc-PAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-624" y="623"/>
         </scene>
         <!--Course-->
         <scene sceneID="Aj5-fP-bdN">
@@ -1602,18 +1679,30 @@
                                     <outlet property="dataSource" destination="PZU-ge-tEJ" id="cG0-73-QjS"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mge-6g-ZYZ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="65" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="IjG-XA-Dr8" kind="show" id="xsN-wQ-Oi5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="VJ0-8m-Vrf"/>
                                 <exclude reference="Rph-Cl-HJJ"/>
+                                <exclude reference="Mge-6g-ZYZ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="VJ0-8m-Vrf"/>
                                 <include reference="Rph-Cl-HJJ"/>
+                                <include reference="Mge-6g-ZYZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -1633,7 +1722,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QL2-Wy-U2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="-47"/>
+            <point key="canvasLocation" x="144" y="621"/>
         </scene>
         <!--Add Course View Controller-->
         <scene sceneID="trq-9X-7X2">
@@ -1789,7 +1878,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xR-qd-uuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="-47"/>
+            <point key="canvasLocation" x="811.5" y="621"/>
         </scene>
         <!--Focus-->
         <scene sceneID="5GB-og-42h">
@@ -2189,7 +2278,7 @@
                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="icE-Of-oxt"/>
                 </navigationItem>
             </objects>
-            <point key="canvasLocation" x="152" y="-816"/>
+            <point key="canvasLocation" x="151.5" y="-968"/>
         </scene>
     </scenes>
 </document>
