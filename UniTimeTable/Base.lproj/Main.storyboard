@@ -361,23 +361,6 @@
             </objects>
             <point key="canvasLocation" x="912" y="-148"/>
         </scene>
-        <!--View Class Controller-->
-        <scene sceneID="ByP-2N-0Fs">
-            <objects>
-                <viewController id="DTo-ZI-dfq" customClass="ViewClassController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I0T-kf-Z7Q"/>
-                        <viewControllerLayoutGuide type="bottom" id="J0f-xN-Jfv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qnu-gZ-3kj">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Fr-Hl-6RZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-624" y="1472"/>
-        </scene>
         <!--Class-->
         <scene sceneID="rpx-7h-7jm">
             <objects>
@@ -528,16 +511,17 @@
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="d0H-jg-dng" id="c00-1q-cjl"/>
+                                    <outlet property="delegate" destination="d0H-jg-dng" id="tgb-WY-c2Z"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEH-9T-vka">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="275" y="72" width="30" height="30"/>
+                                    <rect key="frame" x="245" y="72" width="68" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="DTo-ZI-dfq" kind="show" id="xeW-op-SUJ"/>
+                                    <action selector="editClass:" destination="d0H-jg-dng" eventType="touchUpInside" id="bQ1-Db-uih"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -602,6 +586,8 @@
                     <connections>
                         <outlet property="classTableView" destination="P1s-oA-NIJ" id="IPv-S8-CQn"/>
                         <outlet property="courseCodeLabel" destination="4I2-uP-SLZ" id="dwY-1v-iwx"/>
+                        <outlet property="editButton" destination="NEH-9T-vka" id="9ca-XU-Re1"/>
+                        <segue destination="dU0-2p-bJW" kind="show" identifier="EditClass" id="9jr-XR-VZV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpY-tx-EB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2256,5 +2242,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="fMS-n2-xZU"/>
         <segue reference="k6I-I3-8g4"/>
+        <segue reference="9jr-XR-VZV"/>
     </inferredMetricsTieBreakers>
 </document>

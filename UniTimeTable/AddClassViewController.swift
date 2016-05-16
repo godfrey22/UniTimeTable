@@ -20,6 +20,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
     var managedObjectContext: NSManagedObjectContext
     var selectedType: Type!
     var selectedTeacher: Teacher!
+    var selectedClass: Class?
     
     var startDate = NSDate()
     var endDate = NSDate()
@@ -117,6 +118,13 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        if((selectedClass) != nil)
+        {
+            typeLabel.text = selectedClass?.hasType?.type_name
+            //To-Do
+            
+        }
         if((selectedType) != nil)
         {
             typeLabel.text = selectedType.type_name
@@ -153,42 +161,91 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
     }
     
     @IBAction func addClass(sender: AnyObject) {
-        let newClass: Class = (NSEntityDescription.insertNewObjectForEntityForName("Class", inManagedObjectContext: self.managedObjectContext) as! Class)
-                var week: Int
-                switch(weekSelection.selectedSegmentIndex)
-                {
-                case 0:
-                    week = 7
-                    break
-                case 1:
-                    week = 1
-                    break
-                case 2:
-                    week = 2
-                    break
-                case 3:
-                    week = 3
-                    break
-                case 4:
-                    week = 4
-                    break
-                case 5:
-                    week = 5
-                    break
-                case 6:
-                    week = 6
-                    break
-                default:
-                    week = 1
-                }
-        newClass.setValue(startDate, forKey: "startDate")
-        newClass.setValue(endDate, forKey: "endDate")
-        newClass.setValue(startTime, forKey: "startTime")
-        newClass.setValue(endTime, forKey: "endTime")
-        newClass.setValue(week, forKey: "week")
-        newClass.setValue(locationInput.text, forKey: "location")
-        self.delegate!.addClass(newClass, type: selectedType, teacher: selectedTeacher)
-        self.navigationController?.popViewControllerAnimated(true)
+        if((selectedClass) != nil)
+        {
+            selectedClass!.setValue(selectedType, forKey: "hasType")
+            selectedClass!.setValue(startDate, forKey: "startDate")
+            selectedClass!.setValue(endDate, forKey: "endDate")
+            selectedClass!.setValue(startTime, forKey: "startTime")
+            selectedClass!.setValue(endTime, forKey: "endTime")
+            var week: Int
+            switch(weekSelection.selectedSegmentIndex)
+            {
+            case 0:
+                week = 7
+                break
+            case 1:
+                week = 1
+                break
+            case 2:
+                week = 2
+                break
+            case 3:
+                week = 3
+                break
+            case 4:
+                week = 4
+                break
+            case 5:
+                week = 5
+                break
+            case 6:
+                week = 6
+                break
+            default:
+                week = 1
+            }
+            selectedClass!.setValue(week, forKey: "week")
+            selectedClass!.setValue(locationInput.text, forKey: "location")
+            do
+            {
+                try self.managedObjectContext.save()
+                print("A Course has been added!")
+            }
+            catch let error
+            {
+                print("Could not save Deletion \(error)")
+            }
+            self.navigationController?.popViewControllerAnimated(true)
+            
+        }else{
+            let newClass: Class = (NSEntityDescription.insertNewObjectForEntityForName("Class", inManagedObjectContext: self.managedObjectContext) as! Class)
+            var week: Int
+            switch(weekSelection.selectedSegmentIndex)
+            {
+            case 0:
+                week = 7
+                break
+            case 1:
+                week = 1
+                break
+            case 2:
+                week = 2
+                break
+            case 3:
+                week = 3
+                break
+            case 4:
+                week = 4
+                break
+            case 5:
+                week = 5
+                break
+            case 6:
+                week = 6
+                break
+            default:
+                week = 1
+            }
+            newClass.setValue(startDate, forKey: "startDate")
+            newClass.setValue(endDate, forKey: "endDate")
+            newClass.setValue(startTime, forKey: "startTime")
+            newClass.setValue(endTime, forKey: "endTime")
+            newClass.setValue(week, forKey: "week")
+            newClass.setValue(locationInput.text, forKey: "location")
+            self.delegate!.addClass(newClass, type: selectedType, teacher: selectedTeacher)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     func didSelectType(type: Type) {
