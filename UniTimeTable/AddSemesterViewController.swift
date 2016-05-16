@@ -79,7 +79,7 @@ class AddSemesterViewController: UIViewController {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
             dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-
+            semesterNameInput.text = selectedSemester?.name
             semesterStartDate.text = dateFormatter.stringFromDate((selectedSemester?.startYear)!)
             semesterEndDate.text = dateFormatter.stringFromDate((selectedSemester?.endYear)!)
         }
