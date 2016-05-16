@@ -12,9 +12,10 @@ import CoreData
 class ClassViewController: UIViewController, addClassDelegate {
     
     var selectedCourse: Course!
-    //var selectedType: Type!
+    var selectedType: Type!
     //var selectedTeacher: Teacher!
     
+    @IBOutlet var courseCodeLabel: UILabel!
     var classList: NSMutableArray = []
     var managedObjectContext: NSManagedObjectContext
     
@@ -29,6 +30,7 @@ class ClassViewController: UIViewController, addClassDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        courseCodeLabel.text = "  " + selectedCourse.course_code!
         
         //Register the table view
         classTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "ClassCell")
@@ -66,6 +68,8 @@ class ClassViewController: UIViewController, addClassDelegate {
         
         cell.timeLabel.text = dateFormatter.stringFromDate(c.startTime!) + "-" + dateFormatter.stringFromDate(c.endTime!)
         cell.locationLabel.text = c.location
+        
+        cell.typeLabel.text = c.hasType?.type_name
         
         var weekString = ""
         switch(c.week! as NSNumber)
@@ -133,14 +137,15 @@ class ClassViewController: UIViewController, addClassDelegate {
     }
     
     
-    func addClass(_class: Class) {
+    func addClass(_class: Class, type: Type) {
+        _class.hasType = type
         self.selectedCourse!.addClass(_class)
         self.classList = NSMutableArray(array: (selectedCourse!.hasClass?.allObjects as! [Class]))
         self.classTableView.reloadData()
         do
         {
             try self.managedObjectContext.save()
-            print(_class)
+            selectedType = type
             print("A Class has been added!")
         }
         catch let error
@@ -148,6 +153,8 @@ class ClassViewController: UIViewController, addClassDelegate {
             print("Could not save Deletion \(error)")
         }
     }
+    
+
 
     /*
     // MARK: - Navigation
