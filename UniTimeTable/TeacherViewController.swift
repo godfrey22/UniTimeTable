@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 protocol teacherSelectionDelegate {
-    func didSelectType(teacher: Teacher)
+    func didSelectTeacher(teacher: Teacher)
 }
 
 class TeacherViewController: UIViewController {
@@ -121,7 +121,7 @@ class TeacherViewController: UIViewController {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let t:Teacher = self.teacherList[indexPath.row] as! Teacher
-        delegate.didSelectType(t)
+        delegate.didSelectTeacher(t)
         //self.navigationController?.popToRootViewControllerAnimated(true)
         
     }
