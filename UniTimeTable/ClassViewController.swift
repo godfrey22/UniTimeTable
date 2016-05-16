@@ -69,6 +69,8 @@ class ClassViewController: UIViewController, addClassDelegate {
         cell.timeLabel.text = dateFormatter.stringFromDate(c.startTime!) + "-" + dateFormatter.stringFromDate(c.endTime!)
         cell.locationLabel.text = c.location
         
+        cell.typeLabel.text = c.hasType?.type_name
+        
         var weekString = ""
         switch(c.week! as NSNumber)
         {
@@ -136,6 +138,7 @@ class ClassViewController: UIViewController, addClassDelegate {
     
     
     func addClass(_class: Class, type: Type) {
+        _class.hasType = type
         self.selectedCourse!.addClass(_class)
         self.classList = NSMutableArray(array: (selectedCourse!.hasClass?.allObjects as! [Class]))
         self.classTableView.reloadData()
@@ -143,7 +146,6 @@ class ClassViewController: UIViewController, addClassDelegate {
         {
             try self.managedObjectContext.save()
             selectedType = type
-            print(type)
             print("A Class has been added!")
         }
         catch let error

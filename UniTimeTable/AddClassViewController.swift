@@ -56,7 +56,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         endDate = sender.date
-        endDateInput.text = dateFormatter.stringFromDate(sender.date)
+        startDateInput.text = dateFormatter.stringFromDate(sender.date)
     }
     //End Datepicker
     @IBAction func editEndDate(sender: UITextField) {
@@ -181,7 +181,6 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
     
     func didSelectType(type: Type) {
         selectedType = type
-        print("Pass to add class controller successed! \(type)")
     }
     
     func calcNShowDuration(){
