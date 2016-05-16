@@ -1252,13 +1252,13 @@
         <!--Teacher View Controller-->
         <scene sceneID="zMs-KT-O97">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hot-ye-pRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="TPn-b5-Lh1" customClass="TeacherViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2JF-Xi-mVh"/>
                         <viewControllerLayoutGuide type="bottom" id="SJB-FA-aGw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KI2-HL-COa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ZQ-hx-jcy">
@@ -1396,7 +1396,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hkH-Hx-15s" id="6cE-zb-M9K">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtV-lb-Mit">
@@ -1498,25 +1497,6 @@
                                 <exclude reference="USx-5M-xh8"/>
                                 <exclude reference="meX-de-o9O"/>
                                 <exclude reference="zbi-zn-CPO"/>
-                                <exclude reference="IhR-4T-mOe"/>
-                                <exclude reference="cTH-nd-irp"/>
-                                <exclude reference="seR-JW-xLd"/>
-                                <exclude reference="54I-tk-FkF"/>
-                                <exclude reference="JQ0-rC-CeN"/>
-                                <exclude reference="dKs-T1-Uog"/>
-                                <exclude reference="0RT-zd-KLe"/>
-                                <exclude reference="Q5m-i9-tRA"/>
-                                <exclude reference="tTu-eA-kqt"/>
-                                <exclude reference="70Q-8y-1R0"/>
-                                <exclude reference="OZk-0Y-Y2d"/>
-                                <exclude reference="ZQ1-HQ-HX3"/>
-                                <exclude reference="c5N-e1-Bgr"/>
-                                <exclude reference="8Bn-Sl-itI"/>
-                                <exclude reference="IZH-6L-wS4"/>
-                                <exclude reference="2vd-Lu-fXa"/>
-                                <exclude reference="8JE-ZS-eef"/>
-                                <exclude reference="4hr-tN-0MC"/>
-                                <exclude reference="SgA-4v-ccR"/>
                                 <exclude reference="2uA-50-W9O"/>
                                 <exclude reference="7fk-DD-wXv"/>
                                 <exclude reference="qwG-em-naj"/>
@@ -1539,25 +1519,6 @@
                                 <include reference="USx-5M-xh8"/>
                                 <include reference="meX-de-o9O"/>
                                 <include reference="zbi-zn-CPO"/>
-                                <include reference="IhR-4T-mOe"/>
-                                <include reference="cTH-nd-irp"/>
-                                <include reference="seR-JW-xLd"/>
-                                <include reference="54I-tk-FkF"/>
-                                <include reference="JQ0-rC-CeN"/>
-                                <include reference="dKs-T1-Uog"/>
-                                <include reference="0RT-zd-KLe"/>
-                                <include reference="Q5m-i9-tRA"/>
-                                <include reference="tTu-eA-kqt"/>
-                                <include reference="70Q-8y-1R0"/>
-                                <include reference="OZk-0Y-Y2d"/>
-                                <include reference="ZQ1-HQ-HX3"/>
-                                <include reference="c5N-e1-Bgr"/>
-                                <include reference="8Bn-Sl-itI"/>
-                                <include reference="IZH-6L-wS4"/>
-                                <include reference="2vd-Lu-fXa"/>
-                                <include reference="8JE-ZS-eef"/>
-                                <include reference="4hr-tN-0MC"/>
-                                <include reference="SgA-4v-ccR"/>
                                 <include reference="2uA-50-W9O"/>
                                 <include reference="7fk-DD-wXv"/>
                                 <include reference="qwG-em-naj"/>
@@ -1572,7 +1533,6 @@
                         <outlet property="teacherTableView" destination="gUT-PT-V2U" id="qsy-7R-ycm"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hot-ye-pRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2349" y="1420"/>
         </scene>

@@ -49,7 +49,7 @@
         <attribute name="taskID" attributeType="Integer 16" defaultValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="belongs_to_assignment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assignment" inverseName="hasTask" inverseEntity="Assignment" syncable="YES"/>
     </entity>
-    <entity name="Teacher" syncable="YES">
+    <entity name="Teacher" representedClassName=".Teacher" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="office" optional="YES" attributeType="String" syncable="YES"/>

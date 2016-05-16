@@ -13,7 +13,7 @@ class ClassViewController: UIViewController, addClassDelegate {
     
     var selectedCourse: Course!
     var selectedType: Type!
-    //var selectedTeacher: Teacher!
+    var selectedTeacher: Teacher!
     
     @IBOutlet var courseCodeLabel: UILabel!
     var classList: NSMutableArray = []
@@ -70,7 +70,7 @@ class ClassViewController: UIViewController, addClassDelegate {
         cell.locationLabel.text = c.location
         
         cell.typeLabel.text = c.hasType?.type_name
-        
+        cell.teacherLabel.text = c.hasTeacher?.name
         var weekString = ""
         switch(c.week! as NSNumber)
         {
@@ -137,8 +137,9 @@ class ClassViewController: UIViewController, addClassDelegate {
     }
     
     
-    func addClass(_class: Class, type: Type) {
+    func addClass(_class: Class, type: Type, teacher: Teacher) {
         _class.hasType = type
+        _class.hasTeacher = teacher
         self.selectedCourse!.addClass(_class)
         self.classList = NSMutableArray(array: (selectedCourse!.hasClass?.allObjects as! [Class]))
         self.classTableView.reloadData()
@@ -146,6 +147,7 @@ class ClassViewController: UIViewController, addClassDelegate {
         {
             try self.managedObjectContext.save()
             selectedType = type
+            selectedTeacher = teacher
             print("A Class has been added!")
         }
         catch let error
