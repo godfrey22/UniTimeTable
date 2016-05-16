@@ -127,6 +127,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
         {
             typeLabel.text = selectedClass?.hasType?.type_name
             teacherLabel.text = selectedClass?.hasTeacher?.name
+            locationInput.text = selectedClass?.location
             //To-Do
             
         }
