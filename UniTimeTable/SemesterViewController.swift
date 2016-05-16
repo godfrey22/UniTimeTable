@@ -133,7 +133,10 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
             courseViewController.selectedSemester = semesterList.objectAtIndex(selectedIndexPath.row) as! Semester
         }else if segue.identifier == "EditSemester"
         {
-            
+            let selectedIndexPath: NSIndexPath = self.semesterTableView.indexPathForSelectedRow!
+            let controller: AddSemesterViewController = segue.destinationViewController as! AddSemesterViewController
+            controller.managedObjectContext = self.managedObjectContext
+            controller.selectedSemester = semesterList.objectAtIndex(selectedIndexPath.row) as? Semester
         }
     }
     
