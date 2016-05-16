@@ -117,6 +117,7 @@ class TypeViewController: UIViewController {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let t:Type = self.typeList[indexPath.row] as! Type
         delegate.didSelectType(t)
+        //self.navigationController?.popToRootViewControllerAnimated(true)
         
     }
     

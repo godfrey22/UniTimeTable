@@ -599,7 +599,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="editStartDate:" destination="dU0-2p-bJW" eventType="editingDidEnd" id="Zep-zl-u5w"/>
+                                    <action selector="editStartDate:" destination="dU0-2p-bJW" eventType="editingDidBegin" id="4Fe-S3-xJx"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rT5-BW-jYB">
@@ -1055,6 +1055,7 @@
                         <outlet property="startDateInput" destination="ZEI-db-O5o" id="KAg-zl-TJe"/>
                         <outlet property="startTimeInput" destination="W7L-C2-sK0" id="aGZ-c7-L7o"/>
                         <outlet property="typeInput" destination="rT5-BW-jYB" id="f6L-SB-VHo"/>
+                        <outlet property="typeLabel" destination="Gbs-B1-ege" id="KVn-g1-N0g"/>
                         <outlet property="weekSelection" destination="Hp7-US-pp7" id="VmI-iH-RcH"/>
                     </connections>
                 </viewController>

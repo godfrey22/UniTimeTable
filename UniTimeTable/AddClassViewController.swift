@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 protocol addClassDelegate {
-    func addClass(_class: Class)
+    func addClass(_class: Class, type: Type)
 }
 
 class AddClassViewController: UIViewController, typeSelectionDelegate {
@@ -35,6 +35,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
     @IBOutlet var durationLabel: UILabel!
     @IBOutlet var weekSelection: UISegmentedControl!
     @IBOutlet var locationInput: UITextField!
+    @IBOutlet var typeLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -43,6 +44,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
     }
     
     //Start Datepicker
+    
     @IBAction func editStartDate(sender: UITextField) {
         let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.Date
@@ -53,8 +55,8 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        startDate = sender.date
-        startDateInput.text = dateFormatter.stringFromDate(sender.date)
+        endDate = sender.date
+        endDateInput.text = dateFormatter.stringFromDate(sender.date)
     }
     //End Datepicker
     @IBAction func editEndDate(sender: UITextField) {
@@ -112,6 +114,12 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if((selectedType) != nil)
+        {
+            typeLabel.text = selectedType.type_name
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -167,12 +175,13 @@ class AddClassViewController: UIViewController, typeSelectionDelegate {
         newClass.setValue(endTime, forKey: "endTime")
         newClass.setValue(week, forKey: "week")
         newClass.setValue(locationInput.text, forKey: "location")
-        self.delegate!.addClass(newClass)
+        self.delegate!.addClass(newClass, type: selectedType)
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     func didSelectType(type: Type) {
         selectedType = type
+        print("Pass to add class controller successed! \(type)")
     }
     
     func calcNShowDuration(){

@@ -135,14 +135,15 @@ class ClassViewController: UIViewController, addClassDelegate {
     }
     
     
-    func addClass(_class: Class) {
+    func addClass(_class: Class, type: Type) {
         self.selectedCourse!.addClass(_class)
         self.classList = NSMutableArray(array: (selectedCourse!.hasClass?.allObjects as! [Class]))
         self.classTableView.reloadData()
         do
         {
             try self.managedObjectContext.save()
-            print(_class)
+            selectedType = type
+            print(type)
             print("A Class has been added!")
         }
         catch let error
