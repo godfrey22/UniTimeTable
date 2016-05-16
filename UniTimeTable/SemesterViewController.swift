@@ -13,8 +13,21 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
     
     var semesterList: NSMutableArray = []
     var managedObjectContext: NSManagedObjectContext
+    
+    var editMode = false
 
     @IBOutlet var semesterTableView: UITableView!
+    @IBOutlet var editButton: UIButton!
+    @IBAction func editSemester(sender: UIButton) {
+        if (editMode == false)
+        {
+            editMode = true
+            editButton.setTitle("Finished", forState: UIControlState.Normal)
+        }else{
+            editMode = false
+            editButton.setTitle("Edit", forState: UIControlState.Normal)
+        }
+    }
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -94,6 +107,17 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
         }
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if editMode==false {
+            performSegueWithIdentifier("ViewCourse", sender: self)
+        }else{
+            performSegueWithIdentifier("EditSemester", sender: self)
+        }
+        
+        
+    }
+
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AddSemester"
@@ -107,6 +131,9 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
             let courseViewController: CourseViewController = segue.destinationViewController as! CourseViewController
             courseViewController.managedObjectContext = self.managedObjectContext
             courseViewController.selectedSemester = semesterList.objectAtIndex(selectedIndexPath.row) as! Semester
+        }else if segue.identifier == "EditSemester"
+        {
+            
         }
     }
     

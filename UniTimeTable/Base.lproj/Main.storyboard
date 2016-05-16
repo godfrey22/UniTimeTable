@@ -87,7 +87,6 @@
                                         <connections>
                                             <outlet property="numberOfClassesLabel" destination="Ax0-Wn-U3u" id="V76-33-8ua"/>
                                             <outlet property="timeLabel" destination="dc4-tw-QBu" id="suu-fv-oIt"/>
-                                            <segue destination="PZU-ge-tEJ" kind="show" identifier="ViewCourse" id="wKX-NX-qVc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -103,16 +102,17 @@
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Mju-Wf-a5c" id="551-en-oJg"/>
+                                    <outlet property="delegate" destination="Mju-Wf-a5c" id="PsC-br-jvX"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K8-qx-grf">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="278" y="70" width="30" height="30"/>
+                                    <rect key="frame" x="249" y="70" width="59" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="UVT-Qr-G3K" kind="show" id="2jd-Kn-8bB"/>
+                                    <action selector="editSemester:" destination="Mju-Wf-a5c" eventType="touchUpInside" id="auN-aI-87p"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -165,12 +165,15 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="editButton" destination="4K8-qx-grf" id="Kiu-nW-Tlx"/>
                         <outlet property="semesterTableView" destination="uGs-nY-DJ1" id="m3O-l9-VQf"/>
+                        <segue destination="PZU-ge-tEJ" kind="show" identifier="ViewCourse" id="N9o-YV-inZ"/>
+                        <segue destination="kQf-pV-Uvg" kind="show" identifier="EditSemester" id="VV3-MD-tko"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzi-In-IQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="-148"/>
+            <point key="canvasLocation" x="151.5" y="-148"/>
         </scene>
         <!--Add Semester View Controller-->
         <scene sceneID="eRf-8c-fNV">
@@ -356,12 +359,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihG-39-8zQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="-148"/>
+            <point key="canvasLocation" x="912" y="-148"/>
         </scene>
-        <!--View Controller-->
+        <!--View Class Controller-->
         <scene sceneID="ByP-2N-0Fs">
             <objects>
-                <viewController id="DTo-ZI-dfq" sceneMemberID="viewController">
+                <viewController id="DTo-ZI-dfq" customClass="ViewClassController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I0T-kf-Z7Q"/>
                         <viewControllerLayoutGuide type="bottom" id="J0f-xN-Jfv"/>
@@ -373,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fr-Hl-6RZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-612" y="1349"/>
+            <point key="canvasLocation" x="-624" y="1328"/>
         </scene>
         <!--Class-->
         <scene sceneID="rpx-7h-7jm">
@@ -1128,7 +1131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3t-kf-JNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="811.5" y="1328"/>
+            <point key="canvasLocation" x="912" y="1328"/>
         </scene>
         <!--Type-->
         <scene sceneID="P0O-cs-GuN">
@@ -1288,7 +1291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X94-hn-uD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480.5" y="1328"/>
+            <point key="canvasLocation" x="1666.5" y="1328"/>
         </scene>
         <!--Teacher View Controller-->
         <scene sceneID="zMs-KT-O97">
@@ -1577,29 +1580,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hot-ye-pRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="811.5" y="2094"/>
+            <point key="canvasLocation" x="912" y="2108"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="eDI-6c-Hys">
-            <objects>
-                <viewController id="UVT-Qr-G3K" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6D9-Vn-C2c"/>
-                        <viewControllerLayoutGuide type="bottom" id="cuV-Or-UOB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Vom-Bs-cPM">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TBf-nx-dtg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-672" y="-148"/>
-        </scene>
-        <!--View Controller-->
+        <!--View Course Controller-->
         <scene sceneID="c6E-V9-dWI">
             <objects>
-                <viewController id="IjG-XA-Dr8" sceneMemberID="viewController">
+                <viewController id="IjG-XA-Dr8" customClass="ViewCourseController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j9s-Ip-wDi"/>
                         <viewControllerLayoutGuide type="bottom" id="6Oy-lG-DYF"/>
@@ -1722,7 +1708,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QL2-Wy-U2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="621"/>
+            <point key="canvasLocation" x="151.5" y="623"/>
         </scene>
         <!--Add Course View Controller-->
         <scene sceneID="trq-9X-7X2">
@@ -1878,7 +1864,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xR-qd-uuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="811.5" y="621"/>
+            <point key="canvasLocation" x="912" y="623"/>
         </scene>
         <!--Focus-->
         <scene sceneID="5GB-og-42h">
@@ -2281,4 +2267,7 @@
             <point key="canvasLocation" x="151.5" y="-968"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="VV3-MD-tko"/>
+    </inferredMetricsTieBreakers>
 </document>
