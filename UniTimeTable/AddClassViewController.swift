@@ -108,7 +108,11 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if((selectedClass) != nil)
+        {
+            selectedType = selectedClass?.hasType
+            selectedTeacher = selectedClass?.hasTeacher
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -122,6 +126,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
         if((selectedClass) != nil)
         {
             typeLabel.text = selectedClass?.hasType?.type_name
+            teacherLabel.text = selectedClass?.hasTeacher?.name
             //To-Do
             
         }
@@ -164,6 +169,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
         if((selectedClass) != nil)
         {
             selectedClass!.setValue(selectedType, forKey: "hasType")
+            selectedClass!.setValue(selectedTeacher, forKey: "hasTeacher")
             selectedClass!.setValue(startDate, forKey: "startDate")
             selectedClass!.setValue(endDate, forKey: "endDate")
             selectedClass!.setValue(startTime, forKey: "startTime")
