@@ -1,5 +1,5 @@
 //
-//  Type.swift
+//  Teacher.swift
 //  UniTimeTable
 //
 //  Created by Godfrey Gao on 16/5/16.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Type: NSManagedObject {
+class Teacher: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 
