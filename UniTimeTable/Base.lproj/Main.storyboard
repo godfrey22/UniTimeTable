@@ -376,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fr-Hl-6RZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-624" y="1328"/>
+            <point key="canvasLocation" x="-624" y="1472"/>
         </scene>
         <!--Class-->
         <scene sceneID="rpx-7h-7jm">
@@ -606,7 +606,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpY-tx-EB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="1328"/>
+            <point key="canvasLocation" x="151.5" y="1472"/>
         </scene>
         <!--New Class-->
         <scene sceneID="hL2-Dt-qo6">
@@ -1131,7 +1131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3t-kf-JNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="1328"/>
+            <point key="canvasLocation" x="912" y="1472"/>
         </scene>
         <!--Type-->
         <scene sceneID="P0O-cs-GuN">
@@ -1291,7 +1291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X94-hn-uD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666.5" y="1328"/>
+            <point key="canvasLocation" x="1666.5" y="1472"/>
         </scene>
         <!--Teacher View Controller-->
         <scene sceneID="zMs-KT-O97">
@@ -1580,24 +1580,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hot-ye-pRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="2108"/>
-        </scene>
-        <!--View Course Controller-->
-        <scene sceneID="c6E-V9-dWI">
-            <objects>
-                <viewController id="IjG-XA-Dr8" customClass="ViewCourseController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="j9s-Ip-wDi"/>
-                        <viewControllerLayoutGuide type="bottom" id="6Oy-lG-DYF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lqt-Vm-e4a">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l7m-Yc-PAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-624" y="623"/>
+            <point key="canvasLocation" x="912" y="2252"/>
         </scene>
         <!--Course-->
         <scene sceneID="Aj5-fP-bdN">
@@ -1654,7 +1637,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="courseCode" destination="9RH-W1-mPR" id="NhE-0h-WeU"/>
-                                            <segue destination="d0H-jg-dng" kind="show" identifier="ViewClass" id="55v-cl-V7f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1663,16 +1645,17 @@
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="PZU-ge-tEJ" id="cG0-73-QjS"/>
+                                    <outlet property="delegate" destination="PZU-ge-tEJ" id="kn2-WO-Cgs"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mge-6g-ZYZ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="279" y="65" width="30" height="30"/>
+                                    <rect key="frame" x="238" y="65" width="71" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="IjG-XA-Dr8" kind="show" id="xsN-wQ-Oi5"/>
+                                    <action selector="editCourse:" destination="PZU-ge-tEJ" eventType="touchUpInside" id="yOM-Om-jKi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1702,8 +1685,11 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editButton" destination="Mge-6g-ZYZ" id="Pbo-so-X3h"/>
                         <outlet property="timeLabel" destination="VJ0-8m-Vrf" id="vDz-ZV-927"/>
                         <outlet property="unitTableView" destination="Rph-Cl-HJJ" id="THI-pp-PsO"/>
+                        <segue destination="d0H-jg-dng" kind="show" identifier="ViewClass" id="NC8-PS-izx"/>
+                        <segue destination="Wgd-sq-zyq" kind="show" identifier="EditCourse" id="k6I-I3-8g4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QL2-Wy-U2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2268,6 +2254,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VV3-MD-tko"/>
+        <segue reference="fMS-n2-xZU"/>
+        <segue reference="k6I-I3-8g4"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -95,6 +95,16 @@ class AddSemesterViewController: UIViewController {
                 selectedSemester?.setValue(semesterNameInput.text, forKey: "name")
                 selectedSemester?.setValue(startDate, forKey: "startYear")
                 selectedSemester?.setValue(endDate, forKey: "endYear")
+                do
+                {
+                    try self.managedObjectContext.save()
+                    print("A Course has been added!")
+                }
+                catch let error
+                {
+                    print("Could not save Deletion \(error)")
+                }
+
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }else{
                 //Add a newSemester Object into the Semester table

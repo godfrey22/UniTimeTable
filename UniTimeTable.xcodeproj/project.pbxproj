@@ -34,8 +34,6 @@
 		A768E6C21CD46C1200CB7E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768E6C01CD46C1200CB7E1F /* LaunchScreen.storyboard */; };
 		A768E6CD1CD46C1200CB7E1F /* UniTimeTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6CC1CD46C1200CB7E1F /* UniTimeTableTests.swift */; };
 		A768E6D81CD46C1200CB7E1F /* UniTimeTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */; };
-		A76996071CE9818600380557 /* ViewSemesterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76996061CE9818600380557 /* ViewSemesterController.swift */; };
-		A76996091CE9819500380557 /* ViewCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76996081CE9819500380557 /* ViewCourseController.swift */; };
 		A769960B1CE981A000380557 /* ViewClassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A769960A1CE981A000380557 /* ViewClassController.swift */; };
 		A7D016EE1CE54A1B008A31BA /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */; };
 		A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */; };
@@ -95,8 +93,6 @@
 		A768E6D31CD46C1200CB7E1F /* UniTimeTableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniTimeTableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniTimeTableUITests.swift; sourceTree = "<group>"; };
 		A768E6D91CD46C1200CB7E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A76996061CE9818600380557 /* ViewSemesterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSemesterController.swift; sourceTree = "<group>"; };
-		A76996081CE9819500380557 /* ViewCourseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCourseController.swift; sourceTree = "<group>"; };
 		A769960A1CE981A000380557 /* ViewClassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClassController.swift; sourceTree = "<group>"; };
 		A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +181,6 @@
 		A70BE86C1CE9581E005CC0D0 /* Semester ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A76996061CE9818600380557 /* ViewSemesterController.swift */,
 				A70B5C271CDF361A00E0EA0D /* AddSemesterViewController.swift */,
 				A70B5C371CE06B4D00E0EA0D /* SemesterViewController.swift */,
 			);
@@ -195,7 +190,6 @@
 		A70BE86D1CE95830005CC0D0 /* Course ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A76996081CE9819500380557 /* ViewCourseController.swift */,
 				A754CE281CE2D1F200283B84 /* CourseViewController.swift */,
 				A754CE2A1CE2D9CE00283B84 /* AddCourseViewController.swift */,
 			);
@@ -406,7 +400,6 @@
 				A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
 				A70BE8641CE954FD005CC0D0 /* Class+CoreDataProperties.swift in Sources */,
 				A70BE8651CE954FD005CC0D0 /* Class.swift in Sources */,
-				A76996091CE9819500380557 /* ViewCourseController.swift in Sources */,
 				A70BE86F1CE95F99005CC0D0 /* TeacherViewController.swift in Sources */,
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
 				A70BE8611CE954CD005CC0D0 /* Teacher.swift in Sources */,
@@ -420,7 +413,6 @@
 				A70B5C381CE06B4D00E0EA0D /* SemesterViewController.swift in Sources */,
 				A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */,
 				A70BE8691CE9552F005CC0D0 /* Type.swift in Sources */,
-				A76996071CE9818600380557 /* ViewSemesterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

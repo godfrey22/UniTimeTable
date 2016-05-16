@@ -113,8 +113,6 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
         }else{
             performSegueWithIdentifier("EditSemester", sender: self)
         }
-        
-        
     }
 
     
