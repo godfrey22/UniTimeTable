@@ -108,6 +108,12 @@ class CourseViewController: UIViewController, addCourseDelegate {
             let controller: AddCourseViewController = segue.destinationViewController as! AddCourseViewController
             controller.managedObjectContext = self.managedObjectContext
             controller.delegate = self
+        }else if segue.identifier == "ViewClass"
+        {
+            let selectedIndexPath: NSIndexPath = self.unitTableView.indexPathForSelectedRow!
+            let classViewController: ClassViewController = segue.destinationViewController as! ClassViewController
+            classViewController.managedObjectContext = self.managedObjectContext
+            classViewController.selectedCourse = courseList.objectAtIndex(selectedIndexPath.row) as! Course
         }
     }
     
