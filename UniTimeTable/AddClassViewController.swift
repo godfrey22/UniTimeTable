@@ -145,7 +145,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
             endTime = (selectedClass?.endTime)!
             endTimeInput.text = dateFormatter.stringFromDate(endTime)
             
-
+            weekSelection.selectedSegmentIndex = selectedClass?.week as! Int
             
         }
         if((selectedType) != nil)
