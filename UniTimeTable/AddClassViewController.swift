@@ -58,7 +58,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        endDate = sender.date
+        startDate = sender.date
         startDateInput.text = dateFormatter.stringFromDate(sender.date)
     }
     //End Datepicker
@@ -129,6 +129,23 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
             teacherLabel.text = selectedClass?.hasTeacher?.name
             locationInput.text = selectedClass?.location
             //To-Do
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+            startDate = (selectedClass?.startDate)!
+            startDateInput.text = dateFormatter.stringFromDate(startDate)
+            endDate = (selectedClass?.endDate)!
+            endDateInput.text = dateFormatter.stringFromDate(endDate)
+            
+            dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
+            dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            startTime = (selectedClass?.startTime)!
+            startTimeInput.text = dateFormatter.stringFromDate(startTime)
+            endTime = (selectedClass?.endTime)!
+            endTimeInput.text = dateFormatter.stringFromDate(endTime)
+            
+
             
         }
         if((selectedType) != nil)
