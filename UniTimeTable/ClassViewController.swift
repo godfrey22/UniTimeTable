@@ -14,27 +14,13 @@ class ClassViewController: UIViewController, addClassDelegate {
     var selectedCourse: Course!
     var selectedType: Type!
     var selectedTeacher: Teacher!
-    var editMode = false
     
-    @IBOutlet var editButton: UIButton!
     @IBOutlet var courseCodeLabel: UILabel!
     var classList: NSMutableArray = []
     var managedObjectContext: NSManagedObjectContext
     
     @IBOutlet var classTableView: UITableView!
     
-
-    @IBAction func editClass(sender: UIButton) {
-        if (editMode == false)
-        {
-            editMode = true
-            editButton.setTitle("Finished", forState: UIControlState.Normal)
-        }else{
-            editMode = false
-            editButton.setTitle("Edit", forState: UIControlState.Normal)
-        }
-        
-    }
     required init?(coder aDecoder: NSCoder) {
         self.classList = NSMutableArray()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -68,11 +54,6 @@ class ClassViewController: UIViewController, addClassDelegate {
         classTableView.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        classTableView.reloadData()
-    }
-    
     //Table View Overrides
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classList.count
@@ -81,7 +62,7 @@ class ClassViewController: UIViewController, addClassDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ClassCellIdentifier", forIndexPath: indexPath) as! ClassCell
         let c: Class = self.classList[indexPath.row] as! Class
-        print(c)
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
@@ -139,15 +120,6 @@ class ClassViewController: UIViewController, addClassDelegate {
             }
         }
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if editMode==false {
-            //TO-DO
-            //performSegueWithIdentifier("ViewCourse", sender: self)
-        }else{
-            performSegueWithIdentifier("EditClass", sender: self)
-        }
-    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AddClass"
@@ -155,12 +127,6 @@ class ClassViewController: UIViewController, addClassDelegate {
             let controller: AddClassViewController = segue.destinationViewController as! AddClassViewController
             controller.managedObjectContext = self.managedObjectContext
             controller.delegate = self
-        }else if segue.identifier == "EditClass"
-        {
-            let selectedIndexPath: NSIndexPath = self.classTableView.indexPathForSelectedRow!
-            let controller: AddClassViewController = segue.destinationViewController as! AddClassViewController
-            controller.managedObjectContext = self.managedObjectContext
-            controller.selectedClass = classList.objectAtIndex(selectedIndexPath.row) as? Class
         }
     }
     

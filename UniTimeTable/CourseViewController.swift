@@ -13,23 +13,8 @@ class CourseViewController: UIViewController, addCourseDelegate {
 
     //MARK: Variable initiations
     @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var editButton: UIButton!
     @IBOutlet var unitTableView: UITableView!
     
-    var editMode = false
-    
-    @IBAction func editCourse(sender: UIButton) {
-        if (editMode == false)
-        {
-            editMode = true
-            editButton.setTitle("Finished", forState: UIControlState.Normal)
-        }else{
-            editMode = false
-            editButton.setTitle("Edit", forState: UIControlState.Normal)
-        }
-    }
-
-
     var selectedSemester: Semester!
     var courseList: NSMutableArray = []
     var managedObjectContext: NSManagedObjectContext
@@ -114,13 +99,7 @@ class CourseViewController: UIViewController, addCourseDelegate {
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if editMode==false {
-            performSegueWithIdentifier("ViewClass", sender: self)
-        }else{
-            performSegueWithIdentifier("EditCourse", sender: self)
-        }
-    }
+    
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -135,14 +114,7 @@ class CourseViewController: UIViewController, addCourseDelegate {
             let classViewController: ClassViewController = segue.destinationViewController as! ClassViewController
             classViewController.managedObjectContext = self.managedObjectContext
             classViewController.selectedCourse = courseList.objectAtIndex(selectedIndexPath.row) as! Course
-        }else if segue.identifier == "EditCourse"
-        {
-            let selectedIndexPath: NSIndexPath = self.unitTableView.indexPathForSelectedRow!
-            let controller: AddCourseViewController = segue.destinationViewController as! AddCourseViewController
-            controller.managedObjectContext = self.managedObjectContext
-            controller.selectedCourse = courseList.objectAtIndex(selectedIndexPath.row) as? Course
         }
-
     }
     
     func addCourse(course: Course) {
