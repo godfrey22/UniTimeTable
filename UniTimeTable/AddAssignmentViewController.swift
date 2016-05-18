@@ -19,6 +19,8 @@ class AddAssignmentViewController: UIViewController {
     var managedObjectContext: NSManagedObjectContext
     var dueDate = NSDate()
     var selectedCourse: Course?
+    var selectedSemester: Semester!
+    var semesterList: NSMutableArray = []
     var delegate: addAssignmentDelegate!
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,12 +55,38 @@ class AddAssignmentViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SelectCourse"
+        {
+            let controller: CourseSelectViewController = segue.destinationViewController as! CourseSelectViewController
+            controller.managedObjectContext = self.managedObjectContext
+            controller.selectedSemester = self.selectedSemester
+        }
+    }
+    
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //Request all the objects in the "Semester" table
+        let request = NSFetchRequest(entityName: "Semester")
+        request.returnsObjectsAsFaults = false
+        
+        //Put all the semester into the semesterList
+        do{
+            let result: NSArray = try managedObjectContext.executeFetchRequest(request)
+            if result.count > 0{
+                self.semesterList = NSMutableArray(array: (result as! [Semester]))
+            }
+        }catch
+        {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        selectedSemester = semesterList[0] as! Semester
+        
         // Do any additional setup after loading the view.
     }
 

@@ -42,6 +42,7 @@
 		A76EC00D1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC00C1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift */; };
 		A76EC0141CEAE74D004A030D /* Assignment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0121CEAE74D004A030D /* Assignment+CoreDataProperties.swift */; };
 		A76EC0151CEAE74D004A030D /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0131CEAE74D004A030D /* Assignment.swift */; };
+		A76EC0171CEBFF08004A030D /* CourseSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */; };
 		A7D016EE1CE54A1B008A31BA /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */; };
 		A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */; };
 		A7D017001CE8042F008A31BA /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016FF1CE8042F008A31BA /* ClassCell.swift */; };
@@ -108,6 +109,7 @@
 		A76EC00C1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedAssignmentTableViewController.swift; sourceTree = "<group>"; };
 		A76EC0121CEAE74D004A030D /* Assignment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assignment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A76EC0131CEAE74D004A030D /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectViewController.swift; sourceTree = "<group>"; };
 		A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
 		A7D016FF1CE8042F008A31BA /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 		A76EC0051CEAE234004A030D /* Assignment ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */,
 				A76EC00A1CEAE3BA004A030D /* UpcomingAssignmentTableViewController.swift */,
 				A76EC00C1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift */,
 				A76EC0061CEAE259004A030D /* AssignmentViewController.swift */,
@@ -427,6 +430,7 @@
 				A754CE2B1CE2D9CE00283B84 /* AddCourseViewController.swift in Sources */,
 				A70B5C361CE0698F00E0EA0D /* Semester.swift in Sources */,
 				A754CE271CE1A8FB00283B84 /* Course.swift in Sources */,
+				A76EC0171CEBFF08004A030D /* CourseSelectViewController.swift in Sources */,
 				A754CE2D1CE2E22100283B84 /* CourseCell.swift in Sources */,
 				A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
 				A70BE8641CE954FD005CC0D0 /* Class+CoreDataProperties.swift in Sources */,

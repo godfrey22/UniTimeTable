@@ -2429,7 +2429,7 @@
                                     <rect key="frame" x="0.0" y="74" width="311" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="2c3-d9-uTa" kind="show" id="RFr-Vx-zaG"/>
+                                    <segue destination="2c3-d9-uTa" kind="show" identifier="SelectCourse" id="RFr-Vx-zaG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2522,18 +2522,136 @@
             </objects>
             <point key="canvasLocation" x="1750.5" y="-1716"/>
         </scene>
-        <!--View Controller-->
+        <!--Course Select View Controller-->
         <scene sceneID="L8e-Ha-Pg3">
             <objects>
-                <viewController id="2c3-d9-uTa" sceneMemberID="viewController">
+                <viewController id="2c3-d9-uTa" customClass="CourseSelectViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mRk-6K-vZ8"/>
                         <viewControllerLayoutGuide type="bottom" id="0pI-fw-wiU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qpV-RX-CHE">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course for the assignment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoA-BP-qFV">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Rrz-Am-Obk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.3411764705882353" green="0.75294117647058822" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Rrz-Am-Obk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Rrz-Am-Obk"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lWS-K8-a7K">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="4N8-Jy-LLn"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseSelectIdentifier" id="HZm-ei-1LX" customClass="CourseCell" customModule="UniTimeTable" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HZm-ei-1LX" id="dXa-dh-ERF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWZ-cg-y5U">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="11" width="100" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="HWZ-cg-y5U"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="HWZ-cg-y5U"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseCode" destination="HWZ-cg-y5U" id="12g-ax-rqF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4N8-Jy-LLn"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="4N8-Jy-LLn"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="2c3-d9-uTa" id="KOX-XB-uOx"/>
+                                    <outlet property="delegate" destination="2c3-d9-uTa" id="1nt-ca-KTr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lWS-K8-a7K" firstAttribute="top" secondItem="UoA-BP-qFV" secondAttribute="bottom" constant="8" id="7iS-sa-TGe"/>
+                            <constraint firstItem="lWS-K8-a7K" firstAttribute="width" secondItem="qpV-RX-CHE" secondAttribute="width" id="Kud-fL-AOw"/>
+                            <constraint firstItem="UoA-BP-qFV" firstAttribute="width" secondItem="lWS-K8-a7K" secondAttribute="width" id="Pas-1m-kRb"/>
+                            <constraint firstItem="UoA-BP-qFV" firstAttribute="leading" secondItem="qpV-RX-CHE" secondAttribute="leading" id="bJl-oC-7mv"/>
+                            <constraint firstItem="UoA-BP-qFV" firstAttribute="top" secondItem="mRk-6K-vZ8" secondAttribute="bottom" id="f1K-g3-4X9"/>
+                            <constraint firstItem="UoA-BP-qFV" firstAttribute="width" secondItem="qpV-RX-CHE" secondAttribute="width" id="fXX-oc-NRx"/>
+                            <constraint firstItem="lWS-K8-a7K" firstAttribute="leading" secondItem="qpV-RX-CHE" secondAttribute="leading" id="pc6-2F-504"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="UoA-BP-qFV"/>
+                                <exclude reference="lWS-K8-a7K"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Pas-1m-kRb"/>
+                                <exclude reference="bJl-oC-7mv"/>
+                                <exclude reference="f1K-g3-4X9"/>
+                                <exclude reference="fXX-oc-NRx"/>
+                                <exclude reference="7iS-sa-TGe"/>
+                                <exclude reference="Kud-fL-AOw"/>
+                                <exclude reference="pc6-2F-504"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="UoA-BP-qFV"/>
+                                <include reference="lWS-K8-a7K"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Pas-1m-kRb"/>
+                                <include reference="bJl-oC-7mv"/>
+                                <include reference="f1K-g3-4X9"/>
+                                <include reference="fXX-oc-NRx"/>
+                                <include reference="7iS-sa-TGe"/>
+                                <include reference="Kud-fL-AOw"/>
+                                <include reference="pc6-2F-504"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="unitTableView" destination="lWS-K8-a7K" id="VaH-Ue-8Rs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gc-pS-CT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2701,7 +2819,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzX-S6-ssR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1315.5" y="-1178"/>
+            <point key="canvasLocation" x="1272" y="-1162"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0cc-DI-zpt">
