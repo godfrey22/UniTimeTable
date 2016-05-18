@@ -2146,7 +2146,7 @@
                         <viewControllerLayoutGuide type="bottom" id="85U-gH-NpA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gW1-fo-9f5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjN-04-06f">
@@ -2254,12 +2254,12 @@
                                 <exclude reference="8TY-x9-Uqp"/>
                                 <exclude reference="LbB-nk-qbm"/>
                                 <exclude reference="zNZ-QD-nr9"/>
-                                <exclude reference="0ml-Xr-F2P"/>
-                                <exclude reference="90q-9b-YeA"/>
-                                <exclude reference="Jfo-cS-x3H"/>
                                 <exclude reference="B55-Js-BY6"/>
                                 <exclude reference="Hwa-eg-PyA"/>
                                 <exclude reference="OZk-57-SM7"/>
+                                <exclude reference="0ml-Xr-F2P"/>
+                                <exclude reference="90q-9b-YeA"/>
+                                <exclude reference="Jfo-cS-x3H"/>
                                 <exclude reference="0TK-sS-055"/>
                                 <exclude reference="56k-pO-lpX"/>
                                 <exclude reference="r0L-o9-Nb2"/>
@@ -2276,12 +2276,12 @@
                                 <include reference="8TY-x9-Uqp"/>
                                 <include reference="LbB-nk-qbm"/>
                                 <include reference="zNZ-QD-nr9"/>
-                                <include reference="0ml-Xr-F2P"/>
-                                <include reference="90q-9b-YeA"/>
-                                <include reference="Jfo-cS-x3H"/>
                                 <include reference="B55-Js-BY6"/>
                                 <include reference="Hwa-eg-PyA"/>
                                 <include reference="OZk-57-SM7"/>
+                                <include reference="0ml-Xr-F2P"/>
+                                <include reference="90q-9b-YeA"/>
+                                <include reference="Jfo-cS-x3H"/>
                                 <include reference="0TK-sS-055"/>
                                 <include reference="56k-pO-lpX"/>
                                 <include reference="r0L-o9-Nb2"/>
@@ -2313,6 +2313,7 @@
                         <viewControllerLayoutGuide type="bottom" id="RWS-aQ-fWr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WhW-W7-CIa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment Due" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIv-Bp-bxW">
@@ -2477,19 +2478,19 @@
                                 <exclude reference="PRg-fY-RhA"/>
                                 <exclude reference="lrA-gF-Sgj"/>
                                 <exclude reference="xDo-NW-JRO"/>
-                                <exclude reference="LLJ-Jz-Okb"/>
-                                <exclude reference="khP-tz-ugl"/>
+                                <exclude reference="60A-rd-Q6R"/>
+                                <exclude reference="Jts-Ic-IwU"/>
+                                <exclude reference="NYV-ZR-0se"/>
                                 <exclude reference="ERh-AN-O60"/>
                                 <exclude reference="NsG-am-PNR"/>
                                 <exclude reference="cR8-od-m42"/>
                                 <exclude reference="oWO-YZ-OIX"/>
-                                <exclude reference="AeG-TI-XdY"/>
-                                <exclude reference="T18-BV-wzs"/>
-                                <exclude reference="60A-rd-Q6R"/>
-                                <exclude reference="Jts-Ic-IwU"/>
-                                <exclude reference="NYV-ZR-0se"/>
                                 <exclude reference="jg0-11-392"/>
                                 <exclude reference="m99-tn-V9y"/>
+                                <exclude reference="LLJ-Jz-Okb"/>
+                                <exclude reference="khP-tz-ugl"/>
+                                <exclude reference="AeG-TI-XdY"/>
+                                <exclude reference="T18-BV-wzs"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2508,19 +2509,19 @@
                                 <include reference="PRg-fY-RhA"/>
                                 <include reference="lrA-gF-Sgj"/>
                                 <include reference="xDo-NW-JRO"/>
-                                <include reference="LLJ-Jz-Okb"/>
-                                <include reference="khP-tz-ugl"/>
+                                <include reference="60A-rd-Q6R"/>
+                                <include reference="Jts-Ic-IwU"/>
+                                <include reference="NYV-ZR-0se"/>
                                 <include reference="ERh-AN-O60"/>
                                 <include reference="NsG-am-PNR"/>
                                 <exclude reference="cR8-od-m42"/>
                                 <include reference="oWO-YZ-OIX"/>
-                                <include reference="AeG-TI-XdY"/>
-                                <include reference="T18-BV-wzs"/>
-                                <include reference="60A-rd-Q6R"/>
-                                <include reference="Jts-Ic-IwU"/>
-                                <include reference="NYV-ZR-0se"/>
                                 <include reference="jg0-11-392"/>
                                 <include reference="m99-tn-V9y"/>
+                                <include reference="LLJ-Jz-Okb"/>
+                                <include reference="khP-tz-ugl"/>
+                                <include reference="AeG-TI-XdY"/>
+                                <include reference="T18-BV-wzs"/>
                             </mask>
                         </variation>
                     </view>
@@ -2543,6 +2544,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0pI-fw-wiU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qpV-RX-CHE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course for the assignment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoA-BP-qFV">
@@ -2576,6 +2578,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HZm-ei-1LX" id="dXa-dh-ERF">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWZ-cg-y5U">
@@ -2674,12 +2677,15 @@
             <objects>
                 <tableViewController id="veT-BL-bym" customClass="UpcomingAssignmentTableViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="aqH-cd-p2R">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UpcomingAssignmentCellIdentifier" editingAccessoryType="detailDisclosureButton" id="Iei-gZ-JSA" customClass="UpcomingAssignmentCell" customModule="UniTimeTable" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iei-gZ-JSA" id="gc0-b6-cHC">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8G-1M-tZU">
@@ -2759,12 +2765,15 @@
             <objects>
                 <tableViewController id="2yy-Ob-Toh" customClass="FinishedAssignmentTableViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="vx6-VZ-W7S">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GKt-sn-KtB" customClass="FinishedAssignmentCell" customModule="UniTimeTable" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GKt-sn-KtB" id="vKS-CM-b9b">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FY-5n-XyV">

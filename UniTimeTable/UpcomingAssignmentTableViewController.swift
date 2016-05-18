@@ -83,6 +83,23 @@ class UpcomingAssignmentTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            managedObjectContext.deleteObject(assignmentList.objectAtIndex(indexPath.row) as! NSManagedObject)
+            self.assignmentList.removeObjectAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+            /*do
+            {
+                try self.managedObjectContext.save()
+            }
+            catch let error
+            {
+                print("Could not save Deletion \(error)")
+            }*/
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
