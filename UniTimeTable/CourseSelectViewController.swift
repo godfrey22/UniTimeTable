@@ -9,9 +9,14 @@
 import UIKit
 import CoreData
 
+protocol courseSelectionDelegate {
+    func didSelectCourse(course: Course)
+}
+
 class CourseSelectViewController: UIViewController {
     
     var selectedSemester: Semester!
+    var delegate: courseSelectionDelegate! = nil
     var courseList: NSMutableArray = []
     var managedObjectContext: NSManagedObjectContext
     
@@ -74,6 +79,13 @@ class CourseSelectViewController: UIViewController {
        cell.courseCode.text = c.course_code!
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let c:Course = self.courseList[indexPath.row] as! Course
+        delegate.didSelectCourse(c)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
     
     /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             performSegueWithIdentifier("ViewClass", sender: self)

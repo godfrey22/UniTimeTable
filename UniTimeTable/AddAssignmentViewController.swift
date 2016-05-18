@@ -10,10 +10,10 @@ import UIKit
 import CoreData
 
 protocol addAssignmentDelegate {
-    func addAssignment(assignment: Assignment)
+    func addAssignment(assignment: Assignment, course: Course)
 }
 
-class AddAssignmentViewController: UIViewController {
+class AddAssignmentViewController: UIViewController, courseSelectionDelegate{
     
     
     var managedObjectContext: NSManagedObjectContext
@@ -31,6 +31,7 @@ class AddAssignmentViewController: UIViewController {
     
     @IBOutlet var assignmentTitle: UITextField!
     @IBOutlet var assignmentDue: UITextField!
+    @IBOutlet var assignmentCourseCode: UILabel!
     
     @IBAction func editDueDate(sender: UITextField) {
         let datePickerView: UIDatePicker = UIDatePicker()
@@ -51,7 +52,7 @@ class AddAssignmentViewController: UIViewController {
         newAssignment.setValue(assignmentTitle.text, forKey: "assignment_title")
         newAssignment.setValue(dueDate, forKey: "assignment_due")
         newAssignment.setValue("0", forKey: "assignment_status")
-        self.delegate!.addAssignment(newAssignment)
+        self.delegate!.addAssignment(newAssignment, course: selectedCourse!)
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -61,6 +62,7 @@ class AddAssignmentViewController: UIViewController {
             let controller: CourseSelectViewController = segue.destinationViewController as! CourseSelectViewController
             controller.managedObjectContext = self.managedObjectContext
             controller.selectedSemester = self.selectedSemester
+            controller.delegate = self
         }
     }
     
@@ -95,6 +97,10 @@ class AddAssignmentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func didSelectCourse(course: Course) {
+        selectedCourse = course
+        assignmentCourseCode.text = selectedCourse?.course_code
+    }
 
     /*
     // MARK: - Navigation

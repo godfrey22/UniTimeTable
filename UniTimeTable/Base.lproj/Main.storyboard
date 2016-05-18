@@ -2432,6 +2432,15 @@
                                     <segue destination="2c3-d9-uTa" kind="show" identifier="SelectCourse" id="RFr-Vx-zaG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvv-Yk-epz">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="205" y="74" width="95" height="30"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -2462,6 +2471,7 @@
                                 <exclude reference="YDD-Ty-t5o"/>
                                 <exclude reference="KJI-Hm-pMp"/>
                                 <exclude reference="bui-fq-XSm"/>
+                                <exclude reference="Hvv-Yk-epz"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="PRg-fY-RhA"/>
@@ -2492,6 +2502,7 @@
                                 <include reference="YDD-Ty-t5o"/>
                                 <include reference="KJI-Hm-pMp"/>
                                 <include reference="bui-fq-XSm"/>
+                                <include reference="Hvv-Yk-epz"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="PRg-fY-RhA"/>
@@ -2514,6 +2525,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="assignmentCourseCode" destination="Hvv-Yk-epz" id="SMq-ba-EAr"/>
                         <outlet property="assignmentDue" destination="fg5-LR-y3f" id="tiD-du-xjo"/>
                         <outlet property="assignmentTitle" destination="l38-Ng-IZR" id="1i1-ZY-eTP"/>
                     </connections>
@@ -2676,7 +2688,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="-4" width="100" height="21"/>
+                                                <rect key="frame" x="8" y="-2" width="100" height="21"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j47-Ee-1Ra">
@@ -2685,7 +2697,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="22" y="14" width="128" height="21"/>
+                                                <rect key="frame" x="22" y="15" width="128" height="21"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioj-23-t0l">

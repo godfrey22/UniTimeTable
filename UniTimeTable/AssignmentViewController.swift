@@ -51,10 +51,10 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
         }
     }
     
-    func addAssignment(assignment: Assignment) {
+    func addAssignment(assignment: Assignment, course: Course) {
+        assignment.belongs_to_Course = course
         containerViewController?.assignmentList.addObject(assignment)
         containerViewController?.tableView.reloadData()
-        print(containerViewController?.assignmentList)
     }
 
     /*
