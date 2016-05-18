@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
-    <entity name="Assignment" syncable="YES">
+    <entity name="Assignment" representedClassName=".Assignment" syncable="YES">
         <attribute name="assignment_due" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="assignment_status" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="assignment_status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="assignment_title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="assignmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="courseID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="teacherID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongs_to_Course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="hasAssignment" inverseEntity="Course" syncable="YES"/>
         <relationship name="hasTask" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="belongs_to_assignment" inverseEntity="Task" syncable="YES"/>
     </entity>
@@ -61,7 +58,7 @@
         <relationship name="belongs_to_Class" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Class" inverseName="hasType" inverseEntity="Class" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="163"/>
+        <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="118"/>
         <element name="Class" positionX="-6615" positionY="-3744" width="128" height="178"/>
         <element name="Consult" positionX="-6176" positionY="-3694" width="128" height="73"/>
         <element name="Course" positionX="-6408" positionY="-3753" width="144" height="133"/>
