@@ -15,15 +15,13 @@ class ClassViewController: UIViewController, addClassDelegate {
     var selectedType: Type!
     var selectedTeacher: Teacher!
     var editMode = false
-    
-    @IBOutlet var editButton: UIButton!
-    @IBOutlet var courseCodeLabel: UILabel!
     var classList: NSMutableArray = []
     var managedObjectContext: NSManagedObjectContext
     
-    @IBOutlet var classTableView: UITableView!
     
-
+    @IBOutlet var editButton: UIButton!
+    @IBOutlet var courseCodeLabel: UILabel!
+    @IBOutlet var classTableView: UITableView!
     @IBAction func editClass(sender: UIButton) {
         if (editMode == false)
         {

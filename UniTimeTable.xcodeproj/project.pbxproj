@@ -44,6 +44,9 @@
 		A76EC0151CEAE74D004A030D /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0131CEAE74D004A030D /* Assignment.swift */; };
 		A76EC0171CEBFF08004A030D /* CourseSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */; };
 		A7A0AD691CEC7BE700B1BE3C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */; };
+		A7A0AD6C1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */; };
+		A7A0AD6D1CEC83EA00B1BE3C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */; };
+		A7A0AD6F1CEC8B7300B1BE3C /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6E1CEC8B7300B1BE3C /* TaskCell.swift */; };
 		A7D016EE1CE54A1B008A31BA /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */; };
 		A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */; };
 		A7D017001CE8042F008A31BA /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016FF1CE8042F008A31BA /* ClassCell.swift */; };
@@ -112,6 +115,9 @@
 		A76EC0131CEAE74D004A030D /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectViewController.swift; sourceTree = "<group>"; };
 		A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		A7A0AD6E1CEC8B7300B1BE3C /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
 		A7D016FF1CE8042F008A31BA /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
@@ -161,6 +167,8 @@
 		A70B5C161CDF332100E0EA0D /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */,
+				A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */,
 				A76EC0121CEAE74D004A030D /* Assignment+CoreDataProperties.swift */,
 				A76EC0131CEAE74D004A030D /* Assignment.swift */,
 				A70B5C331CE0698F00E0EA0D /* Semester+CoreDataProperties.swift */,
@@ -180,6 +188,7 @@
 		A70B5C391CE06E0200E0EA0D /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				A7A0AD6E1CEC8B7300B1BE3C /* TaskCell.swift */,
 				A76EC0011CEAE104004A030D /* UpcomingAssignmentCell.swift */,
 				A76EC0031CEAE1A8004A030D /* FinishedAssignmentCell.swift */,
 				A70BE8701CE96317005CC0D0 /* TeacherCell.swift */,
@@ -433,6 +442,7 @@
 				A70BE8711CE96317005CC0D0 /* TeacherCell.swift in Sources */,
 				A76EC0091CEAE262004A030D /* AddAssignmentViewController.swift in Sources */,
 				A7D017021CE82160008A31BA /* TypeViewController.swift in Sources */,
+				A7A0AD6C1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift in Sources */,
 				A7D017001CE8042F008A31BA /* ClassCell.swift in Sources */,
 				A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */,
 				A76EC0141CEAE74D004A030D /* Assignment+CoreDataProperties.swift in Sources */,
@@ -454,6 +464,7 @@
 				A76EC00B1CEAE3BA004A030D /* UpcomingAssignmentTableViewController.swift in Sources */,
 				A70BE8611CE954CD005CC0D0 /* Teacher.swift in Sources */,
 				A76EC0021CEAE104004A030D /* UpcomingAssignmentCell.swift in Sources */,
+				A7A0AD6D1CEC83EA00B1BE3C /* Task.swift in Sources */,
 				A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */,
 				A70B5C281CDF361A00E0EA0D /* AddSemesterViewController.swift in Sources */,
 				A70BE8681CE9552F005CC0D0 /* Type+CoreDataProperties.swift in Sources */,
@@ -464,6 +475,7 @@
 				A70BE8601CE954CD005CC0D0 /* Teacher+CoreDataProperties.swift in Sources */,
 				A70B5C381CE06B4D00E0EA0D /* SemesterViewController.swift in Sources */,
 				A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */,
+				A7A0AD6F1CEC8B7300B1BE3C /* TaskCell.swift in Sources */,
 				A70BE8691CE9552F005CC0D0 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

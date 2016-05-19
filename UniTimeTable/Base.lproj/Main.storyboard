@@ -2747,7 +2747,6 @@
                                     <outlet property="courseCode" destination="m8G-1M-tZU" id="o4m-nT-T6y"/>
                                     <outlet property="dueDate" destination="ioj-23-t0l" id="mBd-jk-GFj"/>
                                     <outlet property="percentage" destination="uZl-Qp-de9" id="MSG-DT-M2u"/>
-                                    <segue destination="Yfj-Cq-Bgh" kind="show" id="eyt-kj-gWL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -2756,6 +2755,9 @@
                             <outlet property="delegate" destination="veT-BL-bym" id="ecO-gK-hJR"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Yfj-Cq-Bgh" kind="show" identifier="ViewAssignment" id="iIA-Rw-rFN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVe-tt-A3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2892,6 +2894,27 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7O2-ab-fSj" id="iKA-wj-kom">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbz-0j-WzB">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="19" y="4" width="42" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Kbz-0j-WzB"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Kbz-0j-WzB"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -2905,6 +2928,9 @@
                                         <include reference="nEZ-ol-qgZ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yfj-Cq-Bgh" id="vvs-rs-Rby"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spv-xu-Kz5">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -3069,6 +3095,13 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="assignmentTitleLabel" destination="8XW-CA-SLO" id="Sp3-jj-KfZ"/>
+                        <outlet property="courseCodeLabel" destination="hkS-yU-Pcu" id="Ddo-nW-Mas"/>
+                        <outlet property="dueDateLabel" destination="xDs-9L-cFG" id="siO-z3-Eay"/>
+                        <outlet property="taskTabelView" destination="VD7-gW-ngw" id="6AK-L1-wXZ"/>
+                        <outlet property="teacherLabel" destination="akv-G6-w49" id="XSq-Fr-TDn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWo-xy-l78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

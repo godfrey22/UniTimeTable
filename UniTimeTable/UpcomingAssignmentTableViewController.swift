@@ -100,7 +100,25 @@ class UpcomingAssignmentTableViewController: UITableViewController {
             }*/
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ViewAssignment"
+        {
+            let selectedIndexPath: NSIndexPath = self.tableView.indexPathForSelectedRow!
+            let controller: TaskViewController = segue.destinationViewController as! TaskViewController
+            controller.managedObjectContext = self.managedObjectContext
+            controller.selectedAssignment = assignmentList.objectAtIndex(selectedIndexPath.row) as! Assignment
+            
 
+        }
+    }
+
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("ViewAssignment", sender: self)
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
