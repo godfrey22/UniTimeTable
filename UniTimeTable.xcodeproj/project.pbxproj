@@ -34,6 +34,7 @@
 		A768E6C21CD46C1200CB7E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768E6C01CD46C1200CB7E1F /* LaunchScreen.storyboard */; };
 		A768E6CD1CD46C1200CB7E1F /* UniTimeTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6CC1CD46C1200CB7E1F /* UniTimeTableTests.swift */; };
 		A768E6D81CD46C1200CB7E1F /* UniTimeTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */; };
+		A76D94871CEEAA5400168E5E /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D94861CEEAA5400168E5E /* AddTaskViewController.swift */; };
 		A76EC0021CEAE104004A030D /* UpcomingAssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0011CEAE104004A030D /* UpcomingAssignmentCell.swift */; };
 		A76EC0041CEAE1A8004A030D /* FinishedAssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0031CEAE1A8004A030D /* FinishedAssignmentCell.swift */; };
 		A76EC0071CEAE259004A030D /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0061CEAE259004A030D /* AssignmentViewController.swift */; };
@@ -105,6 +106,7 @@
 		A768E6D31CD46C1200CB7E1F /* UniTimeTableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniTimeTableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniTimeTableUITests.swift; sourceTree = "<group>"; };
 		A768E6D91CD46C1200CB7E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A76D94861CEEAA5400168E5E /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		A76EC0011CEAE104004A030D /* UpcomingAssignmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingAssignmentCell.swift; sourceTree = "<group>"; };
 		A76EC0031CEAE1A8004A030D /* FinishedAssignmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedAssignmentCell.swift; sourceTree = "<group>"; };
 		A76EC0061CEAE259004A030D /* AssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */,
+				A76D94861CEEAA5400168E5E /* AddTaskViewController.swift */,
 			);
 			name = "Task ViewControllers";
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */,
 				A76EC0141CEAE74D004A030D /* Assignment+CoreDataProperties.swift in Sources */,
 				A7D017081CE82431008A31BA /* TypeCell.swift in Sources */,
+				A76D94871CEEAA5400168E5E /* AddTaskViewController.swift in Sources */,
 				A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */,
 				A754CE2B1CE2D9CE00283B84 /* AddCourseViewController.swift in Sources */,
 				A70B5C361CE0698F00E0EA0D /* Semester.swift in Sources */,
