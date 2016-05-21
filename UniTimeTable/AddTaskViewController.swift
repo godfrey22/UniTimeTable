@@ -7,9 +7,39 @@
 //
 
 import UIKit
+import CoreData
+
+protocol addTaskDelegate {
+    func addTask(task: Task)
+}
 
 class AddTaskViewController: UIViewController {
 
+    @IBOutlet var taskTitleLabel: UILabel!
+    @IBOutlet var taskDescriptionField: UITextView!
+    @IBOutlet var taskWorth: UITextField!
+    
+    
+    var delegate: addTaskDelegate!
+    var managedObjectContext: NSManagedObjectContext
+    
+    
+    @IBAction func AddTask(sender: UIBarButtonItem) {
+        let newTask: Task = (NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext: self.managedObjectContext)as! Task)
+        newTask.setValue(taskTitleLabel.text, forKey: "task_title")
+        newTask.setValue(taskDescriptionField.text, forKey: "task_details")
+        newTask.setValue(Int(taskWorth.text!), forKey: "task_percentage")
+        newTask.setValue(false, forKey: "task_status")
+        self.delegate!.addTask(newTask)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedObjectContext = appDelegate.managedObjectContext
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

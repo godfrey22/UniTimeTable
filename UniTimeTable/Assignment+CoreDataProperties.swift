@@ -19,5 +19,11 @@ extension Assignment {
     @NSManaged var assignment_title: String?
     @NSManaged var belongs_to_Course: Course?
     @NSManaged var hasTask: NSSet?
+    
+    func addTask(value: Task)
+    {
+        let assignment = self.mutableSetValueForKey("hasTask")
+        assignment.addObject(value)
+    }
 
 }

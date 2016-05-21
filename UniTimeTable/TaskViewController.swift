@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TaskViewController: UIViewController {
+class TaskViewController: UIViewController, addTaskDelegate {
     
     var selectedAssignment: Assignment!
     var taskList: NSMutableArray = []
@@ -57,12 +57,35 @@ class TaskViewController: UIViewController {
         //Create a date formatter
 
         let t: Task = self.taskList[indexPath.row] as! Task
-    
+        
+        cell.taskTitle.text = t.task_title
+        
+        if(t.task_status == false)
+        {
+            cell.taskStatus.text = "\(t.task_percentage!)%"
+        }else
+        {
+            cell.taskStatus.text = "Completed"
+        }
         //Config the cell
         
         return cell
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "AddTask")
+        {
+            let controller: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
+            controller.managedObjectContext = self.managedObjectContext
+            controller.delegate = self
+
+        }
+    }
+    func addTask(task: Task) {
+        self.selectedAssignment!.addTask(task)
+        self.taskList = NSMutableArray(array: (selectedAssignment!.hasTask?.allObjects as! [Task]))
+        self.taskTabelView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
