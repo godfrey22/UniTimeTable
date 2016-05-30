@@ -24,6 +24,10 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
         super.init(coder: aDecoder)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //performSegueWithIdentifier("UATVC", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,7 +45,7 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
             containerViewController = connectContainerViewController
             containerViewController!.managedObjectContext = self.managedObjectContext
             containerViewController!.delegate = self
-
+            containerViewController?.viewWillAppear(true)
         }
         if segue.identifier == "AddAssignment"
         {
@@ -54,6 +58,16 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
     func addAssignment(assignment: Assignment, course: Course) {
         assignment.belongs_to_Course = course
         containerViewController?.assignmentList.addObject(assignment)
+        do
+        {
+            try self.managedObjectContext.save()
+            print("An assignment has been added!")
+        }
+        catch let error
+        {
+            print("Could not add assignment \(error)")
+        }
+        self.navigationController?.popViewControllerAnimated(true)
         containerViewController?.tableView.reloadData()
     }
 

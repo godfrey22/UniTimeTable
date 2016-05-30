@@ -41,8 +41,6 @@ class UpcomingAssignmentTableViewController: UITableViewController {
             print(fetchError)
         }
         self.tableView.reloadData()
-
-        
     }
     
     override func viewDidLoad() {
