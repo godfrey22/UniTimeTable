@@ -53,7 +53,21 @@ class AddTaskViewController: UIViewController {
     }
 
     @IBAction func markComplete(sender: UIButton) {
-        
+        if(selectedTask?.task_status == false){
+            selectedTask?.task_status = true
+        }else{
+            selectedTask?.task_status = false
+        }
+        do
+        {
+            try self.managedObjectContext.save()
+            print("A Task has changed status!")
+        }
+        catch let error
+        {
+            print("Could not save Deletion \(error)")
+        }
+        self.navigationController?.popViewControllerAnimated(true)
     }
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -71,6 +85,11 @@ class AddTaskViewController: UIViewController {
             taskWorth.text = String(selectedTask!.task_percentage!)
             completeButton.hidden = false
             deleteButton.hidden = false
+            if((selectedTask?.task_status == true)){
+                completeButton.setTitle("Mark as Incomplete", forState: UIControlState.Normal)
+            }else{
+                completeButton.setTitle("Mark as Complete", forState: UIControlState.Normal)
+            }
         }
     }
     

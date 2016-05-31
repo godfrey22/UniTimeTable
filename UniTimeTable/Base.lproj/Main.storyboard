@@ -2958,10 +2958,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="29.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhY-gZ-FaQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhY-gZ-FaQ">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="UBS-Tb-p5p"/>
+                                                        <constraint firstAttribute="width" constant="50" id="UBS-Tb-p5p">
+                                                            <variation key="widthClass=compact" constant="118"/>
+                                                        </constraint>
                                                         <constraint firstAttribute="height" constant="20" id="ikZ-MG-mfo"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
