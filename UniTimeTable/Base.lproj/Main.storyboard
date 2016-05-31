@@ -3278,6 +3278,9 @@
                                         <include reference="lb2-QP-awT"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="deleteTask:" destination="gxU-Wb-Qxe" eventType="touchUpInside" id="XuT-fk-6XM"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="njq-CE-TDA">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>

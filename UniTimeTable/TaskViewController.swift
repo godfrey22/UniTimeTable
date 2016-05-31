@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TaskViewController: UIViewController, addTaskDelegate {
+class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate {
     
     var selectedAssignment: Assignment!
     var taskList: NSMutableArray = []
@@ -75,16 +75,11 @@ class TaskViewController: UIViewController, addTaskDelegate {
             }
         }
         
-        
-        
         taskTabelView.reloadData()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,7 +118,9 @@ class TaskViewController: UIViewController, addTaskDelegate {
             let selectedIndexPath: NSIndexPath = self.taskTabelView.indexPathForSelectedRow!
             let controller: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
             controller.managedObjectContext = self.managedObjectContext
+            controller.deleteDelegate = self
             controller.selectedTask = taskList.objectAtIndex(selectedIndexPath.row) as? Task
+            controller.selectedIndex = selectedIndexPath.row
         }
     }
     
@@ -142,6 +139,20 @@ class TaskViewController: UIViewController, addTaskDelegate {
         }
     }
 
+    func deleteTask(index: Int) {
+        managedObjectContext.deleteObject(taskList.objectAtIndex(index) as! NSManagedObject)
+        do
+        {
+            try self.managedObjectContext.save()
+            print("A Task has been added!")
+        }
+        catch let error
+        {
+            print("Could not save Deletion \(error)")
+        }
+        self.taskList.removeObjectAtIndex(index)
+        self.taskTabelView.reloadData()
+    }
     /*
     // MARK: - Navigation
 

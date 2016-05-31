@@ -13,6 +13,11 @@ protocol addTaskDelegate {
     func addTask(task: Task)
 }
 
+protocol deleteTaskDelegate {
+    func deleteTask(index: Int)
+}
+
+
 class AddTaskViewController: UIViewController {
 
     @IBOutlet var taskTitleLabel: UILabel!
@@ -22,8 +27,16 @@ class AddTaskViewController: UIViewController {
     @IBOutlet var deleteButton: UIButton!
     
     var selectedTask: Task?
+    var selectedIndex: Int?
+    
     var delegate: addTaskDelegate!
+    var deleteDelegate: deleteTaskDelegate?
     var managedObjectContext: NSManagedObjectContext
+    
+    @IBAction func deleteTask(sender: UIButton) {
+        self.deleteDelegate!.deleteTask(selectedIndex!)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     @IBAction func AddTask(sender: UIBarButtonItem) {
         if(selectedTask != nil){
@@ -39,7 +52,6 @@ class AddTaskViewController: UIViewController {
             {
                 print("Could not save Deletion \(error)")
             }
-            
             self.navigationController?.popViewControllerAnimated(true)
         }else{
             let newTask: Task = (NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext: self.managedObjectContext)as! Task)
