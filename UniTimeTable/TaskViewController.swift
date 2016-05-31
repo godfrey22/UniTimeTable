@@ -27,11 +27,16 @@ class TaskViewController: UIViewController, addTaskDelegate {
         self.managedObjectContext = appDelegate.managedObjectContext
         super.init(coder: aDecoder)
     }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        taskTabelView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         taskTabelView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "TaskCell")
+        taskTabelView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "TaskCell")
         
         assignmentTitleLabel.text = selectedAssignment.assignment_title
         courseCodeLabel.text = selectedAssignment.belongs_to_Course?.course_code
@@ -39,6 +44,21 @@ class TaskViewController: UIViewController, addTaskDelegate {
         //teacherLabel.text
         //To-Do Need to fix logic here
         
+        
+        let request = NSFetchRequest(entityName: "Task")
+        request.returnsObjectsAsFaults = false
+        do{
+            let result: NSArray = try managedObjectContext.executeFetchRequest(request)
+            if result.count != 0
+            {
+                self.taskList = NSMutableArray(array: (selectedAssignment!.hasTask?.allObjects as! [Task]))
+            }
+        }catch
+        {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        taskTabelView.reloadData()
         
         // Do any additional setup after loading the view.
     }
@@ -68,7 +88,6 @@ class TaskViewController: UIViewController, addTaskDelegate {
             cell.taskStatus.text = "Completed"
         }
         //Config the cell
-        
         return cell
     }
 
@@ -80,11 +99,28 @@ class TaskViewController: UIViewController, addTaskDelegate {
             controller.delegate = self
 
         }
+        if(segue.identifier == "EditTask")
+        {
+            let selectedIndexPath: NSIndexPath = self.taskTabelView.indexPathForSelectedRow!
+            let controller: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
+            controller.managedObjectContext = self.managedObjectContext
+            controller.selectedTask = taskList.objectAtIndex(selectedIndexPath.row) as? Task
+        }
     }
+    
     func addTask(task: Task) {
         self.selectedAssignment!.addTask(task)
         self.taskList = NSMutableArray(array: (selectedAssignment!.hasTask?.allObjects as! [Task]))
         self.taskTabelView.reloadData()
+        do
+        {
+            try self.managedObjectContext.save()
+            print("A Task has been added!")
+        }
+        catch let error
+        {
+            print("Could not save Deletion \(error)")
+        }
     }
 
     /*

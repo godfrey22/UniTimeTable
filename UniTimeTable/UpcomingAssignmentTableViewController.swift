@@ -88,14 +88,14 @@ class UpcomingAssignmentTableViewController: UITableViewController {
             self.assignmentList.removeObjectAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
-            /*do
+            do
             {
                 try self.managedObjectContext.save()
             }
             catch let error
             {
                 print("Could not save Deletion \(error)")
-            }*/
+            }
         }
     }
     
@@ -106,8 +106,7 @@ class UpcomingAssignmentTableViewController: UITableViewController {
             let controller: TaskViewController = segue.destinationViewController as! TaskViewController
             controller.managedObjectContext = self.managedObjectContext
             controller.selectedAssignment = assignmentList.objectAtIndex(selectedIndexPath.row) as! Assignment
-            
-
+             
         }
     }
 

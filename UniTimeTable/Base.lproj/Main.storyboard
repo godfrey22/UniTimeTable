@@ -2958,15 +2958,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="29.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbz-0j-WzB">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="19" y="4" width="129" height="21"/>
-                                                    </variation>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhY-gZ-FaQ">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
@@ -2989,6 +2980,15 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbz-0j-WzB">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="19" y="4" width="129" height="21"/>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="jhY-gZ-FaQ" secondAttribute="trailing" constant="15" id="GBc-pN-ao2"/>
@@ -2996,8 +2996,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
-                                                    <exclude reference="Kbz-0j-WzB"/>
                                                     <exclude reference="jhY-gZ-FaQ"/>
+                                                    <exclude reference="Kbz-0j-WzB"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="GBc-pN-ao2"/>
@@ -3006,8 +3006,8 @@
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
-                                                    <include reference="Kbz-0j-WzB"/>
                                                     <include reference="jhY-gZ-FaQ"/>
+                                                    <include reference="Kbz-0j-WzB"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="GBc-pN-ao2"/>
@@ -3018,6 +3018,7 @@
                                         <connections>
                                             <outlet property="taskStatus" destination="jhY-gZ-FaQ" id="o6o-xi-aba"/>
                                             <outlet property="taskTitle" destination="Kbz-0j-WzB" id="baX-LH-eqd"/>
+                                            <segue destination="gxU-Wb-Qxe" kind="show" identifier="EditTask" id="8DM-nh-su0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3033,6 +3034,7 @@
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Yfj-Cq-Bgh" id="vvs-rs-Rby"/>
+                                    <outlet property="delegate" destination="Yfj-Cq-Bgh" id="6kj-H6-GZJ"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -3251,6 +3253,9 @@
                                         <include reference="0ED-me-gAY"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="markComplete:" destination="gxU-Wb-Qxe" eventType="touchUpInside" id="h1X-4a-tb6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvO-Ds-lMe">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -3414,9 +3419,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="MN8-Yf-147"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Task" id="TvP-Qn-1er">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="lna-hd-ddN">
                             <connections>
@@ -3426,6 +3429,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="completeButton" destination="1nk-8j-U3i" id="PA6-Ig-RUT"/>
+                        <outlet property="deleteButton" destination="hvO-Ds-lMe" id="GZA-DG-5MI"/>
                         <outlet property="taskDescriptionField" destination="njq-CE-TDA" id="w8S-Sl-z9r"/>
                         <outlet property="taskTitleLabel" destination="iVN-TF-Qek" id="msD-hF-UYI"/>
                         <outlet property="taskWorth" destination="A46-XH-dlf" id="OtP-8U-EMr"/>
@@ -3595,8 +3600,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9jr-XR-VZV"/>
         <segue reference="VV3-MD-tko"/>
         <segue reference="k6I-I3-8g4"/>
+        <segue reference="9jr-XR-VZV"/>
+        <segue reference="8DM-nh-su0"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,26 +18,60 @@ class AddTaskViewController: UIViewController {
     @IBOutlet var taskTitleLabel: UILabel!
     @IBOutlet var taskDescriptionField: UITextView!
     @IBOutlet var taskWorth: UITextField!
+    @IBOutlet var completeButton: UIButton!
+    @IBOutlet var deleteButton: UIButton!
     
-    
+    var selectedTask: Task?
     var delegate: addTaskDelegate!
     var managedObjectContext: NSManagedObjectContext
     
-    
     @IBAction func AddTask(sender: UIBarButtonItem) {
-        let newTask: Task = (NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext: self.managedObjectContext)as! Task)
-        newTask.setValue(taskTitleLabel.text, forKey: "task_title")
-        newTask.setValue(taskDescriptionField.text, forKey: "task_details")
-        newTask.setValue(Int(taskWorth.text!), forKey: "task_percentage")
-        newTask.setValue(false, forKey: "task_status")
-        self.delegate!.addTask(newTask)
-        self.navigationController?.popViewControllerAnimated(true)
+        if(selectedTask != nil){
+            selectedTask?.task_title = taskTitleLabel.text
+            selectedTask?.task_details = taskDescriptionField.text
+            selectedTask?.task_percentage = Int(taskWorth.text!)
+            do
+            {
+                try self.managedObjectContext.save()
+                print("A Task has been modified!")
+            }
+            catch let error
+            {
+                print("Could not save Deletion \(error)")
+            }
+            
+            self.navigationController?.popViewControllerAnimated(true)
+        }else{
+            let newTask: Task = (NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext: self.managedObjectContext)as! Task)
+            newTask.setValue(taskTitleLabel.text, forKey: "task_title")
+            newTask.setValue(taskDescriptionField.text, forKey: "task_details")
+            newTask.setValue(Int(taskWorth.text!), forKey: "task_percentage")
+            newTask.setValue(false, forKey: "task_status")
+            self.delegate!.addTask(newTask)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
 
+    @IBAction func markComplete(sender: UIButton) {
+        
+    }
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.managedObjectContext = appDelegate.managedObjectContext
         super.init(coder: aDecoder)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        completeButton.hidden = true
+        deleteButton.hidden = true
+        if((selectedTask != nil)){
+            taskTitleLabel.text = selectedTask?.task_title
+            taskDescriptionField.text = selectedTask?.task_details
+            taskWorth.text = String(selectedTask!.task_percentage!)
+            completeButton.hidden = false
+            deleteButton.hidden = false
+        }
     }
     
     override func viewDidLoad() {
