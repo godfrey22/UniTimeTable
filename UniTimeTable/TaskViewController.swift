@@ -58,6 +58,25 @@ class TaskViewController: UIViewController, addTaskDelegate {
             let fetchError = error as NSError
             print(fetchError)
         }
+        
+        taskList.sortUsingComparator {
+            let task1 = $0 as! Task
+            let task2 = $1 as! Task
+            if(task2.task_status == true){
+                return .OrderedAscending
+            }else if(task1.task_status == true)
+            {
+                return .OrderedDescending
+            }else if (Int(task1.task_percentage!) < Int(task2.task_percentage!))
+            {
+                return .OrderedAscending
+            }else{
+                return .OrderedDescending
+            }
+        }
+        
+        
+        
         taskTabelView.reloadData()
         
         // Do any additional setup after loading the view.
