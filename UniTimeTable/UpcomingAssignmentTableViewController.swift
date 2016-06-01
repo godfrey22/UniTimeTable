@@ -14,6 +14,8 @@ class UpcomingAssignmentTableViewController: UITableViewController {
     
     var managedObjectContext: NSManagedObjectContext
     var assignmentList: NSMutableArray = []
+    var UnfinishedAssignmentList: NSMutableArray = []
+    var FinishedAssignmentList: NSMutableArray = []
     var delegate: addAssignmentDelegate!
     
     var semesterList: NSMutableArray = []
@@ -55,17 +57,24 @@ class UpcomingAssignmentTableViewController: UITableViewController {
                 }
             }
         }
+        
         //Clear the assignment list
         assignmentList.removeAllObjects()
+        UnfinishedAssignmentList.removeAllObjects()
+        FinishedAssignmentList.removeAllObjects()
         
         //Put all the assignment into the assignmentList
         let courseList = (NSArray(array: (currentSemester.hasCourse?.allObjects as! [Course])))
         for course in (courseList as! [Course]){
             for assignment in (course.hasAssignment?.allObjects as! [Assignment]) {
                 assignmentList.addObject(assignment)
+                if(Int(assignment.assignment_status!)!<100){
+                    UnfinishedAssignmentList.addObject(assignment)
+                }else{
+                    FinishedAssignmentList.addObject(assignment)
+                }
             }
         }
-
         self.tableView.reloadData()
     }
     
@@ -87,15 +96,14 @@ class UpcomingAssignmentTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return assignmentList.count
+        return UnfinishedAssignmentList.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UpcomingAssignmentCellIdentifier", forIndexPath: indexPath) as! UpcomingAssignmentCell
         
-        let a: Assignment = self.assignmentList[indexPath.row] as! Assignment
-        
+        let a: Assignment = self.UnfinishedAssignmentList[indexPath.row] as! Assignment
         cell.courseCode.text = a.belongs_to_Course?.course_code
         cell.assignmentTitle.text = a.assignment_title
         cell.percentage.text = "\(a.assignment_status!)%"
@@ -130,7 +138,7 @@ class UpcomingAssignmentTableViewController: UITableViewController {
             let selectedIndexPath: NSIndexPath = self.tableView.indexPathForSelectedRow!
             let controller: TaskViewController = segue.destinationViewController as! TaskViewController
             controller.managedObjectContext = self.managedObjectContext
-            controller.selectedAssignment = assignmentList.objectAtIndex(selectedIndexPath.row) as! Assignment
+            controller.selectedAssignment = UnfinishedAssignmentList.objectAtIndex(selectedIndexPath.row) as! Assignment
              
         }
     }

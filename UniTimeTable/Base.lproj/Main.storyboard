@@ -2302,7 +2302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKh-21-rMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076" y="-1716"/>
+            <point key="canvasLocation" x="3144" y="-1700"/>
         </scene>
         <!--Add Assignment View Controller-->
         <scene sceneID="xZB-u9-c1n">
@@ -2533,7 +2533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqt-Zn-HiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2842.5" y="-1716"/>
+            <point key="canvasLocation" x="3910.5" y="-1700"/>
         </scene>
         <!--Course Select View Controller-->
         <scene sceneID="L8e-Ha-Pg3">
@@ -2670,7 +2670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gc-pS-CT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3468" y="-1716"/>
+            <point key="canvasLocation" x="4536" y="-1700"/>
         </scene>
         <!--Upcoming Assignment Table View Controller-->
         <scene sceneID="RMe-Vm-9ep">
@@ -3174,6 +3174,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A46-XH-dlf">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KfJ-kr-5f5"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KfJ-kr-5f5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="KfJ-kr-5f5"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVN-TF-Qek">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
@@ -3288,7 +3308,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="1wq-OM-FR9"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
@@ -3302,26 +3321,6 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A46-XH-dlf">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="KfJ-kr-5f5"/>
-                                </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="KfJ-kr-5f5"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="KfJ-kr-5f5"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -3352,13 +3351,13 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="RYO-6W-ecG"/>
+                                <exclude reference="A46-XH-dlf"/>
                                 <exclude reference="iVN-TF-Qek"/>
                                 <exclude reference="rni-5J-4ya"/>
                                 <exclude reference="xJO-sq-VEr"/>
                                 <exclude reference="1nk-8j-U3i"/>
                                 <exclude reference="hvO-Ds-lMe"/>
                                 <exclude reference="njq-CE-TDA"/>
-                                <exclude reference="A46-XH-dlf"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="XX8-Cx-rhe"/>
@@ -3389,13 +3388,13 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="RYO-6W-ecG"/>
+                                <include reference="A46-XH-dlf"/>
                                 <include reference="iVN-TF-Qek"/>
                                 <include reference="rni-5J-4ya"/>
                                 <include reference="xJO-sq-VEr"/>
                                 <include reference="1nk-8j-U3i"/>
                                 <include reference="hvO-Ds-lMe"/>
                                 <include reference="njq-CE-TDA"/>
-                                <include reference="A46-XH-dlf"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="XX8-Cx-rhe"/>
@@ -3525,7 +3524,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzX-S6-ssR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3468" y="-1162"/>
+            <point key="canvasLocation" x="4254" y="-1162"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0cc-DI-zpt">

@@ -45,9 +45,14 @@ class AddTaskViewController: UIViewController {
     
     @IBAction func AddTask(sender: UIBarButtonItem) {
         if(selectedTask != nil){
-            selectedTask?.task_title = taskTitleLabel.text
-            selectedTask?.task_details = taskDescriptionField.text
-            selectedTask?.task_percentage = Int(taskWorth.text!)
+            selectedTask!.task_title = taskTitleLabel.text
+            selectedTask!.task_details = taskDescriptionField.text
+            
+            if(selectedTask?.task_status == true){
+                selectedAssignment.assignment_status = String(Int(selectedAssignment.assignment_status!)! - Int((selectedTask?.task_percentage)!) + Int(taskWorth.text!)!)
+            }
+            
+            selectedTask!.task_percentage = Int(taskWorth.text!)
             do
             {
                 try self.managedObjectContext.save()
