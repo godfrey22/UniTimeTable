@@ -55,7 +55,7 @@
         <relationship name="belongs_to_Class" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Class" inverseName="hasType" inverseEntity="Class" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="118"/>
+        <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="120"/>
         <element name="Class" positionX="-6615" positionY="-3744" width="128" height="178"/>
         <element name="Consult" positionX="-6176" positionY="-3694" width="128" height="73"/>
         <element name="Course" positionX="-6408" positionY="-3753" width="144" height="133"/>

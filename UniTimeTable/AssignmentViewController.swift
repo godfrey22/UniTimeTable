@@ -14,8 +14,6 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
     var managedObjectContext: NSManagedObjectContext
     var containerViewController: UpcomingAssignmentTableViewController?
     
-    //let childView = self.childViewControllers.last as! ViewController
-    
     @IBOutlet var upcomingAssignment: UIView!
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,12 +24,11 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //performSegueWithIdentifier("UATVC", sender: self)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

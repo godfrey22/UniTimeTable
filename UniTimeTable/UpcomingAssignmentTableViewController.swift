@@ -15,6 +15,9 @@ class UpcomingAssignmentTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext
     var assignmentList: NSMutableArray = []
     var delegate: addAssignmentDelegate!
+    
+    var semesterList: NSMutableArray = []
+    var currentSemester: Semester!
 
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,20 +29,39 @@ class UpcomingAssignmentTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let request = NSFetchRequest(entityName: "Assignment")
+        
+        
+        //Get current semester
+        let request = NSFetchRequest(entityName: "Semester")
         request.returnsObjectsAsFaults = false
         
         //Put all the semester into the semesterList
         do{
             let result: NSArray = try managedObjectContext.executeFetchRequest(request)
             if result.count > 0{
-                self.assignmentList = NSMutableArray(array: (result as! [Assignment]))
+                self.semesterList = NSMutableArray(array: (result as! [Semester]))
             }
         }catch
         {
             let fetchError = error as NSError
             print(fetchError)
         }
+        print(semesterList[0])
+        currentSemester = semesterList[0] as! Semester
+
+        
+        //Clear the assignment list
+        assignmentList.removeAllObjects()
+        
+        //Put all the assignment into the assignmentList
+        print(currentSemester)
+        let courseList = (NSArray(array: (currentSemester.hasCourse?.allObjects as! [Course])))
+        for course in (courseList as! [Course]){
+            for assignment in (course.hasAssignment?.allObjects as! [Assignment]) {
+                assignmentList.addObject(assignment)
+            }
+        }
+
         self.tableView.reloadData()
     }
     
