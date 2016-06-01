@@ -67,11 +67,8 @@ class AddAssignmentViewController: UIViewController, courseSelectionDelegate{
     }
     
 
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         //Request all the objects in the "Semester" table
         let request = NSFetchRequest(entityName: "Semester")
         request.returnsObjectsAsFaults = false
@@ -88,7 +85,17 @@ class AddAssignmentViewController: UIViewController, courseSelectionDelegate{
             print(fetchError)
         }
         selectedSemester = semesterList[0] as! Semester
-        
+        for semester in (semesterList) {
+            if ((semester as! Semester).startYear?.timeIntervalSinceNow < 0){
+                if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
+                    selectedSemester = semester as! Semester
+                }
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
