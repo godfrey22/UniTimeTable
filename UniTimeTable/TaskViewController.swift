@@ -93,13 +93,14 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
         let t: Task = self.taskList[indexPath.row] as! Task
         
         cell.taskTitle.text = t.task_title
+        cell.taskStatus.text = "\(t.task_percentage!)%"
         
         if(t.task_status == false)
         {
-            cell.taskStatus.text = "\(t.task_percentage!)%"
+            cell.taskStatus.textColor = UIColor.redColor()
         }else
         {
-            cell.taskStatus.text = "Completed"
+             cell.taskStatus.textColor = UIColor.greenColor()
         }
         //Config the cell
         return cell
