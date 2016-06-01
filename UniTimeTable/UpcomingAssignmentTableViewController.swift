@@ -47,9 +47,7 @@ class UpcomingAssignmentTableViewController: UITableViewController {
             print(fetchError)
         }
         
-        
         currentSemester = semesterList[0] as! Semester
-        
         for semester in (semesterList) {
             if ((semester as! Semester).startYear?.timeIntervalSinceNow < 0){
                 if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
@@ -100,12 +98,11 @@ class UpcomingAssignmentTableViewController: UITableViewController {
         
         cell.courseCode.text = a.belongs_to_Course?.course_code
         cell.assignmentTitle.text = a.assignment_title
-        cell.percentage.text = a.assignment_status
+        cell.percentage.text = "\(a.assignment_status!)%"
+        
+        cell.percentage.textColor = UIColor.redColor()
 
         // Configure the cell...
-        
-        
-
         return cell
     }
     

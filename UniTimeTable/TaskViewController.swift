@@ -112,6 +112,7 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
             let controller: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
             controller.managedObjectContext = self.managedObjectContext
             controller.delegate = self
+            controller.selectedAssignment = self.selectedAssignment
 
         }
         if(segue.identifier == "EditTask")
@@ -122,6 +123,7 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
             controller.deleteDelegate = self
             controller.selectedTask = taskList.objectAtIndex(selectedIndexPath.row) as? Task
             controller.selectedIndex = selectedIndexPath.row
+            controller.selectedAssignment = self.selectedAssignment
         }
     }
     

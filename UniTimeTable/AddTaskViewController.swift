@@ -29,11 +29,16 @@ class AddTaskViewController: UIViewController {
     var selectedTask: Task?
     var selectedIndex: Int?
     
+    var selectedAssignment: Assignment!
+    
     var delegate: addTaskDelegate!
     var deleteDelegate: deleteTaskDelegate?
     var managedObjectContext: NSManagedObjectContext
     
     @IBAction func deleteTask(sender: UIButton) {
+        if(selectedTask?.task_status==true){
+             self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)!-Int(selectedTask!.task_percentage!))
+        }
         self.deleteDelegate!.deleteTask(selectedIndex!)
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -67,8 +72,10 @@ class AddTaskViewController: UIViewController {
     @IBAction func markComplete(sender: UIButton) {
         if(selectedTask?.task_status == false){
             selectedTask?.task_status = true
+             self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)!+Int(selectedTask!.task_percentage!))
         }else{
             selectedTask?.task_status = false
+            self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)!-Int(selectedTask!.task_percentage!))
         }
         do
         {

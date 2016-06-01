@@ -2715,13 +2715,13 @@
                                                 <rect key="frame" x="22" y="31" width="128" height="21"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Per" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZl-Qp-de9">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Per" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZl-Qp-de9">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="259" y="14" width="26" height="21"/>
+                                                <rect key="frame" x="259" y="14" width="44" height="21"/>
                                             </variation>
                                         </label>
                                     </subviews>
@@ -3279,7 +3279,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="deleteTask:" destination="gxU-Wb-Qxe" eventType="touchUpInside" id="XuT-fk-6XM"/>
+                                    <action selector="deleteTask:" destination="gxU-Wb-Qxe" eventType="touchUpInside" id="AfB-RX-YGG"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="njq-CE-TDA">
@@ -3608,6 +3608,6 @@
         <segue reference="VV3-MD-tko"/>
         <segue reference="k6I-I3-8g4"/>
         <segue reference="9jr-XR-VZV"/>
-        <segue reference="8DM-nh-su0"/>
+        <segue reference="NhV-Jx-bBa"/>
     </inferredMetricsTieBreakers>
 </document>
