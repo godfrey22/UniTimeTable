@@ -2910,7 +2910,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="79P-eZ-3o8"/>
                                 </constraints>
-                                <state key="normal" title="Delete Assignment">
+                                <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.98431372549019602" green="0.0" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -2923,6 +2923,9 @@
                                         <include reference="79P-eZ-3o8"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="submit:" destination="Yfj-Cq-Bgh" eventType="touchUpInside" id="Zlo-PY-cuU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkS-yU-Pcu">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -3150,6 +3153,7 @@
                         <outlet property="assignmentTitleLabel" destination="8XW-CA-SLO" id="Sp3-jj-KfZ"/>
                         <outlet property="courseCodeLabel" destination="hkS-yU-Pcu" id="Ddo-nW-Mas"/>
                         <outlet property="dueDateLabel" destination="xDs-9L-cFG" id="siO-z3-Eay"/>
+                        <outlet property="submitButton" destination="ZbQ-7y-ALA" id="W5a-4f-mCJ"/>
                         <outlet property="taskTabelView" destination="VD7-gW-ngw" id="6AK-L1-wXZ"/>
                         <outlet property="teacherLabel" destination="akv-G6-w49" id="XSq-Fr-TDn"/>
                     </connections>

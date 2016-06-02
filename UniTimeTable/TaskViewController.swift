@@ -20,6 +20,7 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
     @IBOutlet var dueDateLabel: UILabel!
     @IBOutlet var teacherLabel: UILabel!
     @IBOutlet var taskTabelView: UITableView!
+    @IBOutlet var submitButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
         self.taskList = NSMutableArray()
@@ -27,10 +28,41 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
         self.managedObjectContext = appDelegate.managedObjectContext
         super.init(coder: aDecoder)
     }
+    
+    
+    @IBAction func submit(sender: UIButton) {
+        
+        if(Int(self.selectedAssignment.assignment_status!) == 100){
+            self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! + 100)
+        }else if(Int(self.selectedAssignment.assignment_status!) < 100){
+            let submitAlert = UIAlertController(title: "Unfinished Assignment", message: "It seems you have not complete all the task, are you sure you submitted them?", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            submitAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+                self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! + 100)
+            }))
+            
+            submitAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction!) in
+            }))
+            
+            presentViewController(submitAlert, animated: true, completion: nil)
+        }else if(Int(self.selectedAssignment.assignment_status!) > 100){
+            self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! - 100)
+        }
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         taskTabelView.reloadData()
+        
+        if(Int(selectedAssignment.assignment_status!)!>100){
+            submitButton.setTitle("Unsubmit", forState: UIControlState.Normal)
+        }else{
+            submitButton.setTitle("Submit", forState: UIControlState.Normal)
+
+        }
+        
     }
     
     override func viewDidLoad() {
