@@ -2910,7 +2910,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="79P-eZ-3o8"/>
                                 </constraints>
-                                <state key="normal" title="Mark as completed"/>
+                                <state key="normal" title="Delete Assignment">
+                                    <color key="titleColor" red="0.98431372549019602" green="0.0" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="79P-eZ-3o8"/>
@@ -3154,7 +3156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWo-xy-l78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727.25" y="-505.5"/>
+            <point key="canvasLocation" x="2729.25" y="-497.5"/>
         </scene>
         <!--Task-->
         <scene sceneID="iGr-68-KhH">
@@ -3442,7 +3444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJ1-35-6Uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2525.25" y="-505.5"/>
+            <point key="canvasLocation" x="3527.25" y="-497.5"/>
         </scene>
         <!--Finished Assignment Table View Controller-->
         <scene sceneID="Gyk-lH-hLh">
@@ -3519,6 +3521,7 @@
                                     <outlet property="assignment_title" destination="2FY-5n-XyV" id="4mh-ZN-NiG"/>
                                     <outlet property="due_date" destination="VBB-G3-l1b" id="HDT-3f-5XM"/>
                                     <outlet property="status" destination="mWe-K9-Wum" id="Bub-c3-YZh"/>
+                                    <segue destination="Yfj-Cq-Bgh" kind="show" identifier="ViewAssignment" id="rjc-z0-Pdw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -3530,7 +3533,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzX-S6-ssR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4254" y="-1162"/>
+            <point key="canvasLocation" x="3684" y="-1162"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0cc-DI-zpt">
@@ -3610,9 +3613,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VV3-MD-tko"/>
         <segue reference="k6I-I3-8g4"/>
+        <segue reference="iIA-Rw-rFN"/>
+        <segue reference="8DM-nh-su0"/>
+        <segue reference="VV3-MD-tko"/>
         <segue reference="9jr-XR-VZV"/>
-        <segue reference="NhV-Jx-bBa"/>
     </inferredMetricsTieBreakers>
 </document>

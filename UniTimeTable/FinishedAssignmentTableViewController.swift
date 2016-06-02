@@ -106,13 +106,24 @@ class FinishedAssignmentTableViewController: UITableViewController {
             cell.status.text = "Submitted"
             cell.status.textColor = UIColor.greenColor()
         }
-        
-        // Configure the cell...
 
         return cell
     }
     
 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ViewAssignment"
+        {
+            let selectedIndexPath: NSIndexPath = self.tableView.indexPathForSelectedRow!
+            let controller: TaskViewController = segue.destinationViewController as! TaskViewController
+            controller.managedObjectContext = self.managedObjectContext
+            controller.selectedAssignment = FinishedAssignmentList.objectAtIndex(selectedIndexPath.row) as! Assignment
+            
+        }
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
