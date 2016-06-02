@@ -44,34 +44,52 @@ class AddTaskViewController: UIViewController {
     }
     
     @IBAction func AddTask(sender: UIBarButtonItem) {
-        if(selectedTask != nil){
-            selectedTask!.task_title = taskTitleLabel.text
-            selectedTask!.task_details = taskDescriptionField.text
-            
-            if(selectedTask?.task_status == true){
-                selectedAssignment.assignment_status = String(Int(selectedAssignment.assignment_status!)! - Int((selectedTask?.task_percentage)!) + Int(taskWorth.text!)!)
+            if(selectedTask != nil){
+                if(Int(selectedAssignment.assignment_status!)!-Int((selectedTask?.task_percentage)!) + Int(taskWorth.text!)! <= 100){
+                    selectedTask!.task_title = taskTitleLabel.text
+                    selectedTask!.task_details = taskDescriptionField.text
+                    
+                    if(selectedTask?.task_status == true){
+                        selectedAssignment.assignment_status = String(Int(selectedAssignment.assignment_status!)! - Int((selectedTask?.task_percentage)!) + Int(taskWorth.text!)!)
+                    }
+                    
+                    selectedTask!.task_percentage = Int(taskWorth.text!)
+                    do
+                    {
+                        try self.managedObjectContext.save()
+                        print("A Task has been modified!")
+                    }
+                    catch let error
+                    {
+                        print("Could not save Deletion \(error)")
+                    }
+                    self.navigationController?.popViewControllerAnimated(true)
+                }else{
+                    let alertController = UIAlertController(title: "Total percentage invalid", message:
+                        "By adding this task, the overall percentage of this assignment will go over 100%", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+               
+            }else{
+                if(Int(selectedAssignment.assignment_status!)!+Int(taskWorth.text!)! <= 100){
+                    let newTask: Task = (NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext: self.managedObjectContext)as! Task)
+                    newTask.setValue(taskTitleLabel.text, forKey: "task_title")
+                    newTask.setValue(taskDescriptionField.text, forKey: "task_details")
+                    newTask.setValue(Int(taskWorth.text!), forKey: "task_percentage")
+                    newTask.setValue(false, forKey: "task_status")
+                    self.delegate!.addTask(newTask)
+                    self.navigationController?.popViewControllerAnimated(true)
+                }else{
+                    let alertController = UIAlertController(title: "Total percentage invalid", message:
+                        "By adding this task, the overall percentage of this assignment will go over 100%", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
+                }
             }
-            
-            selectedTask!.task_percentage = Int(taskWorth.text!)
-            do
-            {
-                try self.managedObjectContext.save()
-                print("A Task has been modified!")
-            }
-            catch let error
-            {
-                print("Could not save Deletion \(error)")
-            }
-            self.navigationController?.popViewControllerAnimated(true)
-        }else{
-            let newTask: Task = (NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext: self.managedObjectContext)as! Task)
-            newTask.setValue(taskTitleLabel.text, forKey: "task_title")
-            newTask.setValue(taskDescriptionField.text, forKey: "task_details")
-            newTask.setValue(Int(taskWorth.text!), forKey: "task_percentage")
-            newTask.setValue(false, forKey: "task_status")
-            self.delegate!.addTask(newTask)
-            self.navigationController?.popViewControllerAnimated(true)
-        }
     }
 
     @IBAction func markComplete(sender: UIButton) {
