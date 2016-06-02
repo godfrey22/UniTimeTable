@@ -34,6 +34,20 @@
 		A768E6C21CD46C1200CB7E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768E6C01CD46C1200CB7E1F /* LaunchScreen.storyboard */; };
 		A768E6CD1CD46C1200CB7E1F /* UniTimeTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6CC1CD46C1200CB7E1F /* UniTimeTableTests.swift */; };
 		A768E6D81CD46C1200CB7E1F /* UniTimeTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */; };
+		A76D94871CEEAA5400168E5E /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D94861CEEAA5400168E5E /* AddTaskViewController.swift */; };
+		A76EC0021CEAE104004A030D /* UpcomingAssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0011CEAE104004A030D /* UpcomingAssignmentCell.swift */; };
+		A76EC0041CEAE1A8004A030D /* FinishedAssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0031CEAE1A8004A030D /* FinishedAssignmentCell.swift */; };
+		A76EC0071CEAE259004A030D /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0061CEAE259004A030D /* AssignmentViewController.swift */; };
+		A76EC0091CEAE262004A030D /* AddAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0081CEAE262004A030D /* AddAssignmentViewController.swift */; };
+		A76EC00B1CEAE3BA004A030D /* UpcomingAssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC00A1CEAE3BA004A030D /* UpcomingAssignmentTableViewController.swift */; };
+		A76EC00D1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC00C1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift */; };
+		A76EC0141CEAE74D004A030D /* Assignment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0121CEAE74D004A030D /* Assignment+CoreDataProperties.swift */; };
+		A76EC0151CEAE74D004A030D /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0131CEAE74D004A030D /* Assignment.swift */; };
+		A76EC0171CEBFF08004A030D /* CourseSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */; };
+		A7A0AD691CEC7BE700B1BE3C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */; };
+		A7A0AD6C1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */; };
+		A7A0AD6D1CEC83EA00B1BE3C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */; };
+		A7A0AD6F1CEC8B7300B1BE3C /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6E1CEC8B7300B1BE3C /* TaskCell.swift */; };
 		A7D016EE1CE54A1B008A31BA /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */; };
 		A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */; };
 		A7D017001CE8042F008A31BA /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D016FF1CE8042F008A31BA /* ClassCell.swift */; };
@@ -92,6 +106,20 @@
 		A768E6D31CD46C1200CB7E1F /* UniTimeTableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniTimeTableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768E6D71CD46C1200CB7E1F /* UniTimeTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniTimeTableUITests.swift; sourceTree = "<group>"; };
 		A768E6D91CD46C1200CB7E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A76D94861CEEAA5400168E5E /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		A76EC0011CEAE104004A030D /* UpcomingAssignmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingAssignmentCell.swift; sourceTree = "<group>"; };
+		A76EC0031CEAE1A8004A030D /* FinishedAssignmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedAssignmentCell.swift; sourceTree = "<group>"; };
+		A76EC0061CEAE259004A030D /* AssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
+		A76EC0081CEAE262004A030D /* AddAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssignmentViewController.swift; sourceTree = "<group>"; };
+		A76EC00A1CEAE3BA004A030D /* UpcomingAssignmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingAssignmentTableViewController.swift; sourceTree = "<group>"; };
+		A76EC00C1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedAssignmentTableViewController.swift; sourceTree = "<group>"; };
+		A76EC0121CEAE74D004A030D /* Assignment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assignment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A76EC0131CEAE74D004A030D /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectViewController.swift; sourceTree = "<group>"; };
+		A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		A7A0AD6E1CEC8B7300B1BE3C /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		A7D016ED1CE54A1B008A31BA /* ClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		A7D016EF1CE54A28008A31BA /* AddClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassViewController.swift; sourceTree = "<group>"; };
 		A7D016FF1CE8042F008A31BA /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
@@ -128,6 +156,7 @@
 		A70B5C151CDF331100E0EA0D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A76EC0051CEAE234004A030D /* Assignment ViewControllers */,
 				A70BE86C1CE9581E005CC0D0 /* Semester ViewControllers */,
 				A70BE86D1CE95830005CC0D0 /* Course ViewControllers */,
 				A70BE86B1CE9580B005CC0D0 /* Class ViewControllers */,
@@ -140,6 +169,10 @@
 		A70B5C161CDF332100E0EA0D /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */,
+				A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */,
+				A76EC0121CEAE74D004A030D /* Assignment+CoreDataProperties.swift */,
+				A76EC0131CEAE74D004A030D /* Assignment.swift */,
 				A70B5C331CE0698F00E0EA0D /* Semester+CoreDataProperties.swift */,
 				A70B5C341CE0698F00E0EA0D /* Semester.swift */,
 				A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */,
@@ -157,6 +190,9 @@
 		A70B5C391CE06E0200E0EA0D /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				A7A0AD6E1CEC8B7300B1BE3C /* TaskCell.swift */,
+				A76EC0011CEAE104004A030D /* UpcomingAssignmentCell.swift */,
+				A76EC0031CEAE1A8004A030D /* FinishedAssignmentCell.swift */,
 				A70BE8701CE96317005CC0D0 /* TeacherCell.swift */,
 				A70B5C3A1CE06E1800E0EA0D /* SemesterCell.swift */,
 				A754CE2C1CE2E22100283B84 /* CourseCell.swift */,
@@ -247,6 +283,28 @@
 				A768E6D91CD46C1200CB7E1F /* Info.plist */,
 			);
 			path = UniTimeTableUITests;
+			sourceTree = "<group>";
+		};
+		A76EC0051CEAE234004A030D /* Assignment ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7A0AD671CEC7BD200B1BE3C /* Task ViewControllers */,
+				A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */,
+				A76EC00A1CEAE3BA004A030D /* UpcomingAssignmentTableViewController.swift */,
+				A76EC00C1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift */,
+				A76EC0061CEAE259004A030D /* AssignmentViewController.swift */,
+				A76EC0081CEAE262004A030D /* AddAssignmentViewController.swift */,
+			);
+			name = "Assignment ViewControllers";
+			sourceTree = "<group>";
+		};
+		A7A0AD671CEC7BD200B1BE3C /* Task ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */,
+				A76D94861CEEAA5400168E5E /* AddTaskViewController.swift */,
+			);
+			name = "Task ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,31 +441,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76EC0151CEAE74D004A030D /* Assignment.swift in Sources */,
 				A70BE8711CE96317005CC0D0 /* TeacherCell.swift in Sources */,
+				A76EC0091CEAE262004A030D /* AddAssignmentViewController.swift in Sources */,
 				A7D017021CE82160008A31BA /* TypeViewController.swift in Sources */,
+				A7A0AD6C1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift in Sources */,
 				A7D017001CE8042F008A31BA /* ClassCell.swift in Sources */,
 				A768E6B71CD46C1100CB7E1F /* ViewController.swift in Sources */,
+				A76EC0141CEAE74D004A030D /* Assignment+CoreDataProperties.swift in Sources */,
 				A7D017081CE82431008A31BA /* TypeCell.swift in Sources */,
+				A76D94871CEEAA5400168E5E /* AddTaskViewController.swift in Sources */,
 				A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */,
 				A754CE2B1CE2D9CE00283B84 /* AddCourseViewController.swift in Sources */,
 				A70B5C361CE0698F00E0EA0D /* Semester.swift in Sources */,
 				A754CE271CE1A8FB00283B84 /* Course.swift in Sources */,
+				A76EC0171CEBFF08004A030D /* CourseSelectViewController.swift in Sources */,
 				A754CE2D1CE2E22100283B84 /* CourseCell.swift in Sources */,
 				A70B5C351CE0698F00E0EA0D /* Semester+CoreDataProperties.swift in Sources */,
 				A70BE8641CE954FD005CC0D0 /* Class+CoreDataProperties.swift in Sources */,
 				A70BE8651CE954FD005CC0D0 /* Class.swift in Sources */,
+				A7A0AD691CEC7BE700B1BE3C /* TaskViewController.swift in Sources */,
 				A70BE86F1CE95F99005CC0D0 /* TeacherViewController.swift in Sources */,
+				A76EC0041CEAE1A8004A030D /* FinishedAssignmentCell.swift in Sources */,
+				A76EC00D1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift in Sources */,
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
+				A76EC00B1CEAE3BA004A030D /* UpcomingAssignmentTableViewController.swift in Sources */,
 				A70BE8611CE954CD005CC0D0 /* Teacher.swift in Sources */,
+				A76EC0021CEAE104004A030D /* UpcomingAssignmentCell.swift in Sources */,
+				A7A0AD6D1CEC83EA00B1BE3C /* Task.swift in Sources */,
 				A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */,
 				A70B5C281CDF361A00E0EA0D /* AddSemesterViewController.swift in Sources */,
 				A70BE8681CE9552F005CC0D0 /* Type+CoreDataProperties.swift in Sources */,
 				A7D016EE1CE54A1B008A31BA /* ClassViewController.swift in Sources */,
 				A754CE291CE2D1F200283B84 /* CourseViewController.swift in Sources */,
+				A76EC0071CEAE259004A030D /* AssignmentViewController.swift in Sources */,
 				A70B5C3B1CE06E1800E0EA0D /* SemesterCell.swift in Sources */,
 				A70BE8601CE954CD005CC0D0 /* Teacher+CoreDataProperties.swift in Sources */,
 				A70B5C381CE06B4D00E0EA0D /* SemesterViewController.swift in Sources */,
 				A768E6B51CD46C1100CB7E1F /* AppDelegate.swift in Sources */,
+				A7A0AD6F1CEC8B7300B1BE3C /* TaskCell.swift in Sources */,
 				A70BE8691CE9552F005CC0D0 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,7 +32,7 @@ class AddCourseViewController: UIViewController {
             do
             {
                 try self.managedObjectContext.save()
-                print("A Course has been added!")
+                print("A Course has been modified!")
             }
             catch let error
             {

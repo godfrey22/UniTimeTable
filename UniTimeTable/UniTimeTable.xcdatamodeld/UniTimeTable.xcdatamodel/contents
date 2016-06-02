@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
-    <entity name="Assignment" syncable="YES">
+    <entity name="Assignment" representedClassName=".Assignment" syncable="YES">
         <attribute name="assignment_due" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="assignment_status" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="assignment_status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="assignment_title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="assignmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="courseID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="teacherID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="belongs_to_Course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="hasAssignment" inverseEntity="Course" syncable="YES"/>
         <relationship name="hasTask" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="belongs_to_assignment" inverseEntity="Task" syncable="YES"/>
     </entity>
@@ -39,14 +36,11 @@
         <attribute name="startYear" optional="YES" attributeType="Date" minDateTimeInterval="473294700" syncable="YES"/>
         <relationship name="hasCourse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="belongs_to_semester" inverseEntity="Course" syncable="YES"/>
     </entity>
-    <entity name="Task" syncable="YES">
-        <attribute name="assignmentID" attributeType="Integer 16" minValueString="1" defaultValueString="1" syncable="YES"/>
+    <entity name="Task" representedClassName=".Task" syncable="YES">
         <attribute name="task_details" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="task_due" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="task_percentage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="task_status" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="task_title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="taskID" attributeType="Integer 16" defaultValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="belongs_to_assignment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assignment" inverseName="hasTask" inverseEntity="Assignment" syncable="YES"/>
     </entity>
     <entity name="Teacher" representedClassName=".Teacher" syncable="YES">
@@ -61,12 +55,12 @@
         <relationship name="belongs_to_Class" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Class" inverseName="hasType" inverseEntity="Class" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="163"/>
+        <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="120"/>
         <element name="Class" positionX="-6615" positionY="-3744" width="128" height="178"/>
         <element name="Consult" positionX="-6176" positionY="-3694" width="128" height="73"/>
         <element name="Course" positionX="-6408" positionY="-3753" width="144" height="133"/>
         <element name="Semester" positionX="-6372" positionY="-3931" width="128" height="103"/>
-        <element name="Task" positionX="-6149" positionY="-3502" width="128" height="163"/>
+        <element name="Task" positionX="-6149" positionY="-3502" width="128" height="118"/>
         <element name="Teacher" positionX="-6615" positionY="-3465" width="128" height="120"/>
         <element name="Type" positionX="-6624" positionY="-3906" width="128" height="73"/>
     </elements>
