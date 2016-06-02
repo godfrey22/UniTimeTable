@@ -11,11 +11,9 @@ import CoreData
 
 class UpcomingAssignmentTableViewController: UITableViewController {
     
-    
     var managedObjectContext: NSManagedObjectContext
-    var assignmentList: NSMutableArray = []
     var UnfinishedAssignmentList: NSMutableArray = []
-    var FinishedAssignmentList: NSMutableArray = []
+
     var delegate: addAssignmentDelegate!
     
     var semesterList: NSMutableArray = []
@@ -23,7 +21,6 @@ class UpcomingAssignmentTableViewController: UITableViewController {
 
     
     required init?(coder aDecoder: NSCoder) {
-        self.assignmentList = NSMutableArray()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.managedObjectContext = appDelegate.managedObjectContext
         super.init(coder: aDecoder)
@@ -31,12 +28,9 @@ class UpcomingAssignmentTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
         //Get current semester
         let request = NSFetchRequest(entityName: "Semester")
         request.returnsObjectsAsFaults = false
-        
         //Put all the semester into the semesterList
         do{
             let result: NSArray = try managedObjectContext.executeFetchRequest(request)
@@ -59,19 +53,14 @@ class UpcomingAssignmentTableViewController: UITableViewController {
         }
         
         //Clear the assignment list
-        assignmentList.removeAllObjects()
         UnfinishedAssignmentList.removeAllObjects()
-        FinishedAssignmentList.removeAllObjects()
         
         //Put all the assignment into the assignmentList
         let courseList = (NSArray(array: (currentSemester.hasCourse?.allObjects as! [Course])))
         for course in (courseList as! [Course]){
             for assignment in (course.hasAssignment?.allObjects as! [Assignment]) {
-                assignmentList.addObject(assignment)
                 if(Int(assignment.assignment_status!)!<100){
                     UnfinishedAssignmentList.addObject(assignment)
-                }else{
-                    FinishedAssignmentList.addObject(assignment)
                 }
             }
         }
@@ -117,8 +106,8 @@ class UpcomingAssignmentTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            managedObjectContext.deleteObject(assignmentList.objectAtIndex(indexPath.row) as! NSManagedObject)
-            self.assignmentList.removeObjectAtIndex(indexPath.row)
+            managedObjectContext.deleteObject(UnfinishedAssignmentList.objectAtIndex(indexPath.row) as! NSManagedObject)
+            self.UnfinishedAssignmentList.removeObjectAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
             do

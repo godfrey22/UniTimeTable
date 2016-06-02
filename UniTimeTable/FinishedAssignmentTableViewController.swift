@@ -7,12 +7,65 @@
 //
 
 import UIKit
+import CoreData
 
 class FinishedAssignmentTableViewController: UITableViewController {
-
+    
+    var managedObjectContext: NSManagedObjectContext
+    var FinishedAssignmentList: NSMutableArray = []
+    
+    var semesterList: NSMutableArray = []
+    var currentSemester: Semester!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedObjectContext = appDelegate.managedObjectContext
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let request = NSFetchRequest(entityName: "Semester")
+        request.returnsObjectsAsFaults = false
+        //Put all the semester into the semesterList
+        do{
+            let result: NSArray = try managedObjectContext.executeFetchRequest(request)
+            if result.count > 0{
+                self.semesterList = NSMutableArray(array: (result as! [Semester]))
+            }
+        }catch
+        {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        
+        currentSemester = semesterList[0] as! Semester
+        for semester in (semesterList) {
+            if ((semester as! Semester).startYear?.timeIntervalSinceNow < 0){
+                if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
+                    currentSemester = semester as! Semester
+                }
+            }
+        }
+        
+        //Clear the assignment list
+        FinishedAssignmentList.removeAllObjects()
+        
+        //Put all the assignment into the assignmentList
+        let courseList = (NSArray(array: (currentSemester.hasCourse?.allObjects as! [Course])))
+        for course in (courseList as! [Course]){
+            for assignment in (course.hasAssignment?.allObjects as! [Assignment]) {
+                if(Int(assignment.assignment_status!) >= 100){
+                    FinishedAssignmentList.addObject(assignment)
+                }
+            }
+        }
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,23 +82,36 @@ class FinishedAssignmentTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return FinishedAssignmentList.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("FinishedAssignmentCell", forIndexPath: indexPath) as! FinishedAssignmentCell
+        let a: Assignment = self.FinishedAssignmentList[indexPath.row] as! Assignment
+        
+        cell.assignment_title.text = a.assignment_title
+        //cell.due_date.text = a.assignment_due
+        cell.assignment_code.text = a.belongs_to_Course?.course_code
+        
+        if(Int(a.assignment_status!) == 100){
+            cell.status.text = "Not Submitted"
+            cell.status.textColor = UIColor.redColor()
+        }else{
+            cell.status.text = "Submitted"
+            cell.status.textColor = UIColor.greenColor()
+        }
+        
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

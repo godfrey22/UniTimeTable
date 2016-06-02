@@ -13,6 +13,7 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
     
     var managedObjectContext: NSManagedObjectContext
     var containerViewController: UpcomingAssignmentTableViewController?
+    var containerViewController2: FinishedAssignmentTableViewController?
     
     @IBOutlet var upcomingAssignment: UIView!
     
@@ -44,6 +45,13 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
             containerViewController!.delegate = self
             containerViewController?.viewWillAppear(true)
         }
+        if segue.identifier == "FATVC"{
+            let connectContainerViewController = segue.destinationViewController as! FinishedAssignmentTableViewController
+            containerViewController2 = connectContainerViewController
+            containerViewController2!.managedObjectContext = self.managedObjectContext
+            
+            containerViewController2?.viewWillAppear(true)
+        }
         if segue.identifier == "AddAssignment"
         {
             let controller: AddAssignmentViewController = segue.destinationViewController as! AddAssignmentViewController
@@ -54,7 +62,7 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
     
     func addAssignment(assignment: Assignment, course: Course) {
         assignment.belongs_to_Course = course
-        containerViewController?.assignmentList.addObject(assignment)
+        containerViewController?.UnfinishedAssignmentList.addObject(assignment)
         do
         {
             try self.managedObjectContext.save()

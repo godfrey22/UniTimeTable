@@ -14,6 +14,10 @@ class FinishedAssignmentCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    @IBOutlet var assignment_title: UILabel!
+    @IBOutlet var assignment_code: UILabel!
+    @IBOutlet var due_date: UILabel!
+    @IBOutlet var status: UILabel!
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

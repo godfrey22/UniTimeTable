@@ -2224,7 +2224,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="2yy-Ob-Toh" kind="embed" id="RSY-hS-4n0"/>
+                                    <segue destination="2yy-Ob-Toh" kind="embed" identifier="FATVC" id="RSY-hS-4n0"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -3453,7 +3453,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GKt-sn-KtB" customClass="FinishedAssignmentCell" customModule="UniTimeTable" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FinishedAssignmentCell" id="GKt-sn-KtB" customClass="FinishedAssignmentCell" customModule="UniTimeTable" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GKt-sn-KtB" id="vKS-CM-b9b">
@@ -3484,7 +3484,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="248" y="20" width="64" height="21"/>
+                                                <rect key="frame" x="182" y="20" width="130" height="21"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljO-XL-Tqt">
@@ -3514,6 +3514,12 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="assignment_code" destination="ljO-XL-Tqt" id="nPZ-Q0-wOk"/>
+                                    <outlet property="assignment_title" destination="2FY-5n-XyV" id="4mh-ZN-NiG"/>
+                                    <outlet property="due_date" destination="VBB-G3-l1b" id="HDT-3f-5XM"/>
+                                    <outlet property="status" destination="mWe-K9-Wum" id="Bub-c3-YZh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
