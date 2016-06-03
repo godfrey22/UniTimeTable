@@ -45,6 +45,7 @@
 		A76EC0151CEAE74D004A030D /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0131CEAE74D004A030D /* Assignment.swift */; };
 		A76EC0171CEBFF08004A030D /* CourseSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */; };
 		A777DB511D0104F6003F6FA0 /* UCClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DB501D0104F6003F6FA0 /* UCClassCell.swift */; };
+		A777DB551D01067C003F6FA0 /* FocusUCClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DB541D01067C003F6FA0 /* FocusUCClassTableViewController.swift */; };
 		A7A0AD691CEC7BE700B1BE3C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */; };
 		A7A0AD6C1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */; };
 		A7A0AD6D1CEC83EA00B1BE3C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */; };
@@ -118,6 +119,7 @@
 		A76EC0131CEAE74D004A030D /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectViewController.swift; sourceTree = "<group>"; };
 		A777DB501D0104F6003F6FA0 /* UCClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCClassCell.swift; sourceTree = "<group>"; };
+		A777DB541D01067C003F6FA0 /* FocusUCClassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusUCClassTableViewController.swift; sourceTree = "<group>"; };
 		A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		A70B5C151CDF331100E0EA0D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A777DB521D01065D003F6FA0 /* Focus */,
 				A76EC0051CEAE234004A030D /* Assignment ViewControllers */,
 				A70BE86C1CE9581E005CC0D0 /* Semester ViewControllers */,
 				A70BE86D1CE95830005CC0D0 /* Course ViewControllers */,
@@ -299,6 +302,22 @@
 				A76EC0081CEAE262004A030D /* AddAssignmentViewController.swift */,
 			);
 			name = "Assignment ViewControllers";
+			sourceTree = "<group>";
+		};
+		A777DB521D01065D003F6FA0 /* Focus */ = {
+			isa = PBXGroup;
+			children = (
+				A777DB531D010668003F6FA0 /* UCClass */,
+			);
+			name = Focus;
+			sourceTree = "<group>";
+		};
+		A777DB531D010668003F6FA0 /* UCClass */ = {
+			isa = PBXGroup;
+			children = (
+				A777DB541D01067C003F6FA0 /* FocusUCClassTableViewController.swift */,
+			);
+			name = UCClass;
 			sourceTree = "<group>";
 		};
 		A7A0AD671CEC7BD200B1BE3C /* Task ViewControllers */ = {
@@ -457,6 +476,7 @@
 				A7D016F01CE54A28008A31BA /* AddClassViewController.swift in Sources */,
 				A754CE2B1CE2D9CE00283B84 /* AddCourseViewController.swift in Sources */,
 				A70B5C361CE0698F00E0EA0D /* Semester.swift in Sources */,
+				A777DB551D01067C003F6FA0 /* FocusUCClassTableViewController.swift in Sources */,
 				A754CE271CE1A8FB00283B84 /* Course.swift in Sources */,
 				A76EC0171CEBFF08004A030D /* CourseSelectViewController.swift in Sources */,
 				A754CE2D1CE2E22100283B84 /* CourseCell.swift in Sources */,
