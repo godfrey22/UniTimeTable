@@ -44,6 +44,7 @@
 		A76EC0141CEAE74D004A030D /* Assignment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0121CEAE74D004A030D /* Assignment+CoreDataProperties.swift */; };
 		A76EC0151CEAE74D004A030D /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0131CEAE74D004A030D /* Assignment.swift */; };
 		A76EC0171CEBFF08004A030D /* CourseSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */; };
+		A777DB511D0104F6003F6FA0 /* UCClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777DB501D0104F6003F6FA0 /* UCClassCell.swift */; };
 		A7A0AD691CEC7BE700B1BE3C /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */; };
 		A7A0AD6C1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */; };
 		A7A0AD6D1CEC83EA00B1BE3C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */; };
@@ -116,6 +117,7 @@
 		A76EC0121CEAE74D004A030D /* Assignment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assignment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A76EC0131CEAE74D004A030D /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		A76EC0161CEBFF08004A030D /* CourseSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectViewController.swift; sourceTree = "<group>"; };
+		A777DB501D0104F6003F6FA0 /* UCClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCClassCell.swift; sourceTree = "<group>"; };
 		A7A0AD681CEC7BE700B1BE3C /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		A7A0AD6A1CEC83EA00B1BE3C /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A7A0AD6B1CEC83EA00B1BE3C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		A70B5C391CE06E0200E0EA0D /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				A777DB501D0104F6003F6FA0 /* UCClassCell.swift */,
 				A7A0AD6E1CEC8B7300B1BE3C /* TaskCell.swift */,
 				A76EC0011CEAE104004A030D /* UpcomingAssignmentCell.swift */,
 				A76EC0031CEAE1A8004A030D /* FinishedAssignmentCell.swift */,
@@ -464,6 +467,7 @@
 				A70BE86F1CE95F99005CC0D0 /* TeacherViewController.swift in Sources */,
 				A76EC0041CEAE1A8004A030D /* FinishedAssignmentCell.swift in Sources */,
 				A76EC00D1CEAE3D7004A030D /* FinishedAssignmentTableViewController.swift in Sources */,
+				A777DB511D0104F6003F6FA0 /* UCClassCell.swift in Sources */,
 				A768E6BD1CD46C1200CB7E1F /* UniTimeTable.xcdatamodeld in Sources */,
 				A76EC00B1CEAE3BA004A030D /* UpcomingAssignmentTableViewController.swift in Sources */,
 				A70BE8611CE954CD005CC0D0 /* Teacher.swift in Sources */,
