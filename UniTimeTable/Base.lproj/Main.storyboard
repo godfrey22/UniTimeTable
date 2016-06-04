@@ -1841,14 +1841,13 @@
         <!--Focus-->
         <scene sceneID="5GB-og-42h">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G4N-Vs-kV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="0ut-9P-pIZ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c9h-dD-w5Z"/>
                         <viewControllerLayoutGuide type="bottom" id="YGY-PS-qUd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PIA-C7-A5E">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Class" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUf-u0-X7x">
@@ -1926,7 +1925,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="5kd-ua-Tqr" kind="embed" id="bQp-3G-09f"/>
+                                    <segue destination="5kd-ua-Tqr" kind="embed" identifier="UCATVC" id="bQp-3G-09f"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -1956,12 +1955,12 @@
                                 <exclude reference="4hQ-fk-LpC"/>
                                 <exclude reference="XeP-kK-if0"/>
                                 <exclude reference="caB-h7-hqH"/>
-                                <exclude reference="7lu-ao-wO2"/>
-                                <exclude reference="9U9-XU-GEV"/>
-                                <exclude reference="DL5-rH-608"/>
                                 <exclude reference="04r-Qj-JPb"/>
                                 <exclude reference="Kpr-XD-64q"/>
                                 <exclude reference="kHW-xs-XhM"/>
+                                <exclude reference="7lu-ao-wO2"/>
+                                <exclude reference="9U9-XU-GEV"/>
+                                <exclude reference="DL5-rH-608"/>
                                 <exclude reference="3A2-Tc-57g"/>
                                 <exclude reference="LuZ-zF-zIL"/>
                                 <exclude reference="rez-tZ-jdM"/>
@@ -1978,12 +1977,12 @@
                                 <include reference="4hQ-fk-LpC"/>
                                 <include reference="XeP-kK-if0"/>
                                 <include reference="caB-h7-hqH"/>
-                                <include reference="7lu-ao-wO2"/>
-                                <include reference="9U9-XU-GEV"/>
-                                <include reference="DL5-rH-608"/>
                                 <include reference="04r-Qj-JPb"/>
                                 <include reference="Kpr-XD-64q"/>
                                 <include reference="kHW-xs-XhM"/>
+                                <include reference="7lu-ao-wO2"/>
+                                <include reference="9U9-XU-GEV"/>
+                                <include reference="DL5-rH-608"/>
                                 <include reference="3A2-Tc-57g"/>
                                 <include reference="LuZ-zF-zIL"/>
                                 <include reference="rez-tZ-jdM"/>
@@ -1993,20 +1992,24 @@
                     <navigationItem key="navigationItem" title="Focus" id="ggy-09-zzt"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4N-Vs-kV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="-2546"/>
+            <point key="canvasLocation" x="1667.25" y="-2545.875"/>
         </scene>
         <!--FocusUC Class Table View Controller-->
         <scene sceneID="Xiu-aa-hIr">
             <objects>
                 <tableViewController id="t7b-Tl-gwG" customClass="FocusUCClassTableViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="0fi-aE-w7Z">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UCClassCell" id="Q4K-HA-Gdj" customClass="UCClassCell" customModule="UniTimeTable" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q4K-HA-Gdj" id="dDM-Nu-lZ2">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tb-HT-oNJ">
@@ -2118,12 +2121,12 @@
                                         <mask key="constraints">
                                             <exclude reference="BjM-nT-tNV"/>
                                             <exclude reference="kJb-2m-eyo"/>
+                                            <exclude reference="lTY-mf-NzM"/>
+                                            <exclude reference="noN-vS-r6b"/>
                                             <exclude reference="DGg-yQ-lSj"/>
                                             <exclude reference="h3j-nq-ccF"/>
                                             <exclude reference="ds8-pq-1Uh"/>
                                             <exclude reference="wOT-wB-IaU"/>
-                                            <exclude reference="lTY-mf-NzM"/>
-                                            <exclude reference="noN-vS-r6b"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -2138,12 +2141,12 @@
                                         <mask key="constraints">
                                             <include reference="BjM-nT-tNV"/>
                                             <include reference="kJb-2m-eyo"/>
+                                            <include reference="lTY-mf-NzM"/>
+                                            <include reference="noN-vS-r6b"/>
                                             <include reference="DGg-yQ-lSj"/>
                                             <include reference="h3j-nq-ccF"/>
                                             <include reference="ds8-pq-1Uh"/>
                                             <include reference="wOT-wB-IaU"/>
-                                            <include reference="lTY-mf-NzM"/>
-                                            <include reference="noN-vS-r6b"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -2160,25 +2163,75 @@
                             <outlet property="delegate" destination="t7b-Tl-gwG" id="LPe-Yz-6E2"/>
                         </connections>
                     </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rw8-fS-Q45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940.25" y="-2759"/>
+            <point key="canvasLocation" x="2612.25" y="-2789.25"/>
         </scene>
-        <!--Table View Controller-->
+        <!--FocusUC Assignment Table View Controller-->
         <scene sceneID="jZI-Kw-zFh">
             <objects>
-                <tableViewController id="5kd-ua-Tqr" sceneMemberID="viewController">
+                <tableViewController id="5kd-ua-Tqr" customClass="FocusUCAssignmentTableViewController" customModule="UniTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="vcm-ci-jsU">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tT6-7w-XGY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UCAssignmentCell" id="tT6-7w-XGY" customClass="UCAssignmentCell" customModule="UniTimeTable" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tT6-7w-XGY" id="5UU-zc-Xw0">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9j-Tc-YwC">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="9" y="28" width="164" height="21"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Per" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inw-re-nyj">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="289" y="14" width="78" height="21"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UN-bS-JtG">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="8" width="122" height="21"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="w9j-Tc-YwC"/>
+                                            <exclude reference="Inw-re-nyj"/>
+                                            <exclude reference="2UN-bS-JtG"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="w9j-Tc-YwC"/>
+                                            <include reference="Inw-re-nyj"/>
+                                            <include reference="2UN-bS-JtG"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="courseCode" destination="2UN-bS-JtG" id="ZVb-w8-X7N"/>
+                                    <outlet property="dueDate" destination="w9j-Tc-YwC" id="qLK-sV-CFy"/>
+                                    <outlet property="percentage" destination="Inw-re-nyj" id="B7H-MC-maO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2189,7 +2242,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yo-WK-zcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1973.25" y="-2320"/>
+            <point key="canvasLocation" x="2612.25" y="-2301.75"/>
         </scene>
         <!--Assignments-->
         <scene sceneID="ZaC-RV-Rgv">
@@ -2356,7 +2409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKh-21-rMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3210" y="-1540"/>
+            <point key="canvasLocation" x="2040" y="-1716"/>
         </scene>
         <!--Add Assignment View Controller-->
         <scene sceneID="xZB-u9-c1n">
@@ -2587,7 +2640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqt-Zn-HiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3976.5" y="-1540"/>
+            <point key="canvasLocation" x="3772.5" y="-1716"/>
         </scene>
         <!--Course Select View Controller-->
         <scene sceneID="L8e-Ha-Pg3">
@@ -2724,7 +2777,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gc-pS-CT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4602" y="-1540"/>
+            <point key="canvasLocation" x="5160" y="-1716"/>
         </scene>
         <!--Upcoming Assignment Table View Controller-->
         <scene sceneID="RMe-Vm-9ep">
@@ -2815,7 +2868,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVe-tt-A3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2146.5" y="-986"/>
+            <point key="canvasLocation" x="1276.5" y="-1274.25"/>
         </scene>
         <!--Task View Controller-->
         <scene sceneID="QLK-lW-lUe">
@@ -3214,7 +3267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWo-xy-l78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3149.25" y="-321.5"/>
+            <point key="canvasLocation" x="2040.75" y="-736.125"/>
         </scene>
         <!--Task-->
         <scene sceneID="iGr-68-KhH">
@@ -3502,7 +3555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJ1-35-6Uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3947.25" y="-321.5"/>
+            <point key="canvasLocation" x="2891.25" y="-736.125"/>
         </scene>
         <!--Finished Assignment Table View Controller-->
         <scene sceneID="Gyk-lH-hLh">
@@ -3591,7 +3644,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzX-S6-ssR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4104" y="-986"/>
+            <point key="canvasLocation" x="2850" y="-1274.25"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0cc-DI-zpt">
@@ -3672,8 +3725,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="9jr-XR-VZV"/>
-        <segue reference="iIA-Rw-rFN"/>
-        <segue reference="NhV-Jx-bBa"/>
+        <segue reference="rjc-z0-Pdw"/>
+        <segue reference="8DM-nh-su0"/>
         <segue reference="VV3-MD-tko"/>
         <segue reference="k6I-I3-8g4"/>
     </inferredMetricsTieBreakers>
