@@ -15,7 +15,7 @@ class FinishedAssignmentTableViewController: UITableViewController {
     var FinishedAssignmentList: NSMutableArray = []
     
     var semesterList: NSMutableArray = []
-    var currentSemester: Semester!
+    var currentSemester: Semester?
     
     required init?(coder aDecoder: NSCoder)
     {
@@ -40,11 +40,11 @@ class FinishedAssignmentTableViewController: UITableViewController {
             print(fetchError)
         }
         
-        currentSemester = semesterList[0] as! Semester
+        currentSemester = semesterList[0] as? Semester
         for semester in (semesterList) {
             if ((semester as! Semester).startYear?.timeIntervalSinceNow < 0){
                 if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
-                    currentSemester = semester as! Semester
+                    currentSemester = semester as? Semester
                 }
             }
         }
@@ -53,7 +53,7 @@ class FinishedAssignmentTableViewController: UITableViewController {
         FinishedAssignmentList.removeAllObjects()
         
         //Put all the assignment into the assignmentList
-        let courseList = (NSArray(array: (currentSemester.hasCourse?.allObjects as! [Course])))
+        let courseList = (NSArray(array: (currentSemester!.hasCourse?.allObjects as! [Course])))
         for course in (courseList as! [Course]){
             for assignment in (course.hasAssignment?.allObjects as! [Assignment]) {
                 if(Int(assignment.assignment_status!) >= 100){
@@ -95,8 +95,11 @@ class FinishedAssignmentTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("FinishedAssignmentCell", forIndexPath: indexPath) as! FinishedAssignmentCell
         let a: Assignment = self.FinishedAssignmentList[indexPath.row] as! Assignment
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
         cell.assignment_title.text = a.assignment_title
-        //cell.due_date.text = a.assignment_due
+        cell.due_date.text = dateFormatter.stringFromDate(a.assignment_due!)
         cell.assignment_code.text = a.belongs_to_Course?.course_code
         
         if(Int(a.assignment_status!) == 100){

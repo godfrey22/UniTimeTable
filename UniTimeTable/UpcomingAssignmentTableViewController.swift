@@ -17,7 +17,7 @@ class UpcomingAssignmentTableViewController: UITableViewController {
     var delegate: addAssignmentDelegate!
     
     var semesterList: NSMutableArray = []
-    var currentSemester: Semester!
+    var currentSemester: Semester?
 
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,11 +43,11 @@ class UpcomingAssignmentTableViewController: UITableViewController {
             print(fetchError)
         }
         
-        currentSemester = semesterList[0] as! Semester
+        currentSemester = semesterList[0] as? Semester
         for semester in (semesterList) {
             if ((semester as! Semester).startYear?.timeIntervalSinceNow < 0){
                 if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
-                    currentSemester = semester as! Semester
+                    currentSemester = semester as? Semester
                 }
             }
         }
@@ -56,7 +56,7 @@ class UpcomingAssignmentTableViewController: UITableViewController {
         UnfinishedAssignmentList.removeAllObjects()
         
         //Put all the assignment into the assignmentList
-        let courseList = (NSArray(array: (currentSemester.hasCourse?.allObjects as! [Course])))
+        let courseList = (NSArray(array: (currentSemester!.hasCourse?.allObjects as! [Course])))
         for course in (courseList as! [Course]){
             for assignment in (course.hasAssignment?.allObjects as! [Assignment]) {
                 if(Int(assignment.assignment_status!)!<100){
@@ -96,8 +96,13 @@ class UpcomingAssignmentTableViewController: UITableViewController {
         cell.courseCode.text = a.belongs_to_Course?.course_code
         cell.assignmentTitle.text = a.assignment_title
         cell.percentage.text = "\(a.assignment_status!)%"
-        
         cell.percentage.textColor = UIColor.redColor()
+        
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        cell.dueDate.text = dateFormatter.stringFromDate(a.assignment_due!)
 
         // Configure the cell...
         return cell
