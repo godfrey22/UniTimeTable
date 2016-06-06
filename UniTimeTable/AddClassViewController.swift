@@ -108,6 +108,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
         if((selectedClass) != nil)
         {
             selectedType = selectedClass?.hasType
