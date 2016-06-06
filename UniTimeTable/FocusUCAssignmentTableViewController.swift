@@ -96,7 +96,11 @@ class FocusUCAssignmentTableViewController: UITableViewController {
         
         let a: Assignment = self.upcomingAssignmentList[indexPath.row] as! Assignment
         cell.courseCode.text = a.belongs_to_Course?.course_code
-        //cell.dueDate
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        cell.dueDate.text = dateFormatter.stringFromDate(a.assignment_due!)
         cell.percentage.text = a.assignment_status
         
         

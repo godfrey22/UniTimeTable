@@ -111,8 +111,11 @@ class FocusUCClassTableViewController: UITableViewController {
         cell.courseLocation.text = c.location
         cell.courseType.text = c.hasType?.type_name
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
-        //cell.courseTime = c.startTime
+         cell.courseTime.text = dateFormatter.stringFromDate(c.startTime!) + "-" + dateFormatter.stringFromDate(c.endTime!)
+        
         // Configure the cell...
 
         return cell
