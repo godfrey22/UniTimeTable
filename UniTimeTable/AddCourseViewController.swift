@@ -25,6 +25,22 @@ class AddCourseViewController: UIViewController {
     
     @IBAction func addCourse(sender: AnyObject) {
         
+        let courseCodeCondition = (courseCodeInput.text != "")
+        let courseNameCondition = (courseNameInput.text != "")
+        
+        let pass = (courseCodeCondition && courseNameCondition)
+        
+        if(!pass){
+            let alertController = UIAlertController(title: "Empty fields", message:
+                "Please fill in necessary information", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
+
+        
+        
         if((selectedCourse) != nil)
         {
             selectedCourse?.setValue(courseNameInput.text, forKey: "course_name")
