@@ -12,8 +12,8 @@ import CoreData
 class AssignmentViewController: UIViewController, addAssignmentDelegate {
     
     var managedObjectContext: NSManagedObjectContext
-    var containerViewController: UpcomingAssignmentTableViewController?
-    var containerViewController2: FinishedAssignmentTableViewController?
+    var containerViewController: UpcomingAssignmentTableViewController!
+    var containerViewController2: FinishedAssignmentTableViewController!
     
     @IBOutlet var upcomingAssignment: UIView!
     

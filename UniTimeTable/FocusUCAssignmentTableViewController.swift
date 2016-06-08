@@ -16,7 +16,7 @@ class FocusUCAssignmentTableViewController: UITableViewController {
     var containerViewController: FocusUCAssignmentTableViewController?
     
     var semesterList: NSMutableArray = []
-    var currentSemester: Semester!
+    var currentSemester: Semester?
     
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -39,27 +39,30 @@ class FocusUCAssignmentTableViewController: UITableViewController {
             print(fetchError)
         }
         
-        currentSemester = semesterList[0] as! Semester
-        for semester in semesterList {
-            if((semester as! Semester).startYear?.timeIntervalSinceNow<0){
-                if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
-                    currentSemester = semester as! Semester
+        if(semesterList.count > 0){
+            currentSemester = semesterList[0] as? Semester
+            for semester in semesterList {
+                if((semester as! Semester).startYear?.timeIntervalSinceNow<0){
+                    if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
+                        currentSemester = semester as? Semester
+                    }
+                }
+            }
+            
+            upcomingAssignmentList.removeAllObjects()
+            
+            let courseList = (NSArray(array: (currentSemester!.hasCourse?.allObjects as! [Course])))
+            for course in (courseList as! [Course]) {
+                for assignment in (course.hasAssignment?.allObjects as! [Assignment]){
+                    let calendar = NSCalendar.currentCalendar()
+                    let components = calendar.components([.Day], fromDate: (assignment.assignment_due)!, toDate: NSDate(), options: [])
+                    if (components.day < 7){
+                        self.upcomingAssignmentList.addObject(assignment)
+                    }
                 }
             }
         }
-        
-        upcomingAssignmentList.removeAllObjects()
-        
-        let courseList = (NSArray(array: (currentSemester.hasCourse?.allObjects as! [Course])))
-        for course in (courseList as! [Course]) {
-            for assignment in (course.hasAssignment?.allObjects as! [Assignment]){
-                let calendar = NSCalendar.currentCalendar()
-                let components = calendar.components([.Day], fromDate: (assignment.assignment_due)!, toDate: NSDate(), options: [])
-                if (components.day < 7){
-                    self.upcomingAssignmentList.addObject(assignment)
-                }
-            }
-        }
+
         self.tableView.reloadData()
     }
 

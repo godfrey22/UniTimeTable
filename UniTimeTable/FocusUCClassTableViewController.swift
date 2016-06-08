@@ -26,10 +26,10 @@ class FocusUCClassTableViewController: UITableViewController {
     
     var managedObjectContext: NSManagedObjectContext
     var upcomingClassList: NSMutableArray = []
-    var containerViewController: FocusUCClassTableViewController?
+    var containerViewController: FocusUCClassTableViewController!
     
     var semesterList: NSMutableArray = []
-    var currentSemester: Semester!
+    var currentSemester: Semester?
     
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -52,25 +52,30 @@ class FocusUCClassTableViewController: UITableViewController {
             print(fetchError)
         }
         
-        currentSemester = semesterList[0] as! Semester
-        for semester in semesterList {
-            if((semester as! Semester).startYear?.timeIntervalSinceNow<0){
-                if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
-                    currentSemester = semester as! Semester
+        
+        if(semesterList.count > 0){
+            currentSemester = semesterList[0] as? Semester
+            for semester in semesterList {
+                if((semester as! Semester).startYear?.timeIntervalSinceNow<0){
+                    if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
+                        currentSemester = semester as? Semester
+                    }
                 }
             }
-        }
-        
-        upcomingClassList.removeAllObjects()
-        
-        let courseList = (NSArray(array: (currentSemester.hasCourse?.allObjects as! [Course])))
-        for course in (courseList as! [Course]) {
-            for _class in (course.hasClass?.allObjects as! [Class]){
-                if (Int(_class.week!) + 1 == NSDate().dayOfWeek()){
-                    upcomingClassList.addObject(_class)
+            
+            upcomingClassList.removeAllObjects()
+            
+            let courseList = (NSArray(array: (currentSemester!.hasCourse?.allObjects as! [Course])))
+            for course in (courseList as! [Course]) {
+                for _class in (course.hasClass?.allObjects as! [Class]){
+                    if (Int(_class.week!) + 1 == NSDate().dayOfWeek()){
+                        upcomingClassList.addObject(_class)
+                    }
                 }
             }
+
         }
+        
         self.tableView.reloadData()
     }
     
