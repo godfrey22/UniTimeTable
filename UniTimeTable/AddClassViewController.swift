@@ -184,6 +184,23 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
     }
     
     @IBAction func addClass(sender: AnyObject) {
+        
+        let dateCondition = (startDateInput.text != "" && endDateInput.text != "")
+        let timeCondition = (startTimeInput.text != "" && endTimeInput.text != "")
+        let typeCondition = typeLabel.text != ""
+        
+        let pass = (dateCondition && timeCondition && typeCondition)
+        
+        if(!pass){
+            let alertController = UIAlertController(title: "Empty fields", message:
+                "Please fill in necessary information", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        
         if((selectedClass) != nil)
         {
             selectedClass!.setValue(selectedType, forKey: "hasType")
