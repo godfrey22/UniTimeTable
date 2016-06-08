@@ -87,6 +87,21 @@ class AddSemesterViewController: UIViewController {
     //Button function
     @IBAction func saveSemester(sender: UIButton) {
 
+        let semesterNameCondition = (semesterNameInput.text != "")
+        let startDateCondition = (semesterStartDate.text != "")
+        let endDateCondition = (semesterEndDate.text != "")
+        
+        let pass = (endDateCondition && startDateCondition && semesterNameCondition)
+        
+        if(!pass){
+            let alertController = UIAlertController(title: "Empty fields", message:
+                "Please fill in necessary information", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
+        
         if (startDate.timeIntervalSince1970<endDate.timeIntervalSince1970)
         {
             
@@ -104,7 +119,6 @@ class AddSemesterViewController: UIViewController {
                 {
                     print("Could not save Deletion \(error)")
                 }
-
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }else{
                 //Add a newSemester Object into the Semester table

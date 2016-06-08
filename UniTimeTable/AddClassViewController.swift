@@ -129,7 +129,6 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
             typeLabel.text = selectedClass?.hasType?.type_name
             teacherLabel.text = selectedClass?.hasTeacher?.name
             locationInput.text = selectedClass?.location
-            //To-Do
             
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
@@ -147,8 +146,8 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
             endTimeInput.text = dateFormatter.stringFromDate(endTime)
             
             weekSelection.selectedSegmentIndex = selectedClass?.week as! Int
-            
         }
+        
         if((selectedType) != nil)
         {
             typeLabel.text = selectedType.type_name
