@@ -48,6 +48,22 @@ class AddAssignmentViewController: UIViewController, courseSelectionDelegate{
     }
 
     @IBAction func saveAssignment(sender: UIButton) {
+        
+        let assignmentTitleCondition = (assignmentTitle.text != "")
+        let assignmentDueCondition = (assignmentDue.text != "")
+        let assignmentcourseCondition = assignmentCourseCode.text != ""
+        
+        let pass = (assignmentDueCondition && assignmentTitleCondition && assignmentcourseCondition)
+        
+        if(!pass){
+            let alertController = UIAlertController(title: "Empty fields", message:
+                "Please fill in necessary information", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
+        
         let newAssignment: Assignment = (NSEntityDescription.insertNewObjectForEntityForName("Assignment", inManagedObjectContext: self.managedObjectContext)as! Assignment)
         newAssignment.setValue(assignmentTitle.text, forKey: "assignment_title")
         newAssignment.setValue(dueDate, forKey: "assignment_due")
@@ -84,14 +100,18 @@ class AddAssignmentViewController: UIViewController, courseSelectionDelegate{
             let fetchError = error as NSError
             print(fetchError)
         }
-        selectedSemester = semesterList[0] as! Semester
-        for semester in (semesterList) {
-            if ((semester as! Semester).startYear?.timeIntervalSinceNow < 0){
-                if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
-                    selectedSemester = semester as! Semester
+        
+        if(semesterList.count > 0){
+            selectedSemester = semesterList[0] as! Semester
+            for semester in (semesterList) {
+                if ((semester as! Semester).startYear?.timeIntervalSinceNow < 0){
+                    if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
+                        selectedSemester = semester as! Semester
+                    }
                 }
             }
         }
+
     }
     
     override func viewDidLoad() {

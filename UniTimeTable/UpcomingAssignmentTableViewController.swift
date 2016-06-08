@@ -43,27 +43,30 @@ class UpcomingAssignmentTableViewController: UITableViewController {
             print(fetchError)
         }
         
-        currentSemester = semesterList[0] as? Semester
-        for semester in (semesterList) {
-            if ((semester as! Semester).startYear?.timeIntervalSinceNow < 0){
-                if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
-                    currentSemester = semester as? Semester
+        if(semesterList.count > 0){
+            currentSemester = semesterList[0] as? Semester
+            for semester in (semesterList) {
+                if ((semester as! Semester).startYear?.timeIntervalSinceNow < 0){
+                    if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
+                        currentSemester = semester as? Semester
+                    }
+                }
+            }
+            
+            //Clear the assignment list
+            UnfinishedAssignmentList.removeAllObjects()
+            
+            //Put all the assignment into the assignmentList
+            let courseList = (NSArray(array: (currentSemester!.hasCourse?.allObjects as! [Course])))
+            for course in (courseList as! [Course]){
+                for assignment in (course.hasAssignment?.allObjects as! [Assignment]) {
+                    if(Int(assignment.assignment_status!)!<100){
+                        UnfinishedAssignmentList.addObject(assignment)
+                    }
                 }
             }
         }
-        
-        //Clear the assignment list
-        UnfinishedAssignmentList.removeAllObjects()
-        
-        //Put all the assignment into the assignmentList
-        let courseList = (NSArray(array: (currentSemester!.hasCourse?.allObjects as! [Course])))
-        for course in (courseList as! [Course]){
-            for assignment in (course.hasAssignment?.allObjects as! [Assignment]) {
-                if(Int(assignment.assignment_status!)!<100){
-                    UnfinishedAssignmentList.addObject(assignment)
-                }
-            }
-        }
+
         self.tableView.reloadData()
     }
     
