@@ -18,7 +18,6 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
     @IBOutlet var assignmentTitleLabel: UILabel!
     @IBOutlet var courseCodeLabel: UILabel!
     @IBOutlet var dueDateLabel: UILabel!
-    @IBOutlet var teacherLabel: UILabel!
     @IBOutlet var taskTabelView: UITableView!
     @IBOutlet var submitButton: UIButton!
     
@@ -73,8 +72,10 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
         assignmentTitleLabel.text = selectedAssignment.assignment_title
         courseCodeLabel.text = selectedAssignment.belongs_to_Course?.course_code
         
-        //teacherLabel.text
-        //To-Do Need to fix logic here
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+    
+        dueDateLabel.text = dateFormatter.stringFromDate(selectedAssignment.assignment_due!)
         
         
         let request = NSFetchRequest(entityName: "Task")

@@ -25,6 +25,7 @@ class AddTaskViewController: UIViewController {
     @IBOutlet var taskWorth: UITextField!
     @IBOutlet var completeButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
+    @IBOutlet var taskTitleInput: UITextField!
     
     var selectedTask: Task?
     var selectedIndex: Int?
@@ -44,6 +45,29 @@ class AddTaskViewController: UIViewController {
     }
     
     @IBAction func AddTask(sender: UIBarButtonItem) {
+        
+        do{
+            let titleCondition = (taskTitleInput.text != "")
+            let descriptionCondition = (taskDescriptionField.text != "")
+            let taskWorthCondition = ((taskWorth.text != "" && Int(taskWorth.text!) >= 0))
+            let pass = titleCondition && descriptionCondition && taskWorthCondition
+            
+            if(!pass){
+                let alertController = UIAlertController(title: "Empty fields", message:
+                    "Please fill in necessary information", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
+                print(titleCondition)
+                print(descriptionCondition)
+                print(taskWorthCondition)
+                return
+            }
+            
+        }
+
+        
             if(selectedTask != nil){
                 if(Int(selectedAssignment.assignment_status!)!-Int((selectedTask?.task_percentage)!) + Int(taskWorth.text!)! <= 100){
                     selectedTask!.task_title = taskTitleLabel.text
@@ -75,7 +99,7 @@ class AddTaskViewController: UIViewController {
             }else{
                 if(Int(selectedAssignment.assignment_status!)!+Int(taskWorth.text!)! <= 100){
                     let newTask: Task = (NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext: self.managedObjectContext)as! Task)
-                    newTask.setValue(taskTitleLabel.text, forKey: "task_title")
+                    newTask.setValue(taskTitleInput.text, forKey: "task_title")
                     newTask.setValue(taskDescriptionField.text, forKey: "task_details")
                     newTask.setValue(Int(taskWorth.text!), forKey: "task_percentage")
                     newTask.setValue(false, forKey: "task_status")
@@ -122,7 +146,7 @@ class AddTaskViewController: UIViewController {
         completeButton.hidden = true
         deleteButton.hidden = true
         if((selectedTask != nil)){
-            taskTitleLabel.text = selectedTask?.task_title
+            taskTitleInput.text = selectedTask?.task_title
             taskDescriptionField.text = selectedTask?.task_details
             taskWorth.text = String(selectedTask!.task_percentage!)
             completeButton.hidden = false
