@@ -187,9 +187,10 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
         
         let dateCondition = (startDateInput.text != "" && endDateInput.text != "")
         let timeCondition = (startTimeInput.text != "" && endTimeInput.text != "")
-        let typeCondition = typeLabel.text != ""
+        let typeCondition = (typeLabel.text != "")
+        let teacherCondition = (teacherLabel.text != "")
         
-        let pass = (dateCondition && timeCondition && typeCondition)
+        let pass = (dateCondition && timeCondition && typeCondition && teacherCondition)
         
         if(!pass){
             let alertController = UIAlertController(title: "Empty fields", message:

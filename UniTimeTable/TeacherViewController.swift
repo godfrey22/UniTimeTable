@@ -122,8 +122,7 @@ class TeacherViewController: UIViewController {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let t:Teacher = self.teacherList[indexPath.row] as! Teacher
         delegate.didSelectTeacher(t)
-        //self.navigationController?.popToRootViewControllerAnimated(true)
-        
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
 

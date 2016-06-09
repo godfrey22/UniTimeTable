@@ -38,6 +38,7 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
             
             submitAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
                 self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! + 100)
+                self.navigationController?.popViewControllerAnimated(true)
             }))
             
             submitAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction!) in

@@ -104,7 +104,17 @@ class FocusUCAssignmentTableViewController: UITableViewController {
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         
         cell.dueDate.text = dateFormatter.stringFromDate(a.assignment_due!)
-        cell.percentage.text = a.assignment_status
+        
+        cell.percentage.textColor = UIColor.redColor()
+        
+        if(Int(a.assignment_status!)!<100){
+            cell.percentage.text = "\(a.assignment_status!)%"
+        }else if(Int(a.assignment_status!)!==100){
+            cell.percentage.text = "Not Submitted"
+        }else{
+            cell.percentage.text = "Submitted"
+            cell.percentage.textColor = UIColor.greenColor()
+        }
         
         
         // Configure the cell...
