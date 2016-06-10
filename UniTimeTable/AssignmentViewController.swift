@@ -34,10 +34,10 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //Upcoming assignment table view controller segue
         if segue.identifier == "UATVC" {
             let connectContainerViewController = segue.destinationViewController as! UpcomingAssignmentTableViewController
             containerViewController = connectContainerViewController
@@ -45,6 +45,7 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
             containerViewController!.delegate = self
             containerViewController?.viewWillAppear(true)
         }
+        //Finished assignment table view controller segue
         if segue.identifier == "FATVC"{
             let connectContainerViewController = segue.destinationViewController as! FinishedAssignmentTableViewController
             containerViewController2 = connectContainerViewController
@@ -75,15 +76,5 @@ class AssignmentViewController: UIViewController, addAssignmentDelegate {
         self.navigationController?.popViewControllerAnimated(true)
         containerViewController?.tableView.reloadData()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

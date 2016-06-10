@@ -50,9 +50,9 @@
         <relationship name="belongs_to_Class" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Class" inverseName="hasType" inverseEntity="Class" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="120"/>
-        <element name="Class" positionX="-6615" positionY="-3744" width="128" height="178"/>
-        <element name="Course" positionX="-6408" positionY="-3753" width="144" height="120"/>
+        <element name="Assignment" positionX="-6399" positionY="-3502" width="128" height="118"/>
+        <element name="Class" positionX="-6608" positionY="-3778" width="128" height="178"/>
+        <element name="Course" positionX="-6408" positionY="-3753" width="144" height="118"/>
         <element name="Semester" positionX="-6372" positionY="-3931" width="128" height="103"/>
         <element name="Task" positionX="-6149" positionY="-3502" width="128" height="118"/>
         <element name="Teacher" positionX="-6615" positionY="-3465" width="128" height="120"/>

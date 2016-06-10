@@ -19,6 +19,7 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
     @IBOutlet var semesterTableView: UITableView!
     @IBOutlet var editButton: UIButton!
     @IBAction func editSemester(sender: UIButton) {
+        //allow user to edit semester
         if (editMode == false)
         {
             editMode = true
@@ -28,7 +29,6 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
             editButton.setTitle("Edit", forState: UIControlState.Normal)
         }
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         self.semesterList = NSMutableArray()
@@ -68,7 +68,6 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -108,9 +107,11 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //if user is not in edit mode, then user will be brought to all the courses in selected semester
         if editMode==false {
             performSegueWithIdentifier("ViewCourse", sender: self)
         }else{
+            //otherwise, use will be brought to edit semester to modify selected semester
             performSegueWithIdentifier("EditSemester", sender: self)
         }
     }
@@ -153,7 +154,7 @@ class SemesterViewController: UIViewController, UITableViewDataSource, addSemest
         }
     }
     
-    //Delete data purpose
+    //Delete data purpose, testing only..
     func deleteAllData(entity: String)
     {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

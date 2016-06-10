@@ -2221,7 +2221,8 @@
                                                     <exclude reference="ahM-pg-cFY"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="82" y="14" width="150" height="21"/>
                                                 <mask key="constraints">
                                                     <include reference="PBl-OS-Cyh"/>
                                                     <include reference="ahM-pg-cFY"/>
@@ -2268,10 +2269,10 @@
                                         <mask key="constraints">
                                             <exclude reference="NXh-IE-fJJ"/>
                                             <exclude reference="V63-cn-MmX"/>
-                                            <exclude reference="WpR-fR-Ks2"/>
-                                            <exclude reference="nW9-fX-CrD"/>
                                             <exclude reference="6p5-jU-6B0"/>
                                             <exclude reference="Pp6-Af-aR2"/>
+                                            <exclude reference="WpR-fR-Ks2"/>
+                                            <exclude reference="nW9-fX-CrD"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -2283,10 +2284,10 @@
                                         <mask key="constraints">
                                             <include reference="NXh-IE-fJJ"/>
                                             <include reference="V63-cn-MmX"/>
-                                            <include reference="WpR-fR-Ks2"/>
-                                            <include reference="nW9-fX-CrD"/>
                                             <include reference="6p5-jU-6B0"/>
                                             <include reference="Pp6-Af-aR2"/>
+                                            <include reference="WpR-fR-Ks2"/>
+                                            <include reference="nW9-fX-CrD"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -3212,24 +3213,24 @@
                                 <exclude reference="VD7-gW-ngw"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="U04-LN-M7B"/>
-                                <exclude reference="noh-Eb-YbY"/>
-                                <exclude reference="DCn-OA-ucO"/>
-                                <exclude reference="dUP-os-9MZ"/>
-                                <exclude reference="JKd-UL-teX"/>
-                                <exclude reference="iqu-xj-gmA"/>
-                                <exclude reference="SJI-33-gMM"/>
-                                <exclude reference="TT1-JW-MdM"/>
-                                <exclude reference="eli-8s-1AY"/>
-                                <exclude reference="gdt-S2-hhd"/>
-                                <exclude reference="hbB-HB-cIy"/>
-                                <exclude reference="sRf-Wc-pqT"/>
                                 <exclude reference="IYg-ui-DyW"/>
                                 <exclude reference="dWw-mA-wey"/>
                                 <exclude reference="jci-uw-q3g"/>
                                 <exclude reference="1UE-6r-HiG"/>
                                 <exclude reference="7rd-mI-36k"/>
                                 <exclude reference="Bs2-tA-IaB"/>
+                                <exclude reference="U04-LN-M7B"/>
+                                <exclude reference="noh-Eb-YbY"/>
+                                <exclude reference="DCn-OA-ucO"/>
+                                <exclude reference="dUP-os-9MZ"/>
+                                <exclude reference="SJI-33-gMM"/>
+                                <exclude reference="TT1-JW-MdM"/>
+                                <exclude reference="eli-8s-1AY"/>
+                                <exclude reference="JKd-UL-teX"/>
+                                <exclude reference="iqu-xj-gmA"/>
+                                <exclude reference="gdt-S2-hhd"/>
+                                <exclude reference="hbB-HB-cIy"/>
+                                <exclude reference="sRf-Wc-pqT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -3243,23 +3244,23 @@
                                 <include reference="VD7-gW-ngw"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="U04-LN-M7B"/>
-                                <include reference="noh-Eb-YbY"/>
-                                <include reference="DCn-OA-ucO"/>
-                                <include reference="dUP-os-9MZ"/>
-                                <include reference="JKd-UL-teX"/>
-                                <include reference="iqu-xj-gmA"/>
-                                <include reference="SJI-33-gMM"/>
-                                <include reference="eli-8s-1AY"/>
-                                <include reference="gdt-S2-hhd"/>
-                                <include reference="hbB-HB-cIy"/>
-                                <include reference="sRf-Wc-pqT"/>
                                 <include reference="IYg-ui-DyW"/>
                                 <include reference="dWw-mA-wey"/>
                                 <include reference="jci-uw-q3g"/>
                                 <include reference="1UE-6r-HiG"/>
                                 <include reference="7rd-mI-36k"/>
                                 <include reference="Bs2-tA-IaB"/>
+                                <include reference="U04-LN-M7B"/>
+                                <include reference="noh-Eb-YbY"/>
+                                <include reference="DCn-OA-ucO"/>
+                                <include reference="dUP-os-9MZ"/>
+                                <include reference="SJI-33-gMM"/>
+                                <include reference="eli-8s-1AY"/>
+                                <include reference="JKd-UL-teX"/>
+                                <include reference="iqu-xj-gmA"/>
+                                <include reference="gdt-S2-hhd"/>
+                                <include reference="hbB-HB-cIy"/>
+                                <include reference="sRf-Wc-pqT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">

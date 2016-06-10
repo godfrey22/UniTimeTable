@@ -85,21 +85,4 @@ class CourseSelectViewController: UIViewController {
         delegate.didSelectCourse(c)
         self.navigationController?.popViewControllerAnimated(true)
     }
-
-    
-    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            performSegueWithIdentifier("ViewClass", sender: self)
-    }*/
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

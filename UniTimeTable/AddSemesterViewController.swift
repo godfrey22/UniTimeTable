@@ -56,6 +56,7 @@ class AddSemesterViewController: UIViewController {
         semesterEndDate.text = dateFormatter.stringFromDate(sender.date)
     }
     
+    //display indicate message
     @IBAction func clearContent(sender: UITextField) {
         var stringCache: String
         stringCache = semesterNameInput.text!
@@ -74,6 +75,7 @@ class AddSemesterViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        //if user is in editing mode(clicked edit button)
         if((selectedSemester) != nil)
         {
             let dateFormatter = NSDateFormatter()
@@ -84,9 +86,10 @@ class AddSemesterViewController: UIViewController {
             semesterEndDate.text = dateFormatter.stringFromDate((selectedSemester?.endYear)!)
         }
     }
+    
     //Button function
     @IBAction func saveSemester(sender: UIButton) {
-
+        //add conditions
         let semesterNameCondition = (semesterNameInput.text != "")
         let startDateCondition = (semesterStartDate.text != "")
         let endDateCondition = (semesterEndDate.text != "")
@@ -102,6 +105,7 @@ class AddSemesterViewController: UIViewController {
             return
         }
         
+        //if the input end date is later than start date
         if (startDate.timeIntervalSince1970<endDate.timeIntervalSince1970)
         {
             
@@ -132,6 +136,7 @@ class AddSemesterViewController: UIViewController {
             }
         }else
         {
+            //show alert
             let alertController = UIAlertController(title: "Invalid Time Input", message:
                 "Ending date of the semester should be later than the start of the semester!", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
@@ -143,13 +148,11 @@ class AddSemesterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround() 
-        // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

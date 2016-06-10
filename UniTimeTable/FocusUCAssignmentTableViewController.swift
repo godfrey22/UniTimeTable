@@ -26,6 +26,8 @@ class FocusUCAssignmentTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //get all the semester from the core date
         let request = NSFetchRequest(entityName: "Semester")
         request.returnsObjectsAsFaults = false
         do{
@@ -39,21 +41,26 @@ class FocusUCAssignmentTableViewController: UITableViewController {
             print(fetchError)
         }
         
+        //if there is "semester" in the list
         if(semesterList.count > 0){
+            //by default, the first one will be considered as the current semester
             currentSemester = semesterList[0] as? Semester
             for semester in semesterList {
+                //but if, the current date is within another semester, it will change
                 if((semester as! Semester).startYear?.timeIntervalSinceNow<0){
                     if((semester as! Semester).endYear?.timeIntervalSinceNow > 0){
                         currentSemester = semester as? Semester
                     }
                 }
             }
-            
+            //remove all the objects in upcoming assignmentlist
             upcomingAssignmentList.removeAllObjects()
             
+            //get all the courses in current semester
             let courseList = (NSArray(array: (currentSemester!.hasCourse?.allObjects as! [Course])))
             for course in (courseList as! [Course]) {
                 for assignment in (course.hasAssignment?.allObjects as! [Assignment]){
+                    //if there are assignments that are due in the next 7 days, it will be added into the assignment list
                     let calendar = NSCalendar.currentCalendar()
                     let components = calendar.components([.Day], fromDate: (assignment.assignment_due)!, toDate: NSDate(), options: [])
                     if (components.day < 7){
@@ -68,20 +75,11 @@ class FocusUCAssignmentTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -97,6 +95,7 @@ class FocusUCAssignmentTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UCAssignmentCell", forIndexPath: indexPath) as! UCAssignmentCell
         
+        // Configure the cell...
         let a: Assignment = self.upcomingAssignmentList[indexPath.row] as! Assignment
         cell.courseCode.text = a.belongs_to_Course?.course_code
         
@@ -105,71 +104,26 @@ class FocusUCAssignmentTableViewController: UITableViewController {
         
         cell.dueDate.text = dateFormatter.stringFromDate(a.assignment_due!)
         
+        //by default, the color is red, assume the assignment is not finished
         cell.percentage.textColor = UIColor.redColor()
         
         if(Int(a.assignment_status!)!<100){
+            //if the percentage is less than 100, it means it is not finished, and the cell will indicate the percentage
             cell.percentage.text = "\(a.assignment_status!)%"
         }else if(Int(a.assignment_status!)!==100){
+            //if the percentage is 100, it means the assignment is finished, but not submitted yet
             cell.percentage.text = "Not Submitted"
         }else{
+            //if the percentage is more than 100(when user submit assignment, system will add 100 to this percentage), it means submitted, and color will become green
             cell.percentage.text = "Submitted"
             cell.percentage.textColor = UIColor.greenColor()
         }
-        
-        
-        // Configure the cell...
-
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "UCATVC" {
+            //create the segue and display the cell
             let connectContainerViewController = segue.destinationViewController as! FocusUCAssignmentTableViewController
             containerViewController = connectContainerViewController
             containerViewController!.managedObjectContext = self.managedObjectContext

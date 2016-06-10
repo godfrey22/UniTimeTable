@@ -140,8 +140,6 @@ class ClassViewController: UIViewController, addClassDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if editMode==false {
-            //TO-DO
-            //performSegueWithIdentifier("ViewCourse", sender: self)
         }else{
             performSegueWithIdentifier("EditClass", sender: self)
         }
@@ -188,16 +186,4 @@ class ClassViewController: UIViewController, addClassDelegate {
         }
     }
     
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

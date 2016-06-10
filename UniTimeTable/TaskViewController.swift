@@ -31,12 +31,14 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
     
     @IBAction func submit(sender: UIButton) {
         
+        //if task is finished(sum of percentage is 100), perform submit.
         if(Int(self.selectedAssignment.assignment_status!) == 100){
             self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! + 100)
         }else if(Int(self.selectedAssignment.assignment_status!) < 100){
+            //detect unfinished assignment, but user insist to submit, show an alert diaolog
             let submitAlert = UIAlertController(title: "Unfinished Assignment", message: "It seems you have not complete all the task, are you sure you submitted them?", preferredStyle: UIAlertControllerStyle.Alert)
-            
             submitAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+                //user insist, perform submit
                 self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! + 100)
                 self.navigationController?.popViewControllerAnimated(true)
             }))
@@ -46,16 +48,16 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
             
             presentViewController(submitAlert, animated: true, completion: nil)
         }else if(Int(self.selectedAssignment.assignment_status!) > 100){
+            //if the percentage is already greater than 100, it means, user maybe want to change it back
             self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! - 100)
         }
-        
         self.navigationController?.popViewControllerAnimated(true)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         taskTabelView.reloadData()
-        
+        //determine the button title is "submit" or "unsubmit" depending on the assignment percentage status
         if(Int(selectedAssignment.assignment_status!)!>100){
             submitButton.setTitle("Unsubmit", forState: UIControlState.Normal)
         }else{
@@ -68,6 +70,7 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //register the table view
         taskTabelView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "TaskCell")
         
         assignmentTitleLabel.text = selectedAssignment.assignment_title
@@ -79,6 +82,7 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
         dueDateLabel.text = dateFormatter.stringFromDate(selectedAssignment.assignment_due!)
         
         
+        //get all the task from selected assignment
         let request = NSFetchRequest(entityName: "Task")
         request.returnsObjectsAsFaults = false
         do{
@@ -93,6 +97,7 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
             print(fetchError)
         }
         
+        //reorder the task order by its percentage, from small to big (finished taskes will always display at last)
         taskList.sortUsingComparator {
             let task1 = $0 as! Task
             let task2 = $1 as! Task
@@ -123,12 +128,12 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TaskCellIdentifier", forIndexPath: indexPath) as! TaskCell
         //Create a date formatter
-
         let t: Task = self.taskList[indexPath.row] as! Task
         
         cell.taskTitle.text = t.task_title
         cell.taskStatus.text = "\(t.task_percentage!)%"
         
+        //if the task is completed, it will show green, else, red
         if(t.task_status == false)
         {
             cell.taskStatus.textColor = UIColor.redColor()
@@ -190,14 +195,5 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
         self.taskList.removeObjectAtIndex(index)
         self.taskTabelView.reloadData()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

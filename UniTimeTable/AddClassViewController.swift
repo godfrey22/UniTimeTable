@@ -111,19 +111,17 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
         self.hideKeyboardWhenTappedAround() 
         if((selectedClass) != nil)
         {
+            //if user wants to modify the class
             selectedType = selectedClass?.hasType
             selectedTeacher = selectedClass?.hasTeacher
         }
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
-        
         if((selectedClass) != nil)
         {
             typeLabel.text = selectedClass?.hasType?.type_name
@@ -158,25 +156,17 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
         }
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "ViewType"
         {
+            //choose type for the class
             let typeViewController: TypeViewController = segue.destinationViewController as! TypeViewController
             typeViewController.managedObjectContext = self.managedObjectContext
             typeViewController.delegate = self
     }else if segue.identifier == "ViewTeacher"
     {
+        //choose teacher for the class
         let teacherViewController: TeacherViewController = segue.destinationViewController as! TeacherViewController
         teacherViewController.managedObjectContext = self.managedObjectContext
         teacherViewController.delegate = self
@@ -299,6 +289,7 @@ class AddClassViewController: UIViewController, typeSelectionDelegate, teacherSe
     }
     
     func calcNShowDuration(){
+        //calculate the duration of the class, in case students get confused about the time
         let cal = NSCalendar.currentCalendar()
         let unit:NSCalendarUnit = NSCalendarUnit.Minute
         let time = cal.components(unit, fromDate: startTime, toDate: endTime, options: [])

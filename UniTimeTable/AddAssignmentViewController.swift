@@ -33,6 +33,7 @@ class AddAssignmentViewController: UIViewController, courseSelectionDelegate{
     @IBOutlet var assignmentDue: UITextField!
     @IBOutlet var assignmentCourseCode: UILabel!
     
+    //create the date picker
     @IBAction func editDueDate(sender: UITextField) {
         let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.Date
@@ -49,17 +50,17 @@ class AddAssignmentViewController: UIViewController, courseSelectionDelegate{
 
     @IBAction func saveAssignment(sender: UIButton) {
         
+        //save conditions, below can not be empty
         let assignmentTitleCondition = (assignmentTitle.text != "")
         let assignmentDueCondition = (assignmentDue.text != "")
         let assignmentcourseCondition = assignmentCourseCode.text != ""
         
         let pass = (assignmentDueCondition && assignmentTitleCondition && assignmentcourseCondition)
-        
+        //if it doe not pass
         if(!pass){
             let alertController = UIAlertController(title: "Empty fields", message:
                 "Please fill in necessary information", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-            
             self.presentViewController(alertController, animated: true, completion: nil)
             return
         }
@@ -116,27 +117,14 @@ class AddAssignmentViewController: UIViewController, courseSelectionDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func didSelectCourse(course: Course) {
         selectedCourse = course
         assignmentCourseCode.text = selectedCourse?.course_code
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
