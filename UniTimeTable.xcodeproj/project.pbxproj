@@ -21,6 +21,15 @@
 		A70BE8691CE9552F005CC0D0 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BE8671CE9552F005CC0D0 /* Type.swift */; };
 		A70BE86F1CE95F99005CC0D0 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BE86E1CE95F99005CC0D0 /* TeacherViewController.swift */; };
 		A70BE8711CE96317005CC0D0 /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70BE8701CE96317005CC0D0 /* TeacherCell.swift */; };
+		A710E8561D0AA5C10093D9E5 /* assignments.png in Resources */ = {isa = PBXBuildFile; fileRef = A710E84D1D0AA5C10093D9E5 /* assignments.png */; };
+		A710E8571D0AA5C10093D9E5 /* assignments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A710E84E1D0AA5C10093D9E5 /* assignments@2x.png */; };
+		A710E8581D0AA5C10093D9E5 /* assignments@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A710E84F1D0AA5C10093D9E5 /* assignments@3x.png */; };
+		A710E8591D0AA5C10093D9E5 /* focus.png in Resources */ = {isa = PBXBuildFile; fileRef = A710E8501D0AA5C10093D9E5 /* focus.png */; };
+		A710E85A1D0AA5C10093D9E5 /* focus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A710E8511D0AA5C10093D9E5 /* focus@2x.png */; };
+		A710E85B1D0AA5C10093D9E5 /* focus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A710E8521D0AA5C10093D9E5 /* focus@3x.png */; };
+		A710E85C1D0AA5C10093D9E5 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = A710E8531D0AA5C10093D9E5 /* settings.png */; };
+		A710E85D1D0AA5C10093D9E5 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A710E8541D0AA5C10093D9E5 /* settings@2x.png */; };
+		A710E85E1D0AA5C10093D9E5 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A710E8551D0AA5C10093D9E5 /* settings@3x.png */; };
 		A73F33991D028B9F00EFD992 /* FocusUCAssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73F33981D028B9F00EFD992 /* FocusUCAssignmentTableViewController.swift */; };
 		A73F339B1D0297AC00EFD992 /* UCAssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73F339A1D0297AC00EFD992 /* UCAssignmentCell.swift */; };
 		A754CE261CE1A8FB00283B84 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */; };
@@ -91,6 +100,15 @@
 		A70BE8671CE9552F005CC0D0 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		A70BE86E1CE95F99005CC0D0 /* TeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
 		A70BE8701CE96317005CC0D0 /* TeacherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
+		A710E84D1D0AA5C10093D9E5 /* assignments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = assignments.png; sourceTree = "<group>"; };
+		A710E84E1D0AA5C10093D9E5 /* assignments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assignments@2x.png"; sourceTree = "<group>"; };
+		A710E84F1D0AA5C10093D9E5 /* assignments@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assignments@3x.png"; sourceTree = "<group>"; };
+		A710E8501D0AA5C10093D9E5 /* focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = focus.png; sourceTree = "<group>"; };
+		A710E8511D0AA5C10093D9E5 /* focus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus@2x.png"; sourceTree = "<group>"; };
+		A710E8521D0AA5C10093D9E5 /* focus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus@3x.png"; sourceTree = "<group>"; };
+		A710E8531D0AA5C10093D9E5 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		A710E8541D0AA5C10093D9E5 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		A710E8551D0AA5C10093D9E5 /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
 		A73F33981D028B9F00EFD992 /* FocusUCAssignmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusUCAssignmentTableViewController.swift; sourceTree = "<group>"; };
 		A73F339A1D0297AC00EFD992 /* UCAssignmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCAssignmentCell.swift; sourceTree = "<group>"; };
 		A754CE241CE1A8FB00283B84 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -240,6 +258,22 @@
 			name = "Course ViewControllers";
 			sourceTree = "<group>";
 		};
+		A710E84C1D0AA5B10093D9E5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A710E84D1D0AA5C10093D9E5 /* assignments.png */,
+				A710E84E1D0AA5C10093D9E5 /* assignments@2x.png */,
+				A710E84F1D0AA5C10093D9E5 /* assignments@3x.png */,
+				A710E8501D0AA5C10093D9E5 /* focus.png */,
+				A710E8511D0AA5C10093D9E5 /* focus@2x.png */,
+				A710E8521D0AA5C10093D9E5 /* focus@3x.png */,
+				A710E8531D0AA5C10093D9E5 /* settings.png */,
+				A710E8541D0AA5C10093D9E5 /* settings@2x.png */,
+				A710E8551D0AA5C10093D9E5 /* settings@3x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		A73F33971D028B6900EFD992 /* UCAssignment */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +306,7 @@
 		A768E6B31CD46C1100CB7E1F /* UniTimeTable */ = {
 			isa = PBXGroup;
 			children = (
+				A710E84C1D0AA5B10093D9E5 /* images */,
 				A70B5C151CDF331100E0EA0D /* ViewControllers */,
 				A70B5C391CE06E0200E0EA0D /* CustomCell */,
 				A70B5C161CDF332100E0EA0D /* DataModels */,
@@ -450,9 +485,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A710E85D1D0AA5C10093D9E5 /* settings@2x.png in Resources */,
+				A710E8581D0AA5C10093D9E5 /* assignments@3x.png in Resources */,
+				A710E85A1D0AA5C10093D9E5 /* focus@2x.png in Resources */,
 				A768E6C21CD46C1200CB7E1F /* LaunchScreen.storyboard in Resources */,
 				A768E6BF1CD46C1200CB7E1F /* Assets.xcassets in Resources */,
+				A710E8561D0AA5C10093D9E5 /* assignments.png in Resources */,
 				A768E6BA1CD46C1200CB7E1F /* Main.storyboard in Resources */,
+				A710E85C1D0AA5C10093D9E5 /* settings.png in Resources */,
+				A710E8591D0AA5C10093D9E5 /* focus.png in Resources */,
+				A710E8571D0AA5C10093D9E5 /* assignments@2x.png in Resources */,
+				A710E85E1D0AA5C10093D9E5 /* settings@3x.png in Resources */,
+				A710E85B1D0AA5C10093D9E5 /* focus@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

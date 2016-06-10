@@ -1852,7 +1852,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Class" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUf-u0-X7x">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CTv-eE-Pjf"/>
                                 </constraints>
@@ -1870,28 +1870,9 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4p-WS-K1g">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="jWG-Ih-3oS"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="jWG-Ih-3oS"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="jWG-Ih-3oS"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="t7b-Tl-gwG" kind="embed" identifier="UCCTVC" id="aXw-Br-d6w"/>
-                                </connections>
-                            </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Assignment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VE9-1M-WYF">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ard-gY-5dl"/>
                                 </constraints>
@@ -1928,8 +1909,27 @@
                                     <segue destination="5kd-ua-Tqr" kind="embed" identifier="UCATVC" id="bQp-3G-09f"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4p-WS-K1g">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="jWG-Ih-3oS"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jWG-Ih-3oS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="jWG-Ih-3oS"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="t7b-Tl-gwG" kind="embed" identifier="UCCTVC" id="aXw-Br-d6w"/>
+                                </connections>
+                            </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VE9-1M-WYF" firstAttribute="leading" secondItem="PIA-C7-A5E" secondAttribute="leading" id="04r-Qj-JPb"/>
                             <constraint firstItem="muj-yU-lLF" firstAttribute="width" secondItem="PIA-C7-A5E" secondAttribute="width" id="3A2-Tc-57g"/>
@@ -1947,9 +1947,9 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="IUf-u0-X7x"/>
-                                <exclude reference="Z4p-WS-K1g"/>
                                 <exclude reference="VE9-1M-WYF"/>
                                 <exclude reference="muj-yU-lLF"/>
+                                <exclude reference="Z4p-WS-K1g"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4hQ-fk-LpC"/>
@@ -1969,9 +1969,9 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="IUf-u0-X7x"/>
-                                <include reference="Z4p-WS-K1g"/>
                                 <include reference="VE9-1M-WYF"/>
                                 <include reference="muj-yU-lLF"/>
+                                <include reference="Z4p-WS-K1g"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4hQ-fk-LpC"/>
@@ -2321,7 +2321,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjN-04-06f">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WcA-gI-0Pf"/>
                                 </constraints>
@@ -2341,7 +2341,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxV-E5-rF6">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kIO-ps-uzV"/>
                                 </constraints>
@@ -2472,7 +2472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKh-21-rMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2040" y="-1716"/>
+            <point key="canvasLocation" x="1989" y="-1695.75"/>
         </scene>
         <!--Add Assignment View Controller-->
         <scene sceneID="xZB-u9-c1n">
@@ -2860,11 +2860,14 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8G-1M-tZU">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="8" y="-2" width="100" height="21"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="-2" width="114" height="21"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j47-Ee-1Ra">
@@ -2874,6 +2877,9 @@
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="22" y="15" width="128" height="21"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="22" y="15" width="141" height="21"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioj-23-t0l">
@@ -2892,6 +2898,9 @@
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="259" y="14" width="44" height="21"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="223" y="14" width="80" height="21"/>
                                             </variation>
                                         </label>
                                     </subviews>
@@ -2991,7 +3000,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Management" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ja8-e3-Zk8">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Hrf-mw-FOC"/>
                                 </constraints>
@@ -3337,7 +3346,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rni-5J-4ya">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.45490196078431372" green="0.45490196078431372" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Diy-Sl-jTV"/>
                                 </constraints>
@@ -3582,11 +3591,14 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FY-5n-XyV">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="8" y="0.0" width="128" height="21"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="0.0" width="166" height="21"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBB-G3-l1b">
@@ -3679,7 +3691,7 @@
         <scene sceneID="b6u-sF-qFa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rFi-Ta-WGQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Focus" id="J7m-Wl-iQQ"/>
+                    <tabBarItem key="tabBarItem" title="Focus" image="focus.png" id="J7m-Wl-iQQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lYT-rZ-ZkE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -3698,7 +3710,7 @@
         <scene sceneID="HVY-Ao-eyc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TDx-db-ihq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Assignments" id="sYL-Kp-eqp"/>
+                    <tabBarItem key="tabBarItem" title="Assignments" image="assignments.png" id="sYL-Kp-eqp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bbr-5h-BkO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -3717,7 +3729,7 @@
         <scene sceneID="oYQ-T3-2Jx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kSR-hD-eP6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="xhW-XQ-dZm"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="xhW-XQ-dZm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wdX-Ku-Anq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -3733,6 +3745,11 @@
             <point key="canvasLocation" x="151.5" y="-906"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="assignments.png" width="25" height="25"/>
+        <image name="focus.png" width="25" height="25"/>
+        <image name="settings.png" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="VV3-MD-tko"/>
         <segue reference="rjc-z0-Pdw"/>
