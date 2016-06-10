@@ -79,6 +79,16 @@ class FocusUCClassTableViewController: UITableViewController {
                     }
                 }
             }
+            
+            upcomingClassList.sortUsingComparator {
+                let class1 = $0 as! Class
+                let class2 = $1 as! Class
+                if(class1.startTime?.timeIntervalSince1970 < class2.startTime?.timeIntervalSince1970){
+                    return .OrderedAscending
+                }else{
+                    return .OrderedDescending
+                }
+            }
 
         }
         

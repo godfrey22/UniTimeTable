@@ -33,13 +33,13 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
         
         //if task is finished(sum of percentage is 100), perform submit.
         if(Int(self.selectedAssignment.assignment_status!) == 100){
-            self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! + 100)
+            self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! + 101)
         }else if(Int(self.selectedAssignment.assignment_status!) < 100){
             //detect unfinished assignment, but user insist to submit, show an alert diaolog
             let submitAlert = UIAlertController(title: "Unfinished Assignment", message: "It seems you have not complete all the task, are you sure you submitted them?", preferredStyle: UIAlertControllerStyle.Alert)
             submitAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
                 //user insist, perform submit
-                self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! + 100)
+                self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! + 101)
                 self.navigationController?.popViewControllerAnimated(true)
             }))
             
@@ -49,7 +49,7 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
             presentViewController(submitAlert, animated: true, completion: nil)
         }else if(Int(self.selectedAssignment.assignment_status!) > 100){
             //if the percentage is already greater than 100, it means, user maybe want to change it back
-            self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! - 100)
+            self.selectedAssignment.assignment_status = String(Int(self.selectedAssignment.assignment_status!)! - 101)
         }
         self.navigationController?.popViewControllerAnimated(true)
     }

@@ -68,6 +68,22 @@ class FocusUCAssignmentTableViewController: UITableViewController {
                     }
                 }
             }
+            
+            upcomingAssignmentList.sortUsingComparator {
+                let assignment1 = $0 as! Assignment
+                let assignment2 = $1 as! Assignment
+                if(Int(assignment1.assignment_status!)! > 100){
+                    return .OrderedDescending
+                }else if(Int(assignment2.assignment_status!)! > 100)
+                {
+                    return .OrderedAscending
+                }else if (assignment1.assignment_due?.timeIntervalSince1970 < assignment2.assignment_due?.timeIntervalSince1970)
+                {
+                    return .OrderedAscending
+                }else{
+                    return .OrderedDescending
+                }
+            }
         }
 
         self.tableView.reloadData()
