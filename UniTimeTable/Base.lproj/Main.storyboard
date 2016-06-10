@@ -1602,17 +1602,30 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-W1-mPR">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="8" y="11" width="100" height="21"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="-1" width="100" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b08-Bw-uc0">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="23" y="19" width="196" height="21"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="9RH-W1-mPR"/>
+                                                    <exclude reference="b08-Bw-uc0"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -1620,9 +1633,15 @@
                                                     <include reference="9RH-W1-mPR"/>
                                                 </mask>
                                             </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="b08-Bw-uc0"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="courseCode" destination="9RH-W1-mPR" id="NhE-0h-WeU"/>
+                                            <outlet property="courseName" destination="b08-Bw-uc0" id="SyE-0z-icr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1680,7 +1699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QL2-Wy-U2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151.5" y="623"/>
+            <point key="canvasLocation" x="151.5" y="622.5"/>
         </scene>
         <!--Add Course View Controller-->
         <scene sceneID="trq-9X-7X2">
@@ -2102,8 +2121,8 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="4Tb-HT-oNJ" firstAttribute="top" secondItem="dDM-Nu-lZ2" secondAttribute="topMargin" id="BjM-nT-tNV"/>
-                                        <constraint firstItem="hen-dD-MwW" firstAttribute="top" secondItem="4Tb-HT-oNJ" secondAttribute="bottom" constant="-3" id="DGg-yQ-lSj"/>
+                                        <constraint firstItem="4Tb-HT-oNJ" firstAttribute="top" secondItem="dDM-Nu-lZ2" secondAttribute="topMargin" constant="-5" id="BjM-nT-tNV"/>
+                                        <constraint firstItem="hen-dD-MwW" firstAttribute="top" secondItem="4Tb-HT-oNJ" secondAttribute="bottom" id="DGg-yQ-lSj"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="wMM-8O-FlF" secondAttribute="trailing" constant="10" id="ds8-pq-1Uh"/>
                                         <constraint firstItem="hen-dD-MwW" firstAttribute="leading" secondItem="dDM-Nu-lZ2" secondAttribute="leadingMargin" id="h3j-nq-ccF"/>
                                         <constraint firstItem="4Tb-HT-oNJ" firstAttribute="leading" secondItem="dDM-Nu-lZ2" secondAttribute="leadingMargin" id="kJb-2m-eyo"/>
@@ -2253,7 +2272,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Inw-re-nyj" firstAttribute="top" secondItem="5UU-zc-Xw0" secondAttribute="topMargin" constant="6" id="6p5-jU-6B0"/>
-                                        <constraint firstItem="2UN-bS-JtG" firstAttribute="top" secondItem="5UU-zc-Xw0" secondAttribute="topMargin" id="NXh-IE-fJJ"/>
+                                        <constraint firstItem="2UN-bS-JtG" firstAttribute="top" secondItem="5UU-zc-Xw0" secondAttribute="topMargin" constant="-5" id="NXh-IE-fJJ"/>
                                         <constraint firstItem="Inw-re-nyj" firstAttribute="trailing" secondItem="5UU-zc-Xw0" secondAttribute="trailingMargin" id="Pp6-Af-aR2"/>
                                         <constraint firstItem="2UN-bS-JtG" firstAttribute="leading" secondItem="5UU-zc-Xw0" secondAttribute="leadingMargin" id="V63-cn-MmX"/>
                                         <constraint firstItem="w9j-Tc-YwC" firstAttribute="top" secondItem="5UU-zc-Xw0" secondAttribute="topMargin" constant="20" id="WpR-fR-Ks2"/>

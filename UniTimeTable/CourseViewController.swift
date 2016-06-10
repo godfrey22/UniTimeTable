@@ -93,6 +93,7 @@ class CourseViewController: UIViewController, addCourseDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseCellIdentifier", forIndexPath: indexPath) as! CourseCell
         let c: Course = self.courseList[indexPath.row] as! Course
         cell.courseCode.text = c.course_code
+        cell.courseName.text = c.course_name
         return cell
     }
     

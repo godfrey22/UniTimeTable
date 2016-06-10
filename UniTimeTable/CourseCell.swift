@@ -12,7 +12,7 @@ class CourseCell: UITableViewCell {
     
     
     @IBOutlet var courseCode: UILabel!
-    
+    @IBOutlet var courseName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
