@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    //copied from http://stackoverflow.com/questions/24126678/close-ios-keyboard-by-touching-anywhere-using-swift
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)

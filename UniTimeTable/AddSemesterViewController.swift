@@ -26,6 +26,8 @@ class AddSemesterViewController: UIViewController {
     @IBOutlet var semesterStartDate: UITextField!
     @IBOutlet var semesterEndDate: UITextField!
     
+    
+    //learned from http://stackoverflow.com/questions/34431942/uitextfield-and-uidatepicker
     //Start Datepicker
     @IBAction func editStartDate(sender: UITextField) {
         let datePickerView: UIDatePicker = UIDatePicker()
@@ -42,6 +44,7 @@ class AddSemesterViewController: UIViewController {
     }
     
     //End Datepicker
+    //http://stackoverflow.com/questions/34431942/uitextfield-and-uidatepicker
     @IBAction func editEndDate(sender: UITextField) {
         let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.Date

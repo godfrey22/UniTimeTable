@@ -11,6 +11,7 @@ import CoreData
 
 extension NSDate {
     //extend NSDate to return which weekday of the week is, by given date
+    //Learned from  http://stackoverflow.com/questions/25533147/get-day-of-week-using-nsdate-swift
     func dayOfWeek() -> Int? {
         if
             let cal: NSCalendar = NSCalendar.currentCalendar(),
@@ -80,6 +81,7 @@ class FocusUCClassTableViewController: UITableViewController {
                 }
             }
             
+            //modified from http://stackoverflow.com/questions/14928793/sorting-an-array-of-nsindexpaths
             upcomingClassList.sortUsingComparator {
                 let class1 = $0 as! Class
                 let class2 = $1 as! Class

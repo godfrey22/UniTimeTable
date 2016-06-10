@@ -98,6 +98,7 @@ class TaskViewController: UIViewController, addTaskDelegate, deleteTaskDelegate 
         }
         
         //reorder the task order by its percentage, from small to big (finished taskes will always display at last)
+        //modified from http://stackoverflow.com/questions/14928793/sorting-an-array-of-nsindexpaths
         taskList.sortUsingComparator {
             let task1 = $0 as! Task
             let task2 = $1 as! Task

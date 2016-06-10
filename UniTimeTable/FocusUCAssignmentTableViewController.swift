@@ -69,6 +69,7 @@ class FocusUCAssignmentTableViewController: UITableViewController {
                 }
             }
             
+            //modified from http://stackoverflow.com/questions/14928793/sorting-an-array-of-nsindexpaths
             upcomingAssignmentList.sortUsingComparator {
                 let assignment1 = $0 as! Assignment
                 let assignment2 = $1 as! Assignment
